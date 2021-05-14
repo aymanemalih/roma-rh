@@ -1,0 +1,21 @@
+<p-dialog [(visible)]="viewDialog" [style]="{width: '450px'}" header="Entreprise Details" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-grid">
+            <div class="p-field p-sm-6">
+                <label for="ref">Code</label>
+                <input type="text" pInputText id="ref" [(ngModel)]="selected.code" required autofocus disabled/>
+            </div>
+            <div class="p-field p-sm-6">
+                <label for="total">Libelle</label>
+                <input type="text" pInputText id="total" [(ngModel)]="selected.libelle" required autofocus disabled/>
+            </div>
+        </div>
+        <div class="p-formgrid p-grid">
+            <div class="p-field p-col">
+                <label for="descrip">Description</label>
+                <textarea id="descrip" [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" [(ngModel)]="selected.description" disabled>
+                </textarea>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>

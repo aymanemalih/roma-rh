@@ -144,6 +144,19 @@ import { CommandesComponent } from './view/admin/commandes/commandes.component';
 import { CommandeListComponent } from './view/admin/commandes/commande-list/commande-list.component';
 import { CommandeEditComponent } from './view/admin/commandes/commande-edit/commande-edit.component';
 import { CommandeViewComponent } from './view/admin/commandes/commande-view/commande-view.component';
+import { EntrepriseClientComponent } from './view/admin/component/entreprise-client/entreprise-client.component';
+import { EntrepriseComponent } from './view/admin/component/entreprise-client/entreprise/entreprise.component';
+import { ClientComponent } from './view/admin/component/entreprise-client/client/client.component';
+import { EntrepriseCreateComponent } from './view/admin/component/entreprise-client/entreprise/entreprise-create/entreprise-create.component';
+import { EntrepriseEditComponent } from './view/admin/component/entreprise-client/entreprise/entreprise-edit/entreprise-edit.component';
+import { EntrepriseListComponent } from './view/admin/component/entreprise-client/entreprise/entreprise-list/entreprise-list.component';
+import { EntrepriseViewComponent } from './view/admin/component/entreprise-client/entreprise/entreprise-view/entreprise-view.component';
+import {ConfirmationService, MessageService} from 'primeng/api';
+import {ClientCreateComponent} from './view/admin/component/entreprise-client/client/client-create/client-create.component';
+import { ClientListComponent } from './view/admin/component/entreprise-client/client/client-list/client-list.component';
+import { ClientEditComponent } from './view/admin/component/entreprise-client/client/client-edit/client-edit.component';
+import { ClientViewComponent } from './view/admin/component/entreprise-client/client/client-view/client-view.component';
+
 
 @NgModule({
     imports: [
@@ -282,12 +295,23 @@ import { CommandeViewComponent } from './view/admin/commandes/commande-view/comm
         CommandesComponent,
         CommandeListComponent,
         CommandeEditComponent,
-        CommandeViewComponent
+        CommandeViewComponent,
+        EntrepriseClientComponent,
+        EntrepriseComponent,
+        ClientComponent,
+        EntrepriseCreateComponent,
+        EntrepriseEditComponent,
+        EntrepriseListComponent,
+        EntrepriseViewComponent,
+        ClientCreateComponent,
+        ClientListComponent,
+        ClientEditComponent,
+        ClientViewComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService, MenuService
+        PhotoService, ProductService, MenuService, MessageService, ConfirmationService
     ],
     bootstrap: [AppComponent]
 })

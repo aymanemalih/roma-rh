@@ -5,7 +5,6 @@ import {ConfirmationService, MessageService} from "primeng/api";
   selector: 'app-commandes',
   templateUrl: './commandes.component.html',
   styleUrls: ['./commandes.component.scss'],
-  providers: [MessageService, ConfirmationService]
 })
 export class CommandesComponent implements OnInit {
 

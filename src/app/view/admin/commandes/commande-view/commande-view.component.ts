@@ -36,5 +36,4 @@ export class CommandeViewComponent implements OnInit {
   set viewDialog(value: boolean) {
     this.service.viewDialog = value;
   }
-
 }
