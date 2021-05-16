@@ -34,7 +34,7 @@ export class TacheService {
   }
 
   public findByGroupeTacheCode(code: string): Observable<Array<Tache>> {
-    return this.http.get<Array<Tache>>(this.url + 'code/' + code);
+    return this.http.get<Array<Tache>>(this.url + 'codeGroupeTache/' + code);
   }
 
   public deleteByCode(): Observable<number> {

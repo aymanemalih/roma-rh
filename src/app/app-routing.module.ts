@@ -39,6 +39,7 @@ import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
 import {AppLoginComponent} from './pages/app.login.component';
 import {CommandesComponent} from './view/admin/commandes/commandes.component';
 import {EntrepriseClientComponent} from './view/admin/component/entreprise-client/entreprise-client.component';
+import {GroupetacheTacheComponent} from './view/admin/component/groupetache-tache/groupetache-tache.component';
 
 @NgModule({
     imports: [
@@ -48,6 +49,7 @@ import {EntrepriseClientComponent} from './view/admin/component/entreprise-clien
                 children: [
                     {path: '', component: DashboardDemoComponent},
                     {path: 'view/commande', component: CommandesComponent},
+                    {path: 'view/groupetache-tache', component: GroupetacheTacheComponent},
                     {path: 'view/entreprise-client', component: EntrepriseClientComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},
