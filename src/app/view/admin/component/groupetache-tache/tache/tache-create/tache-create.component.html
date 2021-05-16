@@ -1,1 +1,54 @@
-<p>tache-create works!</p>
+<p-dialog [(visible)]="createDialog" [style]="{width: '450px'}" header="Entreprise Details" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-grid">
+            <div class="p-field p-sm-6">
+                <label for="libelle">Libelle</label>
+                <input type="text" pInputText id="libelle" [(ngModel)]="selected.libelle" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.libelle">libelle is required.</small>
+            </div>
+            <div class="p-field p-col">
+                <label for="descrip">Description</label>
+                <textarea id="descrip" [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" [(ngModel)]="selected.description">
+                </textarea>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-6">
+                <label for="datedemarre">Date Démarrage Effective</label>
+                <input type="date" pInputText id="datedemarre" [(ngModel)]="selected.dateDemarrageEffective" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.dateDemarrageEffective">date is required.</small>
+            </div>
+            <div class="p-field p-sm-6">
+                <label for="datefin">Date Fin Effective</label>
+                <input type="date" pInputText id="datefin" [(ngModel)]="selected.dateFinEffective" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.dateFinEffective">date is required.</small>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-6">
+                <label for="etat">Etat</label>
+                <p-dropdown id="etat" [options]="itemsEtats" [(ngModel)]="selected.etatTache" optionLabel="libelle"></p-dropdown>
+            </div>
+            <div class="p-field p-sm-6">
+                <label for="categorie">Catégorie</label>
+                <p-dropdown id="categorie" [options]="itemsCategories" [(ngModel)]="selected.categorieTache" optionLabel="libelle"></p-dropdown>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-6">
+                <label for="periode">Période</label>
+                <p-dropdown id="periode" [options]="itemsEtats" [(ngModel)]="selected.etatTache" optionLabel="libelle"></p-dropdown>
+            </div>
+            <div class="p-field p-sm-6">
+                <label for="responsable">Responsable</label>
+                <p-dropdown id="responsable" [options]="itemsMembres" [(ngModel)]="selected.membreEquipe" optionLabel="nom"></p-dropdown>
+            </div>
+        </div>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideCreateDialog()"></button>
+        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="save()"></button>
+    </ng-template>
+</p-dialog>
