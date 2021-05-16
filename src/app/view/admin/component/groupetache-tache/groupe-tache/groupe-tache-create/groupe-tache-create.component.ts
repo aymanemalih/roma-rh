@@ -8,6 +8,8 @@ import {Equipe} from '../../../../../../controller/model/equipe.model';
 import {EquipeService} from '../../../../../../controller/service/equipe.service';
 import {Lot} from '../../../../../../controller/model/lot.model';
 import {CategorieGroupeTache} from '../../../../../../controller/model/categorie-groupe-tache.model';
+import {EtatGroupeTache} from '../../../../../../controller/model/etat-groupe-tache.model';
+import {EtatGroupeTacheService} from '../../../../../../controller/service/etat-groupe-tache.service';
 
 @Component({
   selector: 'app-groupe-tache-create',
@@ -20,10 +22,16 @@ export class GroupeTacheCreateComponent implements OnInit {
               private service: GroupeTacheService,
               private equipeService: EquipeService,
               private lotService: LotService,
-              private categorieGroupeTacheService: CategorieGroupeTacheService) {
+              private categorieGroupeTacheService: CategorieGroupeTacheService,
+              private etatGroupeTacheService: EtatGroupeTacheService) {
   }
 
   ngOnInit(): void {
+    this.service.selected = null;
+    this.equipeService.findAll().subscribe(data => this.itemsEquipes = data);
+    this.lotService.findAll().subscribe(data => this.itemsLots = data);
+    this.categorieGroupeTacheService.findAll().subscribe(data => this.itemsCategories = data);
+    this.etatGroupeTacheService.findAll().subscribe(data => this.itemsEtats = data);
   }
 
   public hideCreateDialog() {
@@ -102,6 +110,14 @@ export class GroupeTacheCreateComponent implements OnInit {
 
   set itemsCategories(value: Array<CategorieGroupeTache>) {
     this.categorieGroupeTacheService.items = value;
+  }
+
+  get itemsEtats(): Array<EtatGroupeTache> {
+    return this.etatGroupeTacheService.items;
+  }
+
+  set itemsEtats(value: Array<EtatGroupeTache>) {
+    this.etatGroupeTacheService.items = value;
   }
 
 }

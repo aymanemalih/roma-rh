@@ -12,6 +12,7 @@ import {MembreEquipe} from '../../../../../../controller/model/membre-equipe';
 import {CategorieTache} from '../../../../../../controller/model/categorie-tache.model';
 import {Periode} from '../../../../../../controller/model/periode.model';
 import {EtatTache} from '../../../../../../controller/model/etat-tache.model';
+import {GroupeTache} from '../../../../../../controller/model/groupe-tache.model';
 
 @Component({
     selector: 'app-tache-create',
@@ -29,6 +30,13 @@ export class TacheCreateComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.selected.groupeTache = this.groupeTacheService.selected;
+        this.etatTacheService.findAll().subscribe(data => this.itemsEtats = data);
+        this.periodeService.findAll().subscribe(data => this.itemsPeriodes = data);
+        this.membreEquipeService.findByEquipeCode(this.groupeTacheService.selected.equipe).subscribe(
+            data => this.itemsMembres = data);
+        this.categorieTacheService.findByCategorieGroupeTacheCode(this.groupeTacheService.selected.categorieGroupeTache).subscribe(
+            data => this.itemsCategories = data);
     }
 
     public hideCreateDialog() {
@@ -81,20 +89,40 @@ export class TacheCreateComponent implements OnInit {
         return this.service.items;
     }
 
+    set items(value: Array<Tache>) {
+        this.service.items = value;
+    }
+
     get itemsMembres(): Array<MembreEquipe> {
         return this.membreEquipeService.items;
+    }
+
+    set itemsMembres(value: Array<MembreEquipe>) {
+        this.membreEquipeService.items = value;
     }
 
     get itemsPeriodes(): Array<Periode> {
         return this.periodeService.items;
     }
 
+    set itemsPeriodes(value: Array<Periode>) {
+        this.periodeService.items = value;
+    }
+
     get itemsCategories(): Array<CategorieTache> {
         return this.categorieTacheService.items;
     }
 
+    set itemsCategories(value: Array<CategorieTache>) {
+        this.categorieTacheService.items = value;
+    }
+
     get itemsEtats(): Array<EtatTache> {
         return this.etatTacheService.items;
+    }
+
+    set itemsEtats(value: Array<EtatTache>) {
+        this.etatTacheService.items = value;
     }
 
 }

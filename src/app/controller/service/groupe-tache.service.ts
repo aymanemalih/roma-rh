@@ -71,6 +71,9 @@ export class GroupeTacheService {
     }
 
     get selected(): GroupeTache {
+        if (this._selected == null){
+              this._selected = new GroupeTache();
+            }
         return this._selected;
     }
 

@@ -75,6 +75,9 @@ export class TacheService {
   }
 
   get selected(): Tache {
+    if (this._selected == null){
+      this._selected = new Tache();
+    }
     return this._selected;
   }
 

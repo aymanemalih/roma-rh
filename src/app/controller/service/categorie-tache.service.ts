@@ -3,6 +3,7 @@ import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {CategorieTache} from '../model/categorie-tache.model';
+import {CategorieGroupeTache} from '../model/categorie-groupe-tache.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,11 @@ export class CategorieTacheService {
 
   set items(value: Array<CategorieTache>) {
     this._items = value;
+  }
+
+  public findByCategorieGroupeTacheCode(c: CategorieGroupeTache) {
+    console.log('lien -->' + this.url + 'codeCategorieGroupeTache/' + c.code);
+    return this.http.get<Array<CategorieTache>>(this.url + 'codeCategorieGroupeTache/' + c.code);
   }
 }
 
