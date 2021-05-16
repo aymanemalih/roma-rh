@@ -156,6 +156,18 @@ import {ClientCreateComponent} from './view/admin/component/entreprise-client/cl
 import { ClientListComponent } from './view/admin/component/entreprise-client/client/client-list/client-list.component';
 import { ClientEditComponent } from './view/admin/component/entreprise-client/client/client-edit/client-edit.component';
 import { ClientViewComponent } from './view/admin/component/entreprise-client/client/client-view/client-view.component';
+import { GroupetacheTacheComponent } from './view/admin/component/groupetache-tache/groupetache-tache.component';
+import { GroupeTacheComponent } from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache.component';
+import { TacheComponent } from './view/admin/component/groupetache-tache/tache/tache.component';
+import { GroupeTacheCreateComponent } from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-create/groupe-tache-create.component';
+import { GroupeTacheEditComponent } from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-edit/groupe-tache-edit.component';
+import { GroupeTacheListComponent } from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-list/groupe-tache-list.component';
+import { GroupeTacheViewComponent } from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-view/groupe-tache-view.component';
+import { TacheCreateComponent } from './view/admin/component/groupetache-tache/tache/tache-create/tache-create.component';
+import { TacheEditComponent } from './view/admin/component/groupetache-tache/tache/tache-edit/tache-edit.component';
+import { TacheListComponent } from './view/admin/component/groupetache-tache/tache/tache-list/tache-list.component';
+import { TacheViewComponent } from './view/admin/component/groupetache-tache/tache/tache-view/tache-view.component';
+import { SearchBarGroupetacheComponent } from './view/admin/component/groupetache-tache/groupe-tache/search-bar-groupetache/search-bar-groupetache.component';
 
 
 @NgModule({
@@ -306,7 +318,19 @@ import { ClientViewComponent } from './view/admin/component/entreprise-client/cl
         ClientCreateComponent,
         ClientListComponent,
         ClientEditComponent,
-        ClientViewComponent
+        ClientViewComponent,
+        GroupetacheTacheComponent,
+        GroupeTacheComponent,
+        TacheComponent,
+        GroupeTacheCreateComponent,
+        GroupeTacheEditComponent,
+        GroupeTacheListComponent,
+        GroupeTacheViewComponent,
+        TacheCreateComponent,
+        TacheEditComponent,
+        TacheListComponent,
+        TacheViewComponent,
+        SearchBarGroupetacheComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
