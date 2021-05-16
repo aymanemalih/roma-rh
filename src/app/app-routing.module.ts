@@ -39,6 +39,7 @@ import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
 import {AppLoginComponent} from './pages/app.login.component';
 import {CommandesComponent} from './view/admin/commandes/commandes.component';
 import {EntrepriseClientComponent} from './view/admin/component/entreprise-client/entreprise-client.component';
+import {DemandeCongeComponent} from './view/admin/component/demande-conge/demande-conge.component';
 
 @NgModule({
     imports: [
@@ -47,6 +48,7 @@ import {EntrepriseClientComponent} from './view/admin/component/entreprise-clien
                 path: '', component: AppMainComponent,
                 children: [
                     {path: '', component: DashboardDemoComponent},
+                    {path: 'view/demande-conge', component: DemandeCongeComponent},
                     {path: 'view/commande', component: CommandesComponent},
                     {path: 'view/entreprise-client', component: EntrepriseClientComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},

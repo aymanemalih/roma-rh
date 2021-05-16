@@ -156,6 +156,10 @@ import {ClientCreateComponent} from './view/admin/component/entreprise-client/cl
 import { ClientListComponent } from './view/admin/component/entreprise-client/client/client-list/client-list.component';
 import { ClientEditComponent } from './view/admin/component/entreprise-client/client/client-edit/client-edit.component';
 import { ClientViewComponent } from './view/admin/component/entreprise-client/client/client-view/client-view.component';
+import { DemandeCongeComponent } from './view/admin/component/demande-conge/demande-conge.component';
+import { DemandeCongeListComponent } from './view/admin/component/demande-conge/demande-conge-list/demande-conge-list.component';
+import { DemandeCongeCreateComponent } from './view/admin/component/demande-conge/demande-conge-create/demande-conge-create.component';
+import { DemandeCongeEditComponent } from './view/admin/component/demande-conge/demande-conge-edit/demande-conge-edit.component';
 
 
 @NgModule({
@@ -306,7 +310,13 @@ import { ClientViewComponent } from './view/admin/component/entreprise-client/cl
         ClientCreateComponent,
         ClientListComponent,
         ClientEditComponent,
-        ClientViewComponent
+        ClientViewComponent,
+        DemandeCongeComponent,
+        DemandeCongeListComponent,
+        DemandeCongeCreateComponent,
+        DemandeCongeEditComponent,
+
+
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
