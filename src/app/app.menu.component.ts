@@ -81,8 +81,9 @@ export class AppMenuComponent implements OnInit {
                 items: [
                     {label: 'GroupeTache et Tache', icon: 'pi pi-fw pi-th-large', routerLink: ['/view/groupetache-tache']},
                     {label: 'Entreprise and Client', icon: 'pi pi-fw pi-pencil', routerLink: ['/view/entreprise-client']},
-                    {label: 'Demande Conge', icon: 'pi pi-fw pi-pencil', routerLink: ['/view/demande-conge']},
+                    {label: 'Equipe et Membres', icon: 'pi pi-fw pi-users', routerLink: ['/view/equipe-membre-equipe']},
                     {label: 'Commande', icon: 'pi pi-fw pi-pencil', routerLink: ['/view/commande']},
+                    {label: 'demande conge', icon: 'pi pi-fw pi-pencil', routerLink: ['/view/demande-conge']},
                     {label: 'Crud', icon: 'pi pi-fw pi-pencil', routerLink: ['/pages/crud']},
                     {label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', routerLink: ['/pages/calendar']},
                     {label: 'Timeline', icon: 'pi pi-fw pi-calendar', routerLink: ['/pages/timeline']},
