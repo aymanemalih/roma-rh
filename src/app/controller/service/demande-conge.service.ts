@@ -23,14 +23,17 @@ export class DemandeCongeService {
   public findAll(): Observable<Array<DemandeConge>> {
     return this.http.get<Array<DemandeConge>>(this.url);
   }
-  public save(): Observable<number> {
-    return this.http.post<number>(this.url, this.selected);
+  public save(): Observable<DemandeConge> {
+    return this.http.post<DemandeConge>(this.url, this.selected);
   }
-  public edit(): Observable<number> {
-    return this.http.put<number>(this.url, this.selected);
+  public edit(): Observable<DemandeConge> {
+    return this.http.put<DemandeConge>(this.url, this.selected);
   }
-  public deleteById(): Observable<number> {
-    return this.http.delete<number>(this.url + 'id/' + this.selected.id);
+  public deleteByCode(): Observable<number> {
+    return this.http.delete<number>(this.url + 'code/' + this.selected.code);
+  }
+  public deleteMultipleByCode(): Observable<number> {
+    return this.http.post<number>(this.url + 'delete-multiple-by-code' , this.selectes);
   }
   public findIndexById(id: number): number {
     let index = -1;
@@ -45,6 +48,11 @@ export class DemandeCongeService {
 
   public deleteIndexById(id: number) {
     this.items.splice(this.findIndexById(id), 1);
+  }
+  public deleteMultipleIndexById() {
+    for (const item of this.selectes){
+      this.deleteIndexById(item.id);
+    }
   }
     get items(): Array<DemandeConge> {
     return this._items;
