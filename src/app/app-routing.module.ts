@@ -39,6 +39,10 @@ import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
 import {AppLoginComponent} from './pages/app.login.component';
 import {CommandesComponent} from './view/admin/commandes/commandes.component';
 import {EntrepriseClientComponent} from './view/admin/component/entreprise-client/entreprise-client.component';
+import {GroupetacheTacheComponent} from './view/admin/component/groupetache-tache/groupetache-tache.component';
+import {EquipeMembreEquipeComponent} from './view/admin/component/equipe-membre-equipe/equipe-membre-equipe.component';
+import {DemandeConge} from './controller/model/demande-conge.model';
+import {DemandeCongeComponent} from './view/admin/component/demande-conge/demande-conge.component';
 
 @NgModule({
     imports: [
@@ -48,6 +52,9 @@ import {EntrepriseClientComponent} from './view/admin/component/entreprise-clien
                 children: [
                     {path: '', component: DashboardDemoComponent},
                     {path: 'view/commande', component: CommandesComponent},
+                    {path: 'view/demande-conge', component: DemandeCongeComponent},
+                    {path: 'view/groupetache-tache', component: GroupetacheTacheComponent},
+                    {path: 'view/equipe-membre-equipe', component: EquipeMembreEquipeComponent},
                     {path: 'view/entreprise-client', component: EntrepriseClientComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},
