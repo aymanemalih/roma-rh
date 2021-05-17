@@ -50,9 +50,9 @@ import {GroupetacheTacheComponent} from './view/admin/component/groupetache-tach
                 children: [
                     {path: '', component: DashboardDemoComponent},
                     {path: 'view/groupetache-tache', component: GroupetacheTacheComponent},
+                    {path: 'view/entreprise-client', component: EntrepriseClientComponent},
                     {path: 'view/demande-conge', component: DemandeCongeComponent},
                     {path: 'view/commande', component: CommandesComponent},
-                    {path: 'view/entreprise-client', component: EntrepriseClientComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},
                     {path: 'uikit/invalidstate', component: InvalidStateDemoComponent},
