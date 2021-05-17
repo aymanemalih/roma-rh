@@ -159,6 +159,7 @@ import { ClientViewComponent } from './view/admin/component/entreprise-client/cl
 import { DemandeCongeComponent } from './view/admin/component/demande-conge/demande-conge.component';
 import { DemandeCongeListComponent } from './view/admin/component/demande-conge/demande-conge-list/demande-conge-list.component';
 import { DemandeCongeCreateComponent } from './view/admin/component/demande-conge/demande-conge-create/demande-conge-create.component';
+import { DemandeCongeEditComponent } from './view/admin/component/demande-conge/demande-conge-edit/demande-conge-edit.component';
 
 
 @NgModule({
@@ -313,6 +314,7 @@ import { DemandeCongeCreateComponent } from './view/admin/component/demande-cong
         DemandeCongeComponent,
         DemandeCongeListComponent,
         DemandeCongeCreateComponent,
+        DemandeCongeEditComponent,
 
 
 

@@ -13,20 +13,6 @@
         </div>
         <div class="p-grid">
           <div class="p-field p-sm-6">
-           <!-- <label>Etat Demande Conge:</label>
-            <div class="p-field-radiobutton">
-                <p-radioButton name="etatDemandeConge" value="en cours de traitement" [(ngModel)]="selected.etatDemandeConge" inputId="29"></p-radioButton>
-                <label >En cours</label>
-            </div>
-            <div class="p-field-radiobutton">
-                <p-radioButton name="etatDemandeConge" value="acceptée" [(ngModel)]="selected.etatDemandeConge" inputId="30"></p-radioButton>
-                <label >Acceptée</label>
-            </div>
-            <div class="p-field-radiobutton">
-                <p-radioButton name="etatDemandeConge" value="refusée" [(ngModel)]="selected.etatDemandeConge" inputId="31"></p-radioButton>
-                <label >Refusée</label>
-            </div>
-            <small class="p-invalid" *ngIf="submitted && !selected.etatDemandeConge">etat demande conge is required.</small>-->
               <div *ngFor="let etat of itemse" class="p-field-checkbox">
                   <p-radioButton [inputId]="etat.code" name="category" [value]="etat" [(ngModel)]="selected.etatDemandeConge" [disabled]="etat.code === 'R'"></p-radioButton>
                   <label [for]="etat.code">{{etat.libelle}}</label>
