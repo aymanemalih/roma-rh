@@ -18,6 +18,11 @@ export class LotService {
     return this.http.get<Array<Lot>>(this.url);
   }
 
+  public findByProjetId(projetId: number) {
+    console.log('lien -->' + this.url + 'projet/id/' + projetId);
+    return this.http.get<Array<Lot>>(this.url + 'projet/id/' + projetId);
+  }
+
   get items(): Array<Lot> {
     return this._items;
   }

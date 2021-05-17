@@ -1,0 +1,25 @@
+<p-dialog [(visible)]="viewDialog" [style]="{width: '450px'}" header="Equipe Details" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-field">
+            <label for="libelle">Libelle</label>
+            <input type="text" pInputText id="libelle" [(ngModel)]="selected.libelle" disabled />
+        </div>
+        <div class="p-field">
+            <label for="responsable">Responsable</label>
+            <input type="text" pInputText id="responsable" [(ngModel)]="selected.responsable" disabled />
+        </div>
+
+
+
+        <div class="p-formgrid p-grid">
+            <div class="p-field p-col">
+                <label for="etatEquipe">Etat Equipe</label>
+                <p-inputNumber id="etatEquipe" [(ngModel)]="selected.etatEquipe" disabled></p-inputNumber>
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Fermer" icon="pi pi-times" class="p-button-text" (click)="hideViewDialog()"></button>
+    </ng-template>
+</p-dialog>

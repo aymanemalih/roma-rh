@@ -1,1 +1,95 @@
-<p>groupe-tache-edit works!</p>
+<p-dialog [(visible)]="editDialog" [style]="{maxWidth: '60%'}" header="Modifier le groupe de tache" [modal]="true"
+          styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-grid">
+            <div class="p-field p-sm-3">
+                <label for="code">Code</label>
+                <input type="text" pInputText disabled id="code" [(ngModel)]="selected.code"/>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="total">Libelle</label>
+                <input type="text" pInputText id="total" [(ngModel)]="selected.libelle"/>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="datedemarre">Date Démarrage Effective</label>
+                <input type="date" pInputText id="datedemarre" [(ngModel)]="selected.dateDemarrageEffective"/>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="datefin">Date Fin Effective</label>
+                <input type="date" pInputText id="datefin" [(ngModel)]="selected.dateFinEffective"/>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-3">
+                <label for="equipe">Equipe</label>
+                <p-dropdown id="equipe" [options]="itemsEquipes" [(ngModel)]="selected.equipe"
+                            optionLabel="libelle"></p-dropdown>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="lot">Lot</label>
+                <p-dropdown id="lot" [options]="itemsLots" [(ngModel)]="selected.lot"
+                            optionLabel="libelle"></p-dropdown>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="etat">Etat</label>
+                <p-dropdown id="etat" [options]="itemsEtats" [(ngModel)]="selected.etatGroupeTache"
+                            optionLabel="libelle"></p-dropdown>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="categorie">Catégorie</label>
+                <p-dropdown id="categorie" [options]="itemsCategories" [(ngModel)]="selected.categorieGroupeTache"
+                            optionLabel="libelle"></p-dropdown>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-3">
+                <label for="avancement">Avancement</label>
+                <input type="text" pInputText id="avancement" [(ngModel)]="selected.avancement"/>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="poids">Poids</label>
+                <input type="number" pInputText id="poids" [(ngModel)]="selected.poids"/>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="datedemarrePr">Date Démarrage Prevu</label>
+                <input type="date" pInputText id="datedemarrePr" [(ngModel)]="selected.dateDemarragePrevu"/>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="datefinPr">Date Fin Prevu</label>
+                <input type="date" pInputText id="datefinPr" [(ngModel)]="selected.dateFinPrevu"/>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-6">
+                <div class="p-field">
+                    <label for="NbEffectif">Nombre Joure Homme Effectif</label>
+                    <input type="number" pInputText id="NbEffectif" [(ngModel)]="selected.nombreJoureHommeEffectif"/>
+                </div>
+                <div class="p-field">
+                    <label for="NbPrevu">Nombre Joure Homme Prevu</label>
+                    <input type="number" pInputText id="NbPrevu" [(ngModel)]="selected.nombreJoureHommePrevu"/>
+                </div>
+                <div class="p-field">
+                    <label for="NbRetard">Nombre Joure Homme Retard</label>
+                    <input type="number" pInputText id="NbRetard" [(ngModel)]="selected.nombreJoureHommeRetard"/>
+                </div>
+            </div>
+            <div class="p-field p-col p-sm-6">
+                <label for="descrip">Description</label>
+                <textarea id="descrip" [rows]="10" [cols]="30" pInputTextarea autoResize="autoResize"
+                          [(ngModel)]="selected.description">
+                </textarea>
+            </div>
+        </div>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-text"
+                (click)="hideEditDialog()"></button>
+        <button pButton pRipple label="Mise à jour" icon="pi pi-check" class="p-button-text" (click)="edit()"></button>
+    </ng-template>
+</p-dialog>
+
+
+

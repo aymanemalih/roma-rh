@@ -168,6 +168,17 @@ import { TacheEditComponent } from './view/admin/component/groupetache-tache/tac
 import { TacheListComponent } from './view/admin/component/groupetache-tache/tache/tache-list/tache-list.component';
 import { TacheViewComponent } from './view/admin/component/groupetache-tache/tache/tache-view/tache-view.component';
 import { SearchBarGroupetacheComponent } from './view/admin/component/groupetache-tache/groupe-tache/search-bar-groupetache/search-bar-groupetache.component';
+import { EquipeMembreEquipeComponent } from './view/admin/component/equipe-membre-equipe/equipe-membre-equipe.component';
+import { EquipeComponent } from './view/admin/component/equipe-membre-equipe/equipe/equipe.component';
+import { EquipeCreateComponent } from './view/admin/component/equipe-membre-equipe/equipe/equipe-create/equipe-create.component';
+import { EquipeListComponent } from './view/admin/component/equipe-membre-equipe/equipe/equipe-list/equipe-list.component';
+import { EquipeEditComponent } from './view/admin/component/equipe-membre-equipe/equipe/equipe-edit/equipe-edit.component';
+import { EquipeViewComponent } from './view/admin/component/equipe-membre-equipe/equipe/equipe-view/equipe-view.component';
+import { MembreEquipeComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe.component';
+import { MembreEquipeCreateComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-create/membre-equipe-create.component';
+import { MembreEquipeListComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-list/membre-equipe-list.component';
+import { MembreEquipeEditComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-edit/membre-equipe-edit.component';
+import { MembreEquipeViewComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-view/membre-equipe-view.component';
 
 
 @NgModule({
@@ -330,7 +341,18 @@ import { SearchBarGroupetacheComponent } from './view/admin/component/groupetach
         TacheEditComponent,
         TacheListComponent,
         TacheViewComponent,
-        SearchBarGroupetacheComponent
+        SearchBarGroupetacheComponent,
+        EquipeMembreEquipeComponent,
+        EquipeComponent,
+        EquipeCreateComponent,
+        EquipeListComponent,
+        EquipeEditComponent,
+        EquipeViewComponent,
+        MembreEquipeComponent,
+        MembreEquipeCreateComponent,
+        MembreEquipeListComponent,
+        MembreEquipeEditComponent,
+        MembreEquipeViewComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
