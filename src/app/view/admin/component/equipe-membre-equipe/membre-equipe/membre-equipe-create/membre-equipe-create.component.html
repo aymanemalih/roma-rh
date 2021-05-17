@@ -1,0 +1,25 @@
+<p-dialog [(visible)]="createDialog" [style]="{width: '450px'}" header="Create MembreEquipe" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-field">
+            <label for="equipe">Equipe</label>
+            <select id="equipe" [(ngModel)]="selected.equipe" required autofocus >
+                <option *ngFor="let e of equipes" [ngValue]="e">{{e.libelle}}</option>
+            </select>
+            <small class="p-invalid" *ngIf="submitted && !selected.collaborateur"></small>
+        </div>
+        <div class="p-field">
+            <label for="responsable">Collaborateur</label>
+            <select id="responsable" [(ngModel)]="selected.collaborateur" required autofocus >
+                <option *ngFor="let c of collaborateurs" [ngValue]="c">{{c.nom}} {{c.prenom}}</option>
+            </select>
+            <small class="p-invalid" *ngIf="submitted && !selected.collaborateur"></small>
+        </div>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideCreateDialog()"></button>
+        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text"></button>
+        <!--(click)="save()"-->
+    </ng-template>
+</p-dialog>

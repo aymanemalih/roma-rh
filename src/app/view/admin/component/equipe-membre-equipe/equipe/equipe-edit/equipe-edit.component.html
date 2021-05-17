@@ -1,0 +1,33 @@
+<p-dialog [(visible)]="editDialog" [style]="{width: '450px'}" header="Commande Edit" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-field">
+            <label for="libelle">Libelle</label>
+            <input type="text" pInputText id="libelle" [(ngModel)]="selected.libelle" required autofocus />
+            <small class="p-invalid" *ngIf="submitted && !selected.libelle">ref is required.</small>
+        </div>
+        <div class="p-field">
+            <label for="responsable">Responsable</label>
+            <select id="responsable" [(ngModel)]="selected.responsable" required autofocus >
+                <option *ngFor="let c of collaborateurs" [ngValue]="c">{{c.nom}} {{c.prenom}}</option>
+            </select>
+            <small class="p-invalid" *ngIf="submitted && !selected.responsable">total is required.</small>
+        </div>
+
+
+
+        <div class="p-formgrid p-grid">
+            <div class="p-field p-col">
+                <label for="etatEquipe">Etat Equipe</label>
+                <select id="etatEquipe" [(ngModel)]="selected.etatEquipe" required autofocus >
+                    <option *ngFor="let e of etatEquipes" [ngValue]="e">{{e.libelle}}</option>
+                </select>
+                <small class="p-invalid" *ngIf="submitted && !selected.etatEquipe">EtatEquipe is required.</small>
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideEditDialog()"></button>
+        <button pButton pRipple label="Edit" icon="pi pi-check" class="p-button-text" (click)="edit()"></button>
+    </ng-template>
+</p-dialog>
