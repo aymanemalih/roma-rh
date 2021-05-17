@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Collaborateur} from '../model/collaborateur.model';
 import {environment} from '../../../environments/environment';
-import {Equipe} from '../model/equipe.model';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,11 @@ export class CollaborateurService {
   private _items: Array<Collaborateur>;
   private _selected: Collaborateur;
   private _selectes: Array<Collaborateur>;
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
+  public findAll(): Observable<Array<Collaborateur>> {
+    return this.http.get<Array<Collaborateur>>(this.url);
+  }
 
   get selectes(): Array<Collaborateur> {
     return this._selectes;
