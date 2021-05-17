@@ -6,6 +6,7 @@ import {GroupeTache} from './groupe-tache.model';
 
 
 export class Tache {
+  public id: number;
   public libelle: string;
   public code: string;
   public description: string;

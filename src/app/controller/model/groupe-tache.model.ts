@@ -4,6 +4,7 @@ import {Lot} from './lot.model';
 import {CategorieGroupeTache} from './categorie-groupe-tache.model';
 
 export class GroupeTache {
+  public id: number;
   public libelle: string;
   public code: string;
   public description: string;
