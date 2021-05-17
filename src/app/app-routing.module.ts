@@ -40,6 +40,7 @@ import {AppLoginComponent} from './pages/app.login.component';
 import {CommandesComponent} from './view/admin/commandes/commandes.component';
 import {EntrepriseClientComponent} from './view/admin/component/entreprise-client/entreprise-client.component';
 import {DemandeCongeComponent} from './view/admin/component/demande-conge/demande-conge.component';
+import {GroupetacheTacheComponent} from './view/admin/component/groupetache-tache/groupetache-tache.component';
 
 @NgModule({
     imports: [
@@ -48,6 +49,7 @@ import {DemandeCongeComponent} from './view/admin/component/demande-conge/demand
                 path: '', component: AppMainComponent,
                 children: [
                     {path: '', component: DashboardDemoComponent},
+                    {path: 'view/groupetache-tache', component: GroupetacheTacheComponent},
                     {path: 'view/demande-conge', component: DemandeCongeComponent},
                     {path: 'view/commande', component: CommandesComponent},
                     {path: 'view/entreprise-client', component: EntrepriseClientComponent},
