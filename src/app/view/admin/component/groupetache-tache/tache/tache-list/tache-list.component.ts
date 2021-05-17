@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {TacheService} from '../../../../../../controller/service/tache.service';
 import {Tache} from '../../../../../../controller/model/tache.model';
+import {GroupeTache} from '../../../../../../controller/model/groupe-tache.model';
+import {GroupeTacheService} from '../../../../../../controller/service/groupe-tache.service';
 
 @Component({
   selector: 'app-tache-list',
@@ -13,7 +15,8 @@ export class TacheListComponent implements OnInit {
   cols: any[];
 
   constructor(private messageService: MessageService, private confirmationService: ConfirmationService,
-              private service: TacheService) {
+              private service: TacheService,
+              private serviceGrp: GroupeTacheService) {
   }
 
   ngOnInit(): void {
@@ -137,6 +140,10 @@ export class TacheListComponent implements OnInit {
 
   set selectes(value: Array<Tache>) {
     this.service.selectes = value;
+  }
+
+  get selectedGroupeTache(): GroupeTache {
+    return this.serviceGrp.selected;
   }
 
 }
