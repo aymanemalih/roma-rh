@@ -87,7 +87,7 @@ import {TreeTableModule} from 'primeng/treetable';
 import {VirtualScrollerModule} from 'primeng/virtualscroller';
 
 import {AppComponent} from './app.component';
-import {AppCodeModule} from './app.code.component';
+import {AppCodeModule} from './app.code.component'
 import {AppMainComponent} from './app.main.component';
 import {AppConfigComponent} from './app.config.component';
 import {AppCrudComponent} from './pages/app.crud.component';
@@ -156,9 +156,6 @@ import {ClientCreateComponent} from './view/admin/component/entreprise-client/cl
 import { ClientListComponent } from './view/admin/component/entreprise-client/client/client-list/client-list.component';
 import { ClientEditComponent } from './view/admin/component/entreprise-client/client/client-edit/client-edit.component';
 import { ClientViewComponent } from './view/admin/component/entreprise-client/client/client-view/client-view.component';
-import { StatistiquesClientComponent } from './view/admin/component/statistiques-client/statistiques-client.component';
-import { SearchBarComponent } from './view/admin/component/statistiques-client/search-bar/search-bar.component';
-import { StatistiquesProjetComponent } from './view/admin/component/statistiques-projet/statistiques-projet.component';
 
 
 @NgModule({
@@ -309,10 +306,7 @@ import { StatistiquesProjetComponent } from './view/admin/component/statistiques
         ClientCreateComponent,
         ClientListComponent,
         ClientEditComponent,
-        ClientViewComponent,
-        StatistiquesClientComponent,
-        SearchBarComponent,
-        StatistiquesProjetComponent
+        ClientViewComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

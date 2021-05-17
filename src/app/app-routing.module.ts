@@ -39,8 +39,6 @@ import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
 import {AppLoginComponent} from './pages/app.login.component';
 import {CommandesComponent} from './view/admin/commandes/commandes.component';
 import {EntrepriseClientComponent} from './view/admin/component/entreprise-client/entreprise-client.component';
-import {StatistiquesClientComponent} from "./view/admin/component/statistiques-client/statistiques-client.component";
-import {StatistiquesProjetComponent} from "./view/admin/component/statistiques-projet/statistiques-projet.component";
 
 @NgModule({
     imports: [
@@ -50,9 +48,7 @@ import {StatistiquesProjetComponent} from "./view/admin/component/statistiques-p
                 children: [
                     {path: '', component: DashboardDemoComponent},
                     {path: 'view/commande', component: CommandesComponent},
-                    {path: 'view/admin/entreprise-client', component: EntrepriseClientComponent},
-                    {path: 'view/admin/statistiques-client', component: StatistiquesClientComponent},
-                    {path: 'view/admin/statistiques-projet', component: StatistiquesProjetComponent},
+                    {path: 'view/entreprise-client', component: EntrepriseClientComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},
                     {path: 'uikit/invalidstate', component: InvalidStateDemoComponent},
