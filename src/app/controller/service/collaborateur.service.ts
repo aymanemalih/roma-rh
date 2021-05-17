@@ -13,12 +13,7 @@ export class CollaborateurService {
   private _items: Array<Collaborateur>;
   private _selected: Collaborateur;
   private _selectes: Array<Collaborateur>;
-  constructor(private http: HttpClient) { }
-
-  public findAll(): Observable<Array<Collaborateur>> {
-    return this.http.get<Array<Collaborateur>>(this.url);
-  }
-
+  constructor() { }
   get selectes(): Array<Collaborateur> {
     return this._selectes;
   }
