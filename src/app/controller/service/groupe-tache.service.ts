@@ -3,6 +3,7 @@ import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {GroupeTache} from '../model/groupe-tache.model';
+import {GroupeTacheVO} from '../model/groupe-tache-vo.model';
 
 @Injectable({
     providedIn: 'root'
@@ -17,6 +18,18 @@ export class GroupeTacheService {
     private _editDialog: boolean;
     private _viewDialog: boolean;
     private _submitted: boolean;
+    private _groupeTacheVO: GroupeTacheVO;
+
+    get groupeTacheVO(): GroupeTacheVO {
+        if (this._groupeTacheVO == null) {
+            this._groupeTacheVO = new GroupeTacheVO();
+        }
+        return this._groupeTacheVO;
+    }
+
+    set groupeTacheVO(value: GroupeTacheVO) {
+        this._groupeTacheVO = value;
+    }
 
     constructor(private http: HttpClient) {
     }
@@ -50,6 +63,10 @@ export class GroupeTacheService {
             }
         }
         return index;
+    }
+
+    public findGroupeTacheByCreteria(): Observable<Array<GroupeTache>> {
+        return this.http.post<Array<GroupeTache>>(this.url + 'search', this.groupeTacheVO);
     }
 
     public deleteIndexById(id: number) {

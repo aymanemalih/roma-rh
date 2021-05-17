@@ -20,6 +20,11 @@ export class ProjetService {
     return this.http.get<Array<Projet>>(this.url);
   }
 
+  public findByClientId(clientId: number): Observable<Array<Projet>> {
+    console.log('lien -->' + this.url + 'client/id/' + clientId);
+    return this.http.get<Array<Projet>>(this.url + 'client/id/' + clientId);
+  }
+
 
   get selectes(): Array<Projet> {
     return this._selectes;
