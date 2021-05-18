@@ -87,7 +87,7 @@ import {TreeTableModule} from 'primeng/treetable';
 import {VirtualScrollerModule} from 'primeng/virtualscroller';
 
 import {AppComponent} from './app.component';
-import {AppCodeModule} from './app.code.component'
+import {AppCodeModule} from './app.code.component';
 import {AppMainComponent} from './app.main.component';
 import {AppConfigComponent} from './app.config.component';
 import {AppCrudComponent} from './pages/app.crud.component';
@@ -179,6 +179,33 @@ import { MembreEquipeCreateComponent } from './view/admin/component/equipe-membr
 import { MembreEquipeListComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-list/membre-equipe-list.component';
 import { MembreEquipeEditComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-edit/membre-equipe-edit.component';
 import { MembreEquipeViewComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-view/membre-equipe-view.component';
+import { ProjetGlobalComponent } from './view/admin/component/projet-global/projet-global.component';
+import { ProjetComponent } from './view/admin/component/projet-global/projet/projet.component';
+
+import { LotComponent } from './view/admin/component/projet-global/lot/lot.component';
+import { LotListComponent } from './view/admin/component/projet-global/lot/lot-list/lot-list.component';
+import { LotEditComponent } from './view/admin/component/projet-global/lot/lot-edit/lot-edit.component';
+import { LotViewComponent } from './view/admin/component/projet-global/lot/lot-view/lot-view.component';
+import { ProjetListComponent } from './view/admin/component/projet-global/projet/projet-list/projet-list.component';
+import { ProjetViewComponent } from './view/admin/component/projet-global/projet/projet-view/projet-view.component';
+import {ProjetEditComponent} from './view/admin/component/projet-global/projet/projet-edit/projet-edit.component';
+import {ProjetCreateComponent} from './view/admin/component/projet-global/projet/projet-create/projet-create.component';
+import {LotCreateComponent} from './view/admin/component/projet-global/lot/lot-create/lot-create.component';
+import {GroupeTacheListeComponent} from './view/admin/component/projet-global/groupe-tache/groupe-tache-list/groupe-tache-list.component';
+import {GroupeTacheComponente} from './view/admin/component/projet-global/groupe-tache/groupe-tache.component';
+import {GroupesTacheCreateComponent} from './view/admin/component/projet-global/groupe-tache/groupe-tache-create/groupe-tache-create.component';
+import {GroupesTacheViewComponent} from './view/admin/component/projet-global/groupe-tache/groupe-tache-view/groupe-tache-view.component';
+import {GroupesTacheEditComponent} from './view/admin/component/projet-global/groupe-tache/groupe-tache-edit/groupe-tache-edit.component';
+import { TachesComponent } from './view/admin/component/projet-global/taches/taches.component';
+import { TachesCreateComponent } from './view/admin/component/projet-global/taches/taches-create/taches-create.component';
+import { TachesEditComponent } from './view/admin/component/projet-global/taches/taches-edit/taches-edit.component';
+import { TachesListComponent } from './view/admin/component/projet-global/taches/taches-list/taches-list.component';
+import { TachesViewComponent } from './view/admin/component/projet-global/taches/taches-view/taches-view.component';
+import {DemandeCongeComponent} from './view/admin/component/demande-conge/demande-conge.component';
+import {DemandeCongeEditComponent} from './view/admin/component/demande-conge/demande-conge-edit/demande-conge-edit.component';
+import {DemandeCongeCreateComponent} from './view/admin/component/demande-conge/demande-conge-create/demande-conge-create.component';
+import {DemandeCongeListComponent} from './view/admin/component/demande-conge/demande-conge-list/demande-conge-list.component';
+import {DemandeCongeViewComponent} from './view/admin/component/demande-conge/demande-conge-view/demande-conge-view.component';
 
 
 @NgModule({
@@ -337,10 +364,32 @@ import { MembreEquipeViewComponent } from './view/admin/component/equipe-membre-
         GroupeTacheEditComponent,
         GroupeTacheListComponent,
         GroupeTacheViewComponent,
+        GroupesTacheCreateComponent,
+        GroupesTacheEditComponent,
+        GroupesTacheViewComponent,
         TacheCreateComponent,
         TacheEditComponent,
         TacheListComponent,
         TacheViewComponent,
+        GroupeTacheListeComponent,
+        SearchBarGroupetacheComponent,
+        ProjetGlobalComponent,
+        ProjetComponent,
+        ProjetEditComponent,
+        ProjetCreateComponent,
+        LotCreateComponent,
+        LotComponent,
+        LotListComponent,
+        LotEditComponent,
+        LotViewComponent,
+        ProjetListComponent,
+        GroupeTacheComponente,
+        ProjetViewComponent,
+        TachesComponent,
+        TachesCreateComponent,
+        TachesEditComponent,
+        TachesListComponent,
+        TachesViewComponent,
         SearchBarGroupetacheComponent,
         EquipeMembreEquipeComponent,
         EquipeComponent,
@@ -352,7 +401,12 @@ import { MembreEquipeViewComponent } from './view/admin/component/equipe-membre-
         MembreEquipeCreateComponent,
         MembreEquipeListComponent,
         MembreEquipeEditComponent,
-        MembreEquipeViewComponent
+        MembreEquipeViewComponent,
+        DemandeCongeComponent,
+        DemandeCongeEditComponent,
+        DemandeCongeCreateComponent,
+        DemandeCongeListComponent,
+        DemandeCongeViewComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

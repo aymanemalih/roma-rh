@@ -1,1 +1,47 @@
-<p>tache-view works!</p>
+<p-dialog [(visible)]="viewDialog" [style]="{width: '510px'}" header="Détails Du Tache" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-grid">
+            <div class="p-field p-sm-6">
+                <div class="p-field">
+                    <label for="libelle">Libelle</label>
+                    <input type="text" pInputText id="libelle" [(ngModel)]="selected.libelle" disabled/>
+                </div>
+                <div class="p-field">
+                    <label for="code">Code</label>
+                    <input type="text" pInputText id="code" [(ngModel)]="selected.code" disabled/>
+                </div>
+            </div>
+            <div class="p-field p-col">
+                <label for="descrip">Description</label>
+                <textarea id="descrip" [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize"
+                          [(ngModel)]="selected.description" disabled>
+                </textarea>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-6">
+                <label for="datedemarre">Date Démarrage Effective</label>
+                <input type="text" pInputText id="datedemarre" [(ngModel)]="selected.dateDemarrageEffective" disabled/>
+            </div>
+            <div class="p-field p-sm-6">
+                <label for="datefin">Date Fin Effective</label>
+                <input type="text" pInputText id="datefin" [(ngModel)]="selected.dateFinEffective" disabled/>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-4">
+                <label for="etat">Etat</label>
+                <input type="text" pInputText id="etat" [(ngModel)]="selected.etatTache.libelle" disabled/>
+
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="categorie">Catégorie</label>
+                <input type="text" pInputText id="categorie" [(ngModel)]="selected.categorieTache.libelle" disabled/>
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="periode">Période</label>
+                <input type="text" pInputText id="periode" [(ngModel)]="selected.periode.libelle" disabled/>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>

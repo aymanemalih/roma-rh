@@ -1,1 +1,82 @@
-<p>groupe-tache-view works!</p>
+<p-dialog [(visible)]="viewDialog" [style]="{maxWidth: '60%'}" header="Détails Du Groupe De Tache" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-grid">
+            <div class="p-field p-sm-3">
+                <label for="code">Code</label>
+                <input type="text" pInputText id="code" [(ngModel)]="selected.code" disabled/>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="libelle">Libelle</label>
+                <input type="text" pInputText id="libelle" [(ngModel)]="selected.libelle" disabled/>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="datedemarre">Date Démarrage Effective</label>
+                <input type="text" pInputText id="datedemarre" [(ngModel)]="selected.dateDemarrageEffective" disabled/>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="datefin">Date Fin Effective</label>
+                <input type="text" pInputText id="datefin" [(ngModel)]="selected.dateFinEffective" disabled/>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-3">
+                <label for="equipe">Equipe</label>
+                <input type="text" pInputText id="equipe" [(ngModel)]="selected.equipe.libelle" disabled/>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="lot">Lot</label>
+                <input type="text" pInputText id="lot" [(ngModel)]="selected.lot.libelle" disabled/>
+
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="etat">Etat</label>
+                <input type="text" pInputText id="etat" [(ngModel)]="selected.etatGroupeTache.libelle" disabled/>
+
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="categorie">Catégorie</label>
+                <input type="text" pInputText id="categorie" [(ngModel)]="selected.categorieGroupeTache.libelle" disabled/>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-3">
+                <label for="avancement">Avancement</label>
+                <input type="text" pInputText id="avancement" [(ngModel)]="selected.avancement" disabled/>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="poids">Poids</label>
+                <input type="text" pInputText id="poids" [(ngModel)]="selected.poids" disabled/>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="datedemarrePr">Date Démarrage Prevu</label>
+                <input type="text" pInputText id="datedemarrePr" [(ngModel)]="selected.dateDemarragePrevu" disabled/>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="datefinPr">Date Fin Prevu</label>
+                <input type="text" pInputText id="datefinPr" [(ngModel)]="selected.dateFinPrevu" disabled/>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-6">
+                <div class="p-field">
+                    <label for="NbEffectif">Nombre Joure Homme Effectif</label>
+                    <input type="text" pInputText id="NbEffectif" [(ngModel)]="selected.nombreJoureHommeEffectif" disabled/>
+                </div>
+                <div class="p-field">
+                    <label for="NbPrevu">Nombre Joure Homme Prevu</label>
+                    <input type="text" pInputText id="NbPrevu" [(ngModel)]="selected.nombreJoureHommePrevu" disabled/>
+                </div>
+                <div class="p-field">
+                    <label for="NbRetard">Nombre Joure Homme Retard</label>
+                    <input type="text" pInputText id="NbRetard" [(ngModel)]="selected.nombreJoureHommeRetard" disabled/>
+                </div>
+            </div>
+            <div class="p-field p-col p-sm-6">
+                <label for="descrip">Description</label>
+                <textarea id="descrip" [rows]="10" [cols]="30" pInputTextarea autoResize="autoResize"
+                          [(ngModel)]="selected.description" disabled>
+                </textarea>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>

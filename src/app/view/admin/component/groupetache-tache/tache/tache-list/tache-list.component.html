@@ -51,9 +51,9 @@
                         <td>{{tache.membreEquipe.collaborateur.nom}} {{tache.membreEquipe.collaborateur.prenom}}</td>
                         <td>{{tache.categorieTache.libelle}}</td>
                         <td>
-                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="edit(tache)"></button>
+                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-warning p-mr-2" (click)="edit(tache)"></button>
                             <button pButton pRipple icon="pi pi-list" class="p-button-rounded p-button-info p-mr-2" (click)="view(tache)"></button>
-                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="delete(tache)"></button>
+                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger" (click)="delete(tache)"></button>
                         </td>
                     </tr>
                 </ng-template>
