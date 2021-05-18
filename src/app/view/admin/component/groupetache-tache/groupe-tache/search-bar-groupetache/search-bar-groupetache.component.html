@@ -4,19 +4,19 @@
             <div class="p-field p-sm-4">
                 <label for="client">Client:</label><br>
                 <p-dropdown id="client" [options]="itemsClients" [(ngModel)]="groupeTacheVO.clientId"
-                            optionLabel="libelle"
-                            (change)="findProjectsByClientId(groupeTacheVO.clientId)"></p-dropdown>
+                            optionLabel="libelle" optionValue="id"
+                            (onChange)="findProjectsByClientId(groupeTacheVO.clientId)"></p-dropdown>
             </div>
-            <div class="p-field p-sm-4">
+            <div *ngIf="groupeTacheVO.clientId != null" class="p-field p-sm-4">
                 <label for="projet">Projet:</label><br>
                 <p-dropdown id="projet" [options]="itemsProjets" [(ngModel)]="groupeTacheVO.projetId"
-                            optionLabel="libelle"
-                            (change)="findLotsByProjetId(groupeTacheVO.projetId)"></p-dropdown>
+                            optionLabel="libelle" optionValue="id"
+                            (onChange)="findLotsByProjetId(groupeTacheVO.projetId)"></p-dropdown>
             </div>
-            <div class="p-field p-sm-4 p-formgroup">
+            <div *ngIf="groupeTacheVO.projetId != null" class="p-field p-sm-4">
                 <label for="lot">Lot:</label><br>
-                <p-dropdown class="p-formgrid" id="lot" [options]="itemsLots" [(ngModel)]="groupeTacheVO.lotId"
-                            optionLabel="libelle"></p-dropdown>
+                <p-dropdown id="lot" [options]="itemsLots" [(ngModel)]="groupeTacheVO.lotId"
+                            optionLabel="libelle" optionValue="id"></p-dropdown>
             </div>
         </div>
         <div class="p-grid p-field p-sm-2">
