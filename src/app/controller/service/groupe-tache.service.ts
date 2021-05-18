@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {GroupeTache} from '../model/groupe-tache.model';
 import {GroupeTacheVO} from '../model/groupe-tache-vo.model';
+import {Lot} from "../model/lot.model";
 
 @Injectable({
     providedIn: 'root'
@@ -44,6 +45,9 @@ export class GroupeTacheService {
 
     public edit(): Observable<GroupeTache> {
         return this.http.put<GroupeTache>(this.url, this.selected);
+    }
+    public findByLotCode(code: string): Observable<Array<GroupeTache>> {
+        return this.http.get<Array<GroupeTache>>(this.url + 'codeLot/' + code);
     }
 
     public deleteByCode(): Observable<number> {

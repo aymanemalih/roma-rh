@@ -23,6 +23,9 @@ export class EtatDemandeCongeService {
   public findAll(): Observable<Array<EtatDemandeConge>> {
     return this.http.get<Array<EtatDemandeConge>>(this.url);
   }
+  public findByCode(code: string): Observable<EtatDemandeConge>{
+    return this.http.get<EtatDemandeConge>(this.url + 'code/' + code);
+  }
   get items(): Array<EtatDemandeConge> {
     return this._items;
   }

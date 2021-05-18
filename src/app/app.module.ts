@@ -179,9 +179,6 @@ import { MembreEquipeCreateComponent } from './view/admin/component/equipe-membr
 import { MembreEquipeListComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-list/membre-equipe-list.component';
 import { MembreEquipeEditComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-edit/membre-equipe-edit.component';
 import { MembreEquipeViewComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-view/membre-equipe-view.component';
-import {StatistiquesProjetComponent} from "./view/admin/component/statistiques-projet/statistiques-projet.component";
-import {StatistiquesClientComponent} from "./view/admin/component/statistiques-client/statistiques-client.component";
-import {SearchBarComponent} from "./view/admin/component/statistiques-client/search-bar/search-bar.component";
 
 
 @NgModule({
@@ -355,6 +352,12 @@ import {SearchBarComponent} from "./view/admin/component/statistiques-client/sea
         MembreEquipeCreateComponent,
         MembreEquipeListComponent,
         MembreEquipeEditComponent,
+        MembreEquipeViewComponent,
+        DemandeCongeComponent,
+        DemandeCongeEditComponent,
+        DemandeCongeCreateComponent,
+        DemandeCongeListComponent,
+        DemandeCongeViewComponent,
         MembreEquipeViewComponent,
         StatistiquesProjetComponent,
         StatistiquesClientComponent,
