@@ -79,11 +79,12 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Pages', icon: 'pi pi-fw pi-copy', routerLink: ['/pages'],
                 items: [
-                    {label: 'Commande', icon: 'pi pi-fw pi-pencil', routerLink: ['/view/commande']},
-                    {label: 'demande conge', icon: 'pi pi-fw pi-sun', routerLink: ['/view/demande-conge']},
+                    {label: 'Projet', icon: 'pi pi-fw pi-th-large', routerLink: ['/view/projet-global']},
                     {label: 'GroupeTache et Tache', icon: 'pi pi-fw pi-th-large', routerLink: ['/view/groupetache-tache']},
-                    {label: 'Equipe et Membres', icon: 'pi pi-fw pi-users', routerLink: ['/view/equipe-membre-equipe']},
                     {label: 'Entreprise and Client', icon: 'pi pi-fw pi-pencil', routerLink: ['/view/entreprise-client']},
+                    {label: 'Equipe et Membres', icon: 'pi pi-fw pi-users', routerLink: ['/view/equipe-membre-equipe']},
+                    {label: 'Commande', icon: 'pi pi-fw pi-pencil', routerLink: ['/view/commande']},
+                    {label: 'demande conge', icon: 'pi pi-fw pi-pencil', routerLink: ['/view/demande-conge']},
                     {label: 'Crud', icon: 'pi pi-fw pi-pencil', routerLink: ['/pages/crud']},
                     {label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', routerLink: ['/pages/calendar']},
                     {label: 'Timeline', icon: 'pi pi-fw pi-calendar', routerLink: ['/pages/timeline']},
