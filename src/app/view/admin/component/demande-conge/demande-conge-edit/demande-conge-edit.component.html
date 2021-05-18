@@ -1,1 +1,18 @@
-<p>demande-conge-edit works!</p>
+<p-dialog [(visible)]="editDialog" [style]="{width: '450px'}" header="Editer une Demande de congé" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+
+            <div class="p-mb-3  p-text-light p-text-italic colors ">
+                <p *ngIf="selected.etatDemandeConge.code === 'e2' ">Voulez vous vraiment accepter? si OUI cliquer sur SAVE et  n'oublier pas d'ajouter un commentaire</p>
+                <p *ngIf="selected.etatDemandeConge.code === 'e3' ">Voulez vous vraiment refuser? si OUI cliquer sur SAVE et  n'oublier pas d'ajouter un commentaire</p>
+            </div>
+
+            <div class="p-field  p-text-bold">
+                <label>Commentaire Validateur</label>
+                <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize" [(ngModel)]="selected.commentaireValidateur"></textarea>
+            </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideEditDialog()"></button>
+        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="edit()"></button>
+    </ng-template>
+</p-dialog>

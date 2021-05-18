@@ -1,5 +1,5 @@
-<p-dialog [(visible)]="createDialog" [style]="{width: '450px'}" header="DemandeConge  Details" [modal]="true" styleClass="p-fluid">
-    <ng-template pTemplate="content">
+<p-dialog [(visible)]="createDialog" [style]="{width: '450px'}" header="Créer une Demande de congé" [modal]="true" styleClass="p-fluid ">
+    <ng-template pTemplate="content" >
         <div class="p-grid">
           <div class="p-field p-sm-6">
             <label for="code">Code</label>
@@ -27,12 +27,16 @@
 
         <div class="p-grid">
             <div class="p-field p-sm-6">
-                <label >Date de départ</label>
-                <p-calendar [(ngModel)]="selected.dateDepart" dateFormat="dd/mm/yy" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" inputId="navigators"></p-calendar>
+                <label for="dateDepart"></label>
+                <input type="date" pInputText id="dateDepart" [(ngModel)]="selected.dateDepart" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.dateDepart">date is required.</small>
             </div>
             <div class="p-field p-sm-6">
-                <label >Date Fin</label>
-                <p-calendar [(ngModel)]="selected.dateFin" dateFormat="dd/mm/yy" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" inputId="navigators"></p-calendar>
+                <!--<label >Date Fin</label>
+                <p-calendar [(ngModel)]="selected.dateFin" dateFormat="dd/mm/yy" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" inputId="navigators"></p-calendar>-->
+                <label for="dateFin"></label>
+                <input type="date" pInputText id="dateFin" [(ngModel)]="selected.dateFin" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.dateFin">date is required.</small>
             </div>
         </div>
 
