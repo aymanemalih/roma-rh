@@ -3,12 +3,25 @@
 
     <div class="p-fluid p-formgrid p-grid">
         <div class="p-field p-col">
-            <label for="firstname2">Name</label>
-            <input id="firstname2" type="text" pInputText>
+            <label>Client</label>
+            <p-dropdown [options]="clients" [showClear]="true" optionLabel="libelle" optionValue="id" [(ngModel)]="selected.clientId" (onChange)="loadProject()"></p-dropdown>
         </div>
         <div class="p-field p-col">
-            <label for="lastname2">Email</label>
-            <input id="lastname2" type="text" pInputText>
+            <label>Nro</label>
+            <p-dropdown [options]="projects" [showClear]="true" optionLabel="nro.libelle" optionValue="id" [(ngModel)]="selected.lotId" (onChange)="loadLots()"></p-dropdown>
+        </div>
+        <div class="p-field p-col">
+            <label>Sro</label>
+            <p-dropdown [options]="lots" [showClear]="true" optionLabel="libelle"></p-dropdown>
+        </div>
+        <div class="p-field p-col">
+            <label>Equipe</label>
+            <p-dropdown [options]="equipes" [showClear]="true" optionLabel="libelle"
+                        optionValue="id" [(ngModel)]="selected.equipeId" (onChange)="loadMembreEquipe()"></p-dropdown>
+        </div>
+        <div class="p-field p-col">
+            <label>Collaborateur</label>
+            <p-dropdown [options]="membreEquipes" [showClear]="true" optionLabel="collaborateur.nom+' '+collaborateur.prenom"></p-dropdown>
         </div>
     </div>
 </p-panel>

@@ -43,6 +43,8 @@ import {GroupetacheTacheComponent} from './view/admin/component/groupetache-tach
 import {EquipeMembreEquipeComponent} from './view/admin/component/equipe-membre-equipe/equipe-membre-equipe.component';
 import {DemandeConge} from './controller/model/demande-conge.model';
 import {DemandeCongeComponent} from './view/admin/component/demande-conge/demande-conge.component';
+import {StatistiquesClientComponent} from "./view/admin/component/statistiques-client/statistiques-client.component";
+import {StatistiquesProjetComponent} from "./view/admin/component/statistiques-projet/statistiques-projet.component";
 
 @NgModule({
     imports: [
@@ -56,6 +58,8 @@ import {DemandeCongeComponent} from './view/admin/component/demande-conge/demand
                     {path: 'view/groupetache-tache', component: GroupetacheTacheComponent},
                     {path: 'view/equipe-membre-equipe', component: EquipeMembreEquipeComponent},
                     {path: 'view/entreprise-client', component: EntrepriseClientComponent},
+                    {path: 'view/admin/statistiques-client', component: StatistiquesClientComponent},
+                    {path: 'view/admin/statistiques-projet', component: StatistiquesProjetComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},
                     {path: 'uikit/invalidstate', component: InvalidStateDemoComponent},

@@ -33,12 +33,18 @@ export class MembreEquipeService {
         console.log('lien -->' + this.url + 'equipe/code/' + equipe.code);
         return this.http.get<Array<MembreEquipe>>(this.url + 'equipe/code/' + equipe.code);
     }
+
+    public findByEquipeId(id: number) {
+        console.log('lien -->' + this.url + 'equipe/id/' + id);
+        return this.http.get<Array<MembreEquipe>>(this.url + 'equipe/code/' + id);
+    }
+
     public deleteByCode(): Observable<number> {
         return this.http.delete<number>(this.url + 'equipeCode/' + this.selected.equipe.code + '/collaborateurCode/' + this.selected.collaborateur.code);
     }
 
     public deleteMultipleByCode(): Observable<number> {
-        return this.http.post<number>(this.url + 'delete-multiple-by-code' , this.selectes);
+        return this.http.post<number>(this.url + 'delete-multiple-by-code', this.selectes);
     }
 
     public findIndexById(id: number): number {
@@ -57,7 +63,7 @@ export class MembreEquipeService {
     }
 
     public deleteMultipleIndexById() {
-        for (const item of this.selectes){
+        for (const item of this.selectes) {
             this.deleteIndexById(item.id);
         }
     }
