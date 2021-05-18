@@ -201,6 +201,11 @@ import { TachesCreateComponent } from './view/admin/component/projet-global/tach
 import { TachesEditComponent } from './view/admin/component/projet-global/taches/taches-edit/taches-edit.component';
 import { TachesListComponent } from './view/admin/component/projet-global/taches/taches-list/taches-list.component';
 import { TachesViewComponent } from './view/admin/component/projet-global/taches/taches-view/taches-view.component';
+import {DemandeCongeComponent} from './view/admin/component/demande-conge/demande-conge.component';
+import {DemandeCongeEditComponent} from './view/admin/component/demande-conge/demande-conge-edit/demande-conge-edit.component';
+import {DemandeCongeCreateComponent} from './view/admin/component/demande-conge/demande-conge-create/demande-conge-create.component';
+import {DemandeCongeListComponent} from './view/admin/component/demande-conge/demande-conge-list/demande-conge-list.component';
+import {DemandeCongeViewComponent} from './view/admin/component/demande-conge/demande-conge-view/demande-conge-view.component';
 
 
 @NgModule({
@@ -396,7 +401,12 @@ import { TachesViewComponent } from './view/admin/component/projet-global/taches
         MembreEquipeCreateComponent,
         MembreEquipeListComponent,
         MembreEquipeEditComponent,
-        MembreEquipeViewComponent
+        MembreEquipeViewComponent,
+        DemandeCongeComponent,
+        DemandeCongeEditComponent,
+        DemandeCongeCreateComponent,
+        DemandeCongeListComponent,
+        DemandeCongeViewComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

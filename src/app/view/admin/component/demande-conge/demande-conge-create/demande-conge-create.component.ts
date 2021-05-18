@@ -39,14 +39,14 @@ export class DemandeCongeCreateComponent implements OnInit {
            this.messageService.add({
              severity: 'error',
              summary: 'Error Message',
-             detail: 'unsaved demandeConge',
+             detail: 'Demande Non Enregistrée',
            });
          }else{
            this.items.push({...data});
            this.messageService.add({
              severity: 'success',
              summary: 'Successful',
-             detail: 'DemandeConge Created',
+             detail: 'Demande Créée',
              life: 3000
            });
          }
