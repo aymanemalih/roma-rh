@@ -46,7 +46,7 @@ export class EntrepriseService {
     return this.http.put<Entreprise>(this.url, this.selected);
   }
   public findByCriteria(): Observable<Array<Entreprise>>{
-    return this.http.post<Array<Entreprise>>(this.url + 'findByCriteria', this.entrepriseVo )
+    return this.http.post<Array<Entreprise>>(this.url + 'findByCriteria', this.entrepriseVo );
   }
   public deleteByCode(): Observable<number> {
     return this.http.delete<number>(this.url + 'code/' + this.selected.code);
