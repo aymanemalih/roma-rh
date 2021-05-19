@@ -22,7 +22,7 @@
                      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
                 <ng-template pTemplate="caption">
                     <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
-                        <h5 class="p-m-0">Manage Equipes</h5>
+                        <h5 class="p-m-0">Equipes</h5>
                         <span class="p-input-icon-left">
                         <i class="pi pi-search"></i>
                         <input pInputText type="text"  placeholder="Search..." />
@@ -46,13 +46,14 @@
                             <p-tableCheckbox [value]="equipe"></p-tableCheckbox>
                         </td>
                         <td>{{equipe.libelle}}</td>
-                        <td>{{equipe.responsable}}</td>
-                        <td>{{equipe.etatEquipe}}</td>
+                        <td>{{equipe.responsable.nom}} {{equipe.responsable.prenom}}</td>
+                        <td>{{equipe.etatEquipe.libelle}}</td>
 
                         <td>
                             <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="edit(equipe)"></button>
                             <button pButton pRipple icon="pi pi-list" class="p-button-rounded p-button-info p-mr-2" (click)="view(equipe)"></button>
-                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="delete(equipe)"></button>
+                            <button  pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger p-mr-2"(click)="delete(equipe)"></button>
+                            <button pButton pRipple icon="pi pi-chevron-circle-right" class="p-button-rounded p-button-help" (click)="findItems(equipe)"></button>
                         </td>
                     </tr>
                 </ng-template>

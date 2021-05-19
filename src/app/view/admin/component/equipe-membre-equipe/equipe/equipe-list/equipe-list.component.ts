@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {Equipe} from '../../../../../../controller/model/equipe.model';
 import {EquipeService} from '../../../../../../controller/service/equipe.service';
 import {ConfirmationService, MessageService} from 'primeng/api';
+import {MembreEquipeService} from '../../../../../../controller/service/membre-equipe.service';
+import {GroupeTache} from '../../../../../../controller/model/groupe-tache.model';
+import {Entreprise} from '../../../../../../controller/model/entreprise.model';
 
 @Component({
   selector: 'app-equipe-list',
@@ -12,7 +15,8 @@ export class EquipeListComponent implements OnInit {
 
   cols: any[];
   constructor(private messageService: MessageService, private confirmationService: ConfirmationService,
-              private service: EquipeService) { }
+              private service: EquipeService,
+              private serviceItems: MembreEquipeService) { }
 
   ngOnInit(): void {
     this.initCol();
@@ -132,6 +136,14 @@ export class EquipeListComponent implements OnInit {
 
   set selectes(value: Array<Equipe>) {
     this.service.selectes = value;
+  }
+  findItems(selected: Equipe) {
+    this.serviceItems.findByEquipeCode(selected).subscribe(
+        data => {
+          console.log(data);
+          this.serviceItems.items = data;
+        }
+    );
   }
 
 }
