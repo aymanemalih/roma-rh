@@ -40,10 +40,10 @@ import {AppLoginComponent} from './pages/app.login.component';
 import {CommandesComponent} from './view/admin/commandes/commandes.component';
 import {EntrepriseClientComponent} from './view/admin/component/entreprise-client/entreprise-client.component';
 import {GroupetacheTacheComponent} from './view/admin/component/groupetache-tache/groupetache-tache.component';
-import {ProjetGlobalComponent} from "./view/admin/component/projet-global/projet-global.component";
+import {ProjetGlobalComponent} from './view/admin/component/projet-global/projet-global.component';
 import {EquipeMembreEquipeComponent} from './view/admin/component/equipe-membre-equipe/equipe-membre-equipe.component';
-import {DemandeConge} from './controller/model/demande-conge.model';
 import {DemandeCongeComponent} from './view/admin/component/demande-conge/demande-conge.component';
+import {StatistiquesSuiviCollaborateurComponent} from './view/admin/component/statistiques-suivi-collaborateur/statistiques-suivi-collaborateur.component';
 
 @NgModule({
     imports: [
@@ -55,6 +55,7 @@ import {DemandeCongeComponent} from './view/admin/component/demande-conge/demand
                     {path: 'view/commande', component: CommandesComponent},
                     {path: 'view/demande-conge', component: DemandeCongeComponent},
                     {path: 'view/projet-global', component: ProjetGlobalComponent},
+                    {path: 'view/suivi-collaborateur', component: StatistiquesSuiviCollaborateurComponent},
                     {path: 'view/groupetache-tache', component: GroupetacheTacheComponent},
                     {path: 'view/equipe-membre-equipe', component: EquipeMembreEquipeComponent},
                     {path: 'view/entreprise-client', component: EntrepriseClientComponent},
