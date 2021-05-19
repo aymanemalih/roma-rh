@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {Commande} from '../model/commande.model';
 import {environment} from '../../../environments/environment';
-import {Observable} from "rxjs";
+import {Observable} from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
