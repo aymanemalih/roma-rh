@@ -187,6 +187,7 @@ import {DemandeCongeViewComponent} from './view/admin/component/demande-conge/de
 import {StatistiquesClientComponent} from './view/admin/component/statistiques-client/statistiques-client.component';
 import {StatistiquesProjetComponent} from './view/admin/component/statistiques-projet/statistiques-projet.component';
 import {SearchBarComponent} from './view/admin/component/statistiques-client/search-bar/search-bar.component';
+import { StatistiquesClientTableComponent } from './view/admin/component/statistiques-client/statistiques-client-table/statistiques-client-table.component';
 
 
 @NgModule({
@@ -369,7 +370,8 @@ import {SearchBarComponent} from './view/admin/component/statistiques-client/sea
         MembreEquipeViewComponent,
         StatistiquesProjetComponent,
         StatistiquesClientComponent,
-        SearchBarComponent
+        SearchBarComponent,
+        StatistiquesClientTableComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

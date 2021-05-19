@@ -10,6 +10,9 @@ import {MembreEquipeService} from '../../../../../controller/service/membre-equi
 import {MembreEquipe} from '../../../../../controller/model/membre-equipe';
 import {EquipeService} from '../../../../../controller/service/equipe.service';
 import {Equipe} from '../../../../../controller/model/equipe.model';
+import {StatistiquesServiceService} from "../../../../../controller/service/statistiques-service.service";
+import {Observable} from "rxjs";
+import {A} from "@angular/cdk/keycodes";
 
 @Component({
     selector: 'app-search-bar',
@@ -17,13 +20,13 @@ import {Equipe} from '../../../../../controller/model/equipe.model';
     styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent implements OnInit {
-    public selected: TacheVo;
 
     constructor(private clientService: ClientService,
                 private projectService: ProjetService,
                 private lotService: LotService,
                 private membreEquipeService: MembreEquipeService,
-                private equipeService: EquipeService) {
+                private equipeService: EquipeService,
+                private statistiquesService: StatistiquesServiceService) {
     }
 
     ngOnInit(): void {
@@ -37,7 +40,6 @@ export class SearchBarComponent implements OnInit {
                 this.equipeService.items = data;
             }
         );
-        this.selected = new TacheVo();
     }
 
     get clients(): Array<Client> {
@@ -58,6 +60,14 @@ export class SearchBarComponent implements OnInit {
 
     get membreEquipes(): Array<MembreEquipe> {
         return this.membreEquipeService.items;
+    }
+
+    get selected(): TacheVo {
+        return this.statistiquesService.selected;
+    }
+
+    set selected(value: TacheVo) {
+        this.statistiquesService.selected = value;
     }
 
     public loadProject() {
@@ -90,5 +100,16 @@ export class SearchBarComponent implements OnInit {
 
     public findSelectedMember(id: number): number {
         return this.membreEquipeService.findIndexById(id);
+    }
+
+    calcStatistique(){
+        this.statistiquesService.calcStatistique().subscribe(
+            data => {
+                this.statistiquesService.items = data;
+                console.log(this.statistiquesService.items);
+                console.log('ha ana');
+                console.log(this.statistiquesService.items.keys());
+            }
+        );
     }
 }
