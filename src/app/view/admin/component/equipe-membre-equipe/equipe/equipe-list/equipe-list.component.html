@@ -46,13 +46,14 @@
                             <p-tableCheckbox [value]="equipe"></p-tableCheckbox>
                         </td>
                         <td>{{equipe.libelle}}</td>
-                        <td>{{equipe.responsable}}</td>
-                        <td>{{equipe.etatEquipe}}</td>
+                        <td>{{equipe.responsable.nom}} {{equipe.responsable.prenom}}</td>
+                        <td>{{equipe.etatEquipe.libelle}}</td>
 
                         <td>
                             <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="edit(equipe)"></button>
                             <button pButton pRipple icon="pi pi-list" class="p-button-rounded p-button-info p-mr-2" (click)="view(equipe)"></button>
-                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="delete(equipe)"></button>
+                            <button  pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger p-mr-2"(click)="delete(equipe)"></button>
+                            <button pButton pRipple icon="pi pi-chevron-circle-right" class="p-button-rounded p-button-help" (click)="findItems(equipe)"></button>
                         </td>
                     </tr>
                 </ng-template>

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {EntrepriseService} from '../../../../../../controller/service/entreprise.service';
 import {Entreprise} from '../../../../../../controller/model/entreprise.model';
-import {ClientService} from "../../../../../../controller/service/client.service";
+import {ClientService} from '../../../../../../controller/service/client.service';
 
 @Component({
     selector: 'app-entreprise-list',

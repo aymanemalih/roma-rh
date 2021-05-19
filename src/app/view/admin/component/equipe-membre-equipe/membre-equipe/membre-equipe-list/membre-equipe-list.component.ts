@@ -18,7 +18,6 @@ export class MembreEquipeListComponent implements OnInit {
 
   ngOnInit(): void {
     this.initCol();
-    this.service.findAll().subscribe(data => this.items = data);
   }
   private initCol() {
     this.cols = [
@@ -29,7 +28,7 @@ export class MembreEquipeListComponent implements OnInit {
   public delete(selected: MembreEquipe) {
     this.selected = selected;
     this.confirmationService.confirm({
-      message: 'Are you sure you want to delete ' + selected.collaborateur + '?',
+      message: 'Are you sure you want to delete ' + selected.collaborateur.nom  +  selected.collaborateur.prenom + '?',
       header: 'Confirm',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
