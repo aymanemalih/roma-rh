@@ -1,0 +1,93 @@
+<p-dialog [(visible)]="editDialog" [style]="{maxWidth: '60%'}" header="Modifier le Lot" [modal]="true"
+          styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-grid">
+            <div class="p-field p-sm-3">
+                <label for="code">Code</label>
+                <input type="text" pInputText id="code" [(ngModel)]="selected.code" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.code">ref is required.</small>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="total">Libelle</label>
+                <input type="text" pInputText id="total" [(ngModel)]="selected.libelle" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.libelle">libelle is required.</small>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="totale">Desctiption</label>
+                <input type="text" pInputText id="totale" [(ngModel)]="selected.description" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.description">Description is required.</small>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="avancement">Avancement</label>
+                <input type="number" pInputText id="avancement" [(ngModel)]="selected.avancement" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.avancement">avancement is required.</small>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-3">
+                <label for="datedemarre">Date Démarrage Effective</label>
+                <input type="date" pInputText id="datedemarre" [(ngModel)]="selected.dateDemarrageEffective" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.dateDemarrageEffective">date is required.</small>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="datedemarrep">Date Démarrage Prévu</label>
+                <input type="date" pInputText id="datedemarrep" [(ngModel)]="selected.dateDemarragePrevu" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.dateDemarragePrevu">date is required.</small>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="datefin">Date Fin Effective</label>
+                <input type="date" pInputText id="datefin" [(ngModel)]="selected.dateFinEffective" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.dateFinEffective">date is required.</small>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="datefinp">Date Fin Prévu</label>
+                <input type="date" pInputText id="datefinp" [(ngModel)]="selected.dateFinPrevu" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.dateFinPrevu">date is required.</small>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-3">
+                <label for="sro">Sro</label>
+                <p-dropdown id="sro" [options]="itemssros" [(ngModel)]="selected.sro" optionLabel="libelle"></p-dropdown>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="projet">Projet</label>
+                <input type="text" pInputText id="projet" disabled  [(ngModel)]="selected.projet.libelle" required autofocus />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="etat">Etat</label>
+                <p-dropdown id="etat" [options]="itemsetatlots" [(ngModel)]="selected.etatLot" optionLabel="libelle"></p-dropdown>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="resp">Responsable</label>
+                <p-dropdown id="resp" [options]="itemsCollaborateurs" [(ngModel)]="selected.responsable" optionLabel="libelle"></p-dropdown>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-4">
+                <label for="nombreJoureHommeEffectif">NbrJrsEffectif</label>
+                <input type="number" pInputText id="nombreJoureHommeEffectif" [(ngModel)]="selected.nombreJoureHommeEffectif" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.nombreJoureHommeEffectif">nombreJoureHommeEffectif is required.</small>
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="nombreJoureHommePrevu">NbrJrsPrevu</label>
+                <input type="number" pInputText id="nombreJoureHommePrevu" [(ngModel)]="selected.nombreJoureHommePrevu" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.nombreJoureHommePrevu">nombreJoureHommePrevu is required.</small>
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="nombreJoureHommeRetard">NbrJrsRetard</label>
+                <input type="text" pInputText id="nombreJoureHommeRetard" [(ngModel)]="selected.nombreJoureHommeRetard" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.nombreJoureHommeRetard">nombreJoureHommeRetard is required.</small>
+            </div>
+        </div>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-text"
+                (click)="hideEditDialog()"></button>
+        <button pButton pRipple label="Mise à jour" icon="pi pi-check" class="p-button-text" (click)="edit()"></button>
+    </ng-template>
+</p-dialog>
+
+

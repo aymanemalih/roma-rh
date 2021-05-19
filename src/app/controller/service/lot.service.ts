@@ -80,6 +80,9 @@ export class LotService {
     }
 
     get selected(): Lot {
+        if (this._selected == null) {
+            this._selected = new Lot();
+        }
         return this._selected;
     }
 
