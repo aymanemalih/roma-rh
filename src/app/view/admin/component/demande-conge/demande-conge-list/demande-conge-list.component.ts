@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {DemandeCongeService} from '../../../../../controller/service/demande-conge.service';
 import {DemandeConge} from '../../../../../controller/model/demande-conge.model';
 import {ConfirmationService, MessageService} from 'primeng/api';
-import {Commande} from '../../../../../controller/model/commande.model';
+import {DemandeCongeVo} from '../../../../../controller/model/demande-conge-vo.model';
 
 @Component({
     selector: 'app-demande-conge-list',
@@ -73,7 +73,15 @@ export class DemandeCongeListComponent implements OnInit {
             }
         });
     }
-
+    public  findByCriteria(){
+        console.log('http://localhost:8036/maneo-rh/conge/findByCriteriaConge');
+        this.demandeCongeService.findByCriteria().subscribe(
+            data => {
+                console.log(data);
+                this.items = data;
+            }
+        );
+    }
     public edit(demandeConge: DemandeConge, state: number) {
         this.selected = {...demandeConge};
         if (state === 1) {
@@ -106,6 +114,7 @@ export class DemandeCongeListComponent implements OnInit {
     set selected(value: DemandeConge) {
         this.demandeCongeService.selected = value;
     }
+
 
     get items(): Array<DemandeConge> {
         return this.demandeCongeService.items;
@@ -153,5 +162,11 @@ export class DemandeCongeListComponent implements OnInit {
 
     set selectes(value: Array<DemandeConge>) {
         this.demandeCongeService.selectes = value;
+    }
+    get demandeCongeVo(): DemandeCongeVo{
+        return  this.demandeCongeService.demandeCongeVo;
+    }
+    set demandeCongeVo(value: DemandeCongeVo){
+        this.demandeCongeService.demandeCongeVo;
     }
 }

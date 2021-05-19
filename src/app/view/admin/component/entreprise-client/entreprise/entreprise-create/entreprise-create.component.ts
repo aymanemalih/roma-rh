@@ -24,18 +24,28 @@ export class EntrepriseCreateComponent implements OnInit {
     this.submitted = true;
     if (this.selected.code.trim()) {
       this.service.save().subscribe(data => {
-        this.items.push({...data});
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Successful',
-          detail: 'Entreprise Created',
-          life: 3000
-        });
+         if(data == null){
+           this.messageService.add({
+             severity: 'error',
+             summary: 'Error Message',
+             detail: 'Entreprise Non Enregistrée',
+           });
+         }else{
+           this.items.push({...data});
+           this.messageService.add({
+             severity: 'success',
+             summary: 'Successful',
+             detail: 'Entreprise Créee',
+             life: 3000
+           });
+         }
+
       });
       this.createDialog = false;
       this.selected = new Entreprise();
     }
   }
+
   get selected(): Entreprise {
     return this.service.selected;
   }
