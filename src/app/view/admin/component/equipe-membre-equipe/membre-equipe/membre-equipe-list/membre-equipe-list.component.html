@@ -34,7 +34,6 @@
                         <th style="width: 3rem">
                             <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                         </th>
-                        <th pSortableColumn="equipe">Equipe <p-sortIcon field="equipe"></p-sortIcon></th>
                         <th pSortableColumn="collaborteur">Collaborateur <p-sortIcon field="collaborteur"></p-sortIcon></th>
                         <th></th>
                     </tr>
@@ -44,13 +43,12 @@
                         <td>
                             <p-tableCheckbox [value]="membreEquipe"></p-tableCheckbox>
                         </td>
-                        <td>{{membreEquipe}}</td>
-                        <td>{{membreEquipe}}</td>
+                        <td>{{membreEquipe.collaborateur.nom}} {{membreEquipe.collaborateur.prenom}}</td>
 
                         <td>
                             <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="edit(membreEquipe)"></button>
                             <button pButton pRipple icon="pi pi-list" class="p-button-rounded p-button-info p-mr-2" (click)="view(membreEquipe)"></button>
-                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="delete(membreEquipe)"></button>
+                            <button  pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger p-mr-2" (click)="delete(membreEquipe)"></button>
                         </td>
                     </tr>
                 </ng-template>
@@ -62,9 +60,10 @@
             </p-table>
         </div>
 
-        <app-equipe-create></app-equipe-create>
-        <app-equipe-edit></app-equipe-edit>
-        <app-equipe-view></app-equipe-view>
+
+        <app-membre-equipe-create></app-membre-equipe-create>
+        <app-membre-equipe-view></app-membre-equipe-view>
+        <app-membre-equipe-edit></app-membre-equipe-edit>
         <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
     </div>
 </div>

@@ -25,7 +25,7 @@ export class LotService {
         return this.http.get<Array<Lot>>(this.url);
     }
 
-  public findByProjetId(projetId: number) {
+  public findByProjetId(projetId: number): Observable<Array<Lot>> {
     console.log('lien -->' + this.url + 'projet/id/' + projetId);
     return this.http.get<Array<Lot>>(this.url + 'projet/id/' + projetId);
   }

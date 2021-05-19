@@ -4,7 +4,6 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {MembreEquipe} from '../model/membre-equipe';
 import {Equipe} from '../model/equipe.model';
-
 @Injectable({
     providedIn: 'root'
 })
@@ -25,17 +24,26 @@ export class MembreEquipeService {
         return this.http.get<Array<MembreEquipe>>(this.url);
     }
 
-    public save(): Observable<Equipe> {
-        return this.http.post<Equipe>(this.url, this.selected);
+    public save(): Observable<MembreEquipe> {
+        return this.http.post<MembreEquipe>(this.url, this.selected);
     }
-
-    public findByEquipeCode(equipe: Equipe) {
+    public update(i: number, me: MembreEquipe): Observable<MembreEquipe>{
+       return this.http.put<MembreEquipe>(this.url + 'id/' + i, me);
+    }
+    public findByEquipeCode(equipe: Equipe): Observable<Array<MembreEquipe>> {
         console.log('lien -->' + this.url + 'equipe/code/' + equipe.code);
         return this.http.get<Array<MembreEquipe>>(this.url + 'equipe/code/' + equipe.code);
     }
     public deleteByCode(): Observable<number> {
         return this.http.delete<number>(this.url + 'equipeCode/' + this.selected.equipe.code + '/collaborateurCode/' + this.selected.collaborateur.code);
     }
+    public findByEquipeCodeAndCollaborateurCode(codeEquipe: string , codeCollaborateur: string): Observable<MembreEquipe>{
+        return this.http.get<MembreEquipe>(this.url + 'equipeCode/' + this.selected.equipe.code + '/collaborateurCode/' + this.selected.collaborateur.code);
+    }
+    public deleteByEquipeCodeAndCollaborateurCode(codeEquipe: string , codeCollaborateur: string): Observable<number>{
+        return this.http.delete<number>(this.url + 'equipeCode/' + this.selected.equipe.code + '/collaborateurCode/' + this.selected.collaborateur.code);
+    }
+
 
     public deleteMultipleByCode(): Observable<number> {
         return this.http.post<number>(this.url + 'delete-multiple-by-code' , this.selectes);

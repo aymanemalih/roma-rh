@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {EntrepriseService} from '../../../../../../controller/service/entreprise.service';
 import {Entreprise} from '../../../../../../controller/model/entreprise.model';
-import {ClientService} from "../../../../../../controller/service/client.service";
+import {ClientService} from '../../../../../../controller/service/client.service';
+import {EntrepriseVo} from '../../../../../../controller/model/entreprise-vo.model';
 
 @Component({
     selector: 'app-entreprise-list',
@@ -68,7 +69,13 @@ export class EntrepriseListComponent implements OnInit {
         this.submitted = false;
         this.createDialog = true;
     }
-
+ public  findByCriteria(){
+        this.service.findByCriteria().subscribe(
+            data=>{
+                this.items = data ;
+            }
+        );
+ }
     public edit(entreprise: Entreprise) {
         this.selected = {...entreprise};
         this.editDialog = true;
@@ -149,5 +156,10 @@ export class EntrepriseListComponent implements OnInit {
             }
         );
     }
-
+    get entrepriseVo(): EntrepriseVo{
+        return  this.service.entrepriseVo;
+    }
+    set entrepriseVo(value: EntrepriseVo){
+        this.service.entrepriseVo;
+    }
 }
