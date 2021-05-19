@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {MessageService} from 'primeng/api';
 import {ClientService} from '../../../../../../controller/service/client.service';
 import {Client} from "../../../../../../controller/model/client.model";
+import {EntrepriseService} from '../../../../../../controller/service/entreprise.service';
+import {Entreprise} from '../../../../../../controller/model/entreprise.model';
 
 
 @Component({
@@ -11,7 +13,8 @@ import {Client} from "../../../../../../controller/model/client.model";
 })
 export class ClientCreateComponent implements OnInit {
 
-  constructor(private messageService: MessageService, private service: ClientService) {
+  constructor(private messageService: MessageService, private service: ClientService,
+              private serviceEntreprise: EntrepriseService) {
   }
 
   ngOnInit(): void {
@@ -23,6 +26,7 @@ export class ClientCreateComponent implements OnInit {
   }
 
   public save() {
+    console.log(this.selected);
     this.submitted = true;
     if (this.selected.code.trim()) {
       this.service.save().subscribe(data => {
@@ -44,6 +48,14 @@ export class ClientCreateComponent implements OnInit {
 
   set selected(value: Client) {
     this.service.selected = value;
+  }
+
+  get selectedEntreprise(): Entreprise {
+    return this.serviceEntreprise.selected;
+  }
+
+  set selectedEntreprise(value: Entreprise) {
+    this.serviceEntreprise.selected = value;
   }
 
   get createDialog(): boolean {

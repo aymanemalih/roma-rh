@@ -372,6 +372,12 @@ import { StatistiquesClientTableComponent } from './view/admin/component/statist
         StatistiquesClientComponent,
         SearchBarComponent,
         StatistiquesClientTableComponent
+        CriteresRechercheTacheComponent,
+        SearchBarComponent,
+        ListeTachesComponent,
+        StatistiquesSuiviCollaborateurComponent,
+        CriteresDeRechercheComponent,
+        CollaborateurDonneesComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

@@ -23,9 +23,9 @@
                 <ng-template pTemplate="caption">
                     <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
                         <h5 class="p-m-0">Entreprises</h5>
-                        <span class="p-input-icon-left">
+                        <span class="p-input-icon-left" (click)="findByCriteria()">
                         <i class="pi pi-search"></i>
-                        <input pInputText type="text"  placeholder="Search..." />
+                        <input pInputText type="text" [(ngModel)]="entrepriseVo.libelle" placeholder="Search..." />
                     </span>
                     </div>
                 </ng-template>

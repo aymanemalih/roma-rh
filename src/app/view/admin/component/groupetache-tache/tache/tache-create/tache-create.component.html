@@ -1,8 +1,8 @@
-<p-dialog [(visible)]="createDialog" [style]="{width: '450px'}" header="Créer une tache" [modal]="true"
+<p-dialog [(visible)]="createDialog" [style]="{width: '450px'}" header="Créer une nouvelle tache" [modal]="true"
           styleClass="p-fluid">
     <ng-template pTemplate="content">
         <div class="p-grid">
-            <div class="p-grid p-field p-sm-6">
+            <div class="p-field p-sm-6">
                 <div class="p-field">
                     <label for="libelle">Libelle</label>
                     <input type="text" pInputText id="libelle" [(ngModel)]="selected.libelle" required autofocus/>
@@ -62,8 +62,8 @@
     </ng-template>
 
     <ng-template pTemplate="footer">
-        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"
+        <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-text"
                 (click)="hideCreateDialog()"></button>
-        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="save()"></button>
+        <button pButton pRipple label="Enregistrer" icon="pi pi-check" class="p-button-text" (click)="save()"></button>
     </ng-template>
 </p-dialog>

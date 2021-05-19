@@ -6,6 +6,10 @@ import {CollaborateurService} from '../../../../../../controller/service/collabo
 import {Projet} from '../../../../../../controller/model/projet.model';
 import {Equipe} from '../../../../../../controller/model/equipe.model';
 import {Collaborateur} from '../../../../../../controller/model/collaborateur.model';
+import {ClientService} from '../../../../../../controller/service/client.service';
+import {Client} from '../../../../../../controller/model/client.model';
+import {EtatProjetService} from '../../../../../../controller/service/etat-projet.service';
+import {Etatprojet} from '../../../../../../controller/model/etatprojet.model';
 
 @Component({
     selector: 'app-projet-create',
@@ -17,13 +21,17 @@ export class ProjetCreateComponent implements OnInit {
     constructor(private messageService: MessageService,
                 private projetService: ProjetService,
                 private equipeService: EquipeService,
+                private etatProjetService: EtatProjetService,
                 private collaborateurService: CollaborateurService,
+                private clientService: ClientService,
                 private service: ProjetService) {
     }
 
     ngOnInit(): void {
         this.service.selected = null;
         this.equipeService.findAll().subscribe(data => this.itemsEquipes = data);
+        this.clientService.findAll().subscribe(data => this.itemsClients = data);
+        this.etatProjetService.findAll().subscribe(data => this.itemsEtatProjet = data);
         this.collaborateurService.findAll().subscribe(data => this.itemsCollaborateurs = data);
     }
 
@@ -95,6 +103,22 @@ export class ProjetCreateComponent implements OnInit {
 
     set itemsCollaborateurs(value: Array<Collaborateur>) {
         this.collaborateurService.items = value;
+    }
+
+    get itemsClients(): Array<Client> {
+        return this.clientService.items;
+    }
+
+    set itemsClients(value: Array<Client>) {
+        this.clientService.items = value;
+    }
+
+    get itemsEtatProjet(): Array<Etatprojet> {
+        return this.etatProjetService.items;
+    }
+
+    set itemsEtatProjet(value: Array<Etatprojet>) {
+        this.etatProjetService.items = value;
     }
 
 }

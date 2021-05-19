@@ -1,0 +1,52 @@
+<div class="p-grid">
+    <div class="p-col-12">
+
+        <p-toast></p-toast>
+
+        <div class="card">
+            <p-toolbar styleClass="p-mb-4">
+                <ng-template pTemplate="right">
+                    <button pButton pRipple label="Exporter" icon="pi pi-upload" class="p-button-help p-mb-2" (click)="dt.exportCSV()"></button>
+                </ng-template>
+            </p-toolbar>
+
+            <p-table #dt [value]="items" [columns]="cols" [rows]="4" [paginator]="true" [globalFilterFields]="['nom']"
+                     [rowHover]="true" dataKey="id"
+                     styleClass="p-datatable-customers"
+                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                        <h5 class="p-m-0">Liste</h5>
+                        <span class="p-input-icon-left">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text"  placeholder="Search..." />
+                    </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="nom">Nom <p-sortIcon field="nom"></p-sortIcon></th>
+                        <th pSortableColumn="jourOuvr">Total des Jours Ouvrable <p-sortIcon field="jourOuvr"></p-sortIcon></th>
+                        <th pSortableColumn="jourTrava">Total des Jours Travaillé <p-sortIcon field="jourTrava"></p-sortIcon></th>
+                        <th pSortableColumn="jourConge">Total des Jours Congé <p-sortIcon field="jourConge"></p-sortIcon></th>
+                        <th pSortableColumn="jourRest">Jour Restant <p-sortIcon field="jourRest"></p-sortIcon></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-selected>
+                    <tr>
+                        <td>{{selected.collaborateur.nom}} {{selected.collaborateur.prenom}}</td>
+                        <td>{{selected.sommeJourNonWeekEnd}}</td>
+                        <td>{{selected.sommeJourTravail}}</td>
+                        <td>{{selected.sommeJourConge}}</td>
+                        <td>{{selected.sommeJourDecalage}}</td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+                    <div class="p-d-flex p-ai-center p-jc-between">
+                        In total there are {{items ? items.length : 0 }} items.
+                    </div>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

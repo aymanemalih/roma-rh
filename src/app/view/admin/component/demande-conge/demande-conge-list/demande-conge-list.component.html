@@ -21,9 +21,9 @@
                 <ng-template pTemplate="caption">
                     <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
                         <h5 class="p-m-0">Demandes Congé</h5>
-                        <span class="p-input-icon-left">
-                        <i class="pi pi-search"></i>
-                        <input pInputText type="text"  placeholder="Search..." />
+                        <span  (click)="findByCriteria()" class="p-input-icon-left">
+                       <i class="pi pi-search" ></i>
+                        <input pInputText type="text"  [(ngModel)]="demandeCongeVo.nomCollaborateur" placeholder="Search..." />
                     </span>
                     </div>
                 </ng-template>

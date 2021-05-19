@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ConfirmationService, MessageService} from "primeng/api";
 import {ClientService} from "../../../../../../controller/service/client.service";
 import {Client} from "../../../../../../controller/model/client.model";
+import {EntrepriseService} from '../../../../../../controller/service/entreprise.service';
+import {Entreprise} from '../../../../../../controller/model/entreprise.model';
 
 
 @Component({
@@ -14,7 +16,8 @@ export class ClientListComponent implements OnInit {
   cols: any[];
 
   constructor(private messageService: MessageService, private confirmationService: ConfirmationService,
-              private service: ClientService) {
+              private service: ClientService,
+              private serviceEntreprise: EntrepriseService) {
   }
 
   ngOnInit(): void {
@@ -64,6 +67,7 @@ export class ClientListComponent implements OnInit {
     this.selected = new Client();
     this.submitted = false;
     this.createDialog = true;
+    this.service.selected.entreprise = this.serviceEntreprise.selected;
   }
 
   public edit(entreprise: Client) {
@@ -137,5 +141,11 @@ export class ClientListComponent implements OnInit {
   set selectes(value: Array<Client>) {
     this.service.selectes = value;
   }
+  get selectedEntreprise(): Entreprise {
+    return this.serviceEntreprise.selected;
+  }
 
+  set selectedEntreprise(value: Entreprise) {
+    this.serviceEntreprise.selected = value;
+  }
 }
