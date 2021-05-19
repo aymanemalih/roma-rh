@@ -1,6 +1,7 @@
-<div class="card"  style="height: 110px; background-color: #B3E5FC">
+<div class="card"  style="height: 110px; background-color: #e5e8e8">
     <div class="p-grid">
-        <div class="p-grid p-field p-sm-10">
+        <div class="p-grid p-field p-sm-1"></div>
+        <div class="p-grid p-field p-sm-9">
             <div class="p-field p-sm-4">
                 <label for="client">Client:</label><br>
                 <p-dropdown id="client" [options]="itemsClients" [(ngModel)]="groupeTacheVO.clientId"
@@ -20,9 +21,9 @@
             </div>
         </div>
         <div class="p-grid p-field p-sm-2">
-            <div class="p-grid p-field p-sm-12"></div>
-            <div class="p-grid p-field p-sm-12">
-                <button pButton label="Rechercher" icon="pi pi-search" class="p-button-info p-button"
+            <div class="p-field p-sm-12"></div>
+            <div>
+                <button pButton label="Rechercher" icon="pi pi-search" class="p-button-primary p-button-outlined"
                         (click)="findGroupeTacheByCreteria()"></button>
             </div>
         </div>

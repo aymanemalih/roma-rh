@@ -206,6 +206,7 @@ import {DemandeCongeEditComponent} from './view/admin/component/demande-conge/de
 import {DemandeCongeCreateComponent} from './view/admin/component/demande-conge/demande-conge-create/demande-conge-create.component';
 import {DemandeCongeListComponent} from './view/admin/component/demande-conge/demande-conge-list/demande-conge-list.component';
 import {DemandeCongeViewComponent} from './view/admin/component/demande-conge/demande-conge-view/demande-conge-view.component';
+import { StatistiquesSuiviCollaborateurComponent } from './view/component/statistiques-suivi-collaborateur/statistiques-suivi-collaborateur.component';
 
 
 @NgModule({
@@ -407,6 +408,7 @@ import {DemandeCongeViewComponent} from './view/admin/component/demande-conge/de
         DemandeCongeCreateComponent,
         DemandeCongeListComponent,
         DemandeCongeViewComponent,
+        StatistiquesSuiviCollaborateurComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
