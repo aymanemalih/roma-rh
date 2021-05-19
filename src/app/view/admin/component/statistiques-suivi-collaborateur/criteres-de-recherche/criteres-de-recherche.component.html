@@ -1,1 +1,23 @@
-<p>criteres-de-recherche works!</p>
+<div class="card"  style="height: 110px; background-color: #e5e8e8">
+    <div class="p-grid">
+        <div class="p-grid p-field p-sm-3"></div>
+        <div class="p-grid p-field p-sm-7">
+            <div class="p-field p-sm-6">
+                <label for="datemin">Date Min:</label><br>
+                <input type="date" id="datemin" class="form-control" [(ngModel)]="selected.dateDemarrageEffectiveMin">
+
+            </div>
+            <div class="p-field p-sm-6">
+                <label for="datemax">Date Max:</label><br>
+                <input type="date" id="datemax" class="form-control" [(ngModel)]="selected.dateDemarrageEffectiveMax">
+            </div>
+        </div>
+        <div class="p-grid p-field p-sm-2">
+            <div class="p-field p-sm-12"></div>
+            <div>
+                <button pButton icon="pi pi-search" label="Rechercher" class="p-button-primary p-button-outlined"
+                        (click)="calcStatistiqueSuiviCollaborateur()"></button>
+            </div>
+        </div>
+    </div>
+</div>
