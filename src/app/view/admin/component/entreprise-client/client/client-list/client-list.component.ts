@@ -67,6 +67,7 @@ export class ClientListComponent implements OnInit {
     this.selected = new Client();
     this.submitted = false;
     this.createDialog = true;
+    this.service.selected.entreprise = this.serviceEntreprise.selected;
   }
 
   public edit(entreprise: Client) {

@@ -28,7 +28,7 @@ export class EntrepriseEditComponent implements OnInit {
           this.messageService.add({
             severity: 'success',
             summary: 'Successful',
-            detail: 'Commande Updated',
+            detail: 'Entreprise Updated',
             life: 3000
           });
         });
