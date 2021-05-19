@@ -6,13 +6,13 @@
         <div class="card">
             <p-toolbar styleClass="p-mb-4">
                 <ng-template pTemplate="left">
-                    <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2 p-mb-2" (click)="openCreate()"></button>
-                    <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger p-mb-2" (click)="deleteMultiple()" [disabled]="!selectes || !selectes.length"></button>
+                    <button pButton pRipple label="Nouveau" icon="pi pi-plus" class="p-button-success p-mr-2 p-mb-2" (click)="openCreate()"></button>
+                    <button pButton pRipple label="Supprimer" icon="pi pi-trash" class="p-button-danger p-mb-2" (click)="deleteMultiple()" [disabled]="!selectes || !selectes.length"></button>
                 </ng-template>
 
                 <ng-template pTemplate="right">
-                    <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-mb-2 p-d-inline-block"></p-fileUpload>
-                    <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help p-mb-2" (click)="dt.exportCSV()"></button>
+                    <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Importer" chooseLabel="Importer" class="p-mr-2 p-mb-2 p-d-inline-block"></p-fileUpload>
+                    <button pButton pRipple label="Exporter" icon="pi pi-upload" class="p-button-help p-mb-2" (click)="dt.exportCSV()"></button>
                 </ng-template>
             </p-toolbar>
 
@@ -38,7 +38,7 @@
                         <th pSortableColumn="datedemarre">Date Démarrage <p-sortIcon field="datedemarre"></p-sortIcon></th>
                         <th pSortableColumn="responsable">Responsable <p-sortIcon field="responsable"></p-sortIcon></th>
                         <th pSortableColumn="categorieTache">Catégorie Tache <p-sortIcon field="categorieTache"></p-sortIcon></th>
-                        <th></th>
+                        <th>Action</th>
                     </tr>
                 </ng-template>
                 <ng-template pTemplate="body" let-tache>
@@ -51,9 +51,9 @@
                         <td>{{tache.membreEquipe.collaborateur.nom}} {{tache.membreEquipe.collaborateur.prenom}}</td>
                         <td>{{tache.categorieTache.libelle}}</td>
                         <td>
-                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="edit(tache)"></button>
+                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-warning p-mr-2" (click)="edit(tache)"></button>
                             <button pButton pRipple icon="pi pi-list" class="p-button-rounded p-button-info p-mr-2" (click)="view(tache)"></button>
-                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="delete(tache)"></button>
+                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger" (click)="delete(tache)"></button>
                         </td>
                     </tr>
                 </ng-template>

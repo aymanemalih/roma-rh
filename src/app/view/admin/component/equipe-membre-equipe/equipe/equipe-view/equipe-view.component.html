@@ -6,7 +6,7 @@
         </div>
         <div class="p-field">
             <label for="responsable">Responsable</label>
-            <input type="text" pInputText id="responsable" [(ngModel)]="selected.responsable" disabled />
+            <input type="text" pInputText id="responsable" value="{{selected.responsable.nom}} {{selected.responsable.prenom}}" disabled />
         </div>
 
 
@@ -14,7 +14,8 @@
         <div class="p-formgrid p-grid">
             <div class="p-field p-col">
                 <label for="etatEquipe">Etat Equipe</label>
-                <p-inputNumber id="etatEquipe" [(ngModel)]="selected.etatEquipe" disabled></p-inputNumber>
+                <input type="text" pInputText id="etatEquipe" [(ngModel)]="selected.etatEquipe.libelle" disabled />
+
             </div>
         </div>
     </ng-template>

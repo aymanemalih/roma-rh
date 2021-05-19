@@ -1,1 +1,16 @@
-<p>membre-equipe-view works!</p>
+<p-dialog [(visible)]="viewDialog" [style]="{width: '450px'}" header="MembreEquipe Details" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-field">
+            <label for="equipe">Equipe</label>
+            <input type="text" pInputText id="equipe" [(ngModel)]="selected.equipe.libelle" disabled />
+        </div>
+        <div class="p-field">
+            <label for="Collaborateur">Collaborateur</label>
+            <input type="text" pInputText id="Collaborateur" value="{{selected.collaborateur.nom}} {{selected.collaborateur.prenom}}"  disabled />
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Fermer" icon="pi pi-times" class="p-button-text" (click)="hideViewDialog()"></button>
+    </ng-template>
+</p-dialog>

@@ -34,6 +34,14 @@ export class SearchBarGroupetacheComponent implements OnInit {
         return this.service.selected;
     }
 
+    get items(): Array<GroupeTache> {
+        return this.service.items;
+    }
+
+    set items(value: Array<GroupeTache>) {
+        this.service.items = value;
+    }
+
     get client(): Client {
         return this.clientService.selected;
     }
@@ -63,8 +71,8 @@ export class SearchBarGroupetacheComponent implements OnInit {
     }
 
 
-    public findGroupeTacheByCreteria() {
-        return this.service.findGroupeTacheByCreteria();
+    findGroupeTacheByCreteria() {
+        this.service.findGroupeTacheByCreteria().subscribe(data => this.items = data);
     }
 
     findProjectsByClientId(clientId: number) {
