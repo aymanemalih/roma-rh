@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {ClientService} from '../../../../../controller/service/client.service';
 import {Client} from '../../../../../controller/model/client.model';
-import {ProjetService} from "../../../../../controller/service/projet.service";
-import {Projet} from "../../../../../controller/model/projet.model";
-import {TacheVo} from "../../../../../controller/model/tache-vo.model";
-import {LotService} from "../../../../../controller/service/lot.service";
-import {Lot} from "../../../../../controller/model/lot.model";
-import {MembreEquipeService} from "../../../../../controller/service/membre-equipe.service";
-import {MembreEquipe} from "../../../../../controller/model/membre-equipe";
-import {EquipeService} from "../../../../../controller/service/equipe.service";
-import {Equipe} from "../../../../../controller/model/equipe.model";
+import {ProjetService} from '../../../../../controller/service/projet.service';
+import {Projet} from '../../../../../controller/model/projet.model';
+import {TacheVo} from '../../../../../controller/model/tache-vo.model';
+import {LotService} from '../../../../../controller/service/lot.service';
+import {Lot} from '../../../../../controller/model/lot.model';
+import {MembreEquipeService} from '../../../../../controller/service/membre-equipe.service';
+import {MembreEquipe} from '../../../../../controller/model/membre-equipe';
+import {EquipeService} from '../../../../../controller/service/equipe.service';
+import {Equipe} from '../../../../../controller/model/equipe.model';
 
 @Component({
     selector: 'app-search-bar',
@@ -39,7 +39,6 @@ export class SearchBarComponent implements OnInit {
         );
         this.selected = new TacheVo();
     }
-
 
     get clients(): Array<Client> {
         return this.clientService.items;
@@ -79,10 +78,17 @@ export class SearchBarComponent implements OnInit {
     }
 
     public loadMembreEquipe() {
+        this.selected.membreEquipeId = null;
         this.membreEquipeService.findByEquipeId(this.selected.equipeId).subscribe(
             data => {
+                console.log(data);
                 this.membreEquipeService.items = data;
+                console.log(this.membreEquipeService.items);
             }
         );
+    }
+
+    public findSelectedMember(id: number): number {
+        return this.membreEquipeService.findIndexById(id);
     }
 }

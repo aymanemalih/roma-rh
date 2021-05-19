@@ -87,7 +87,7 @@ import {TreeTableModule} from 'primeng/treetable';
 import {VirtualScrollerModule} from 'primeng/virtualscroller';
 
 import {AppComponent} from './app.component';
-import {AppCodeModule} from './app.code.component'
+import {AppCodeModule} from './app.code.component';
 import {AppMainComponent} from './app.main.component';
 import {AppConfigComponent} from './app.config.component';
 import {AppCrudComponent} from './pages/app.crud.component';
@@ -179,6 +179,14 @@ import { MembreEquipeCreateComponent } from './view/admin/component/equipe-membr
 import { MembreEquipeListComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-list/membre-equipe-list.component';
 import { MembreEquipeEditComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-edit/membre-equipe-edit.component';
 import { MembreEquipeViewComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-view/membre-equipe-view.component';
+import {DemandeCongeComponent} from './view/admin/component/demande-conge/demande-conge.component';
+import {DemandeCongeEditComponent} from './view/admin/component/demande-conge/demande-conge-edit/demande-conge-edit.component';
+import {DemandeCongeCreateComponent} from './view/admin/component/demande-conge/demande-conge-create/demande-conge-create.component';
+import {DemandeCongeListComponent} from './view/admin/component/demande-conge/demande-conge-list/demande-conge-list.component';
+import {DemandeCongeViewComponent} from './view/admin/component/demande-conge/demande-conge-view/demande-conge-view.component';
+import {StatistiquesClientComponent} from './view/admin/component/statistiques-client/statistiques-client.component';
+import {StatistiquesProjetComponent} from './view/admin/component/statistiques-projet/statistiques-projet.component';
+import {SearchBarComponent} from './view/admin/component/statistiques-client/search-bar/search-bar.component';
 
 
 @NgModule({

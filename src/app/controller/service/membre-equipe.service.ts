@@ -34,13 +34,13 @@ export class MembreEquipeService {
         return this.http.get<Array<MembreEquipe>>(this.url + 'equipe/code/' + equipe.code);
     }
 
-    public findByEquipeId(id: number) {
-        console.log('lien -->' + this.url + 'equipe/id/' + id);
-        return this.http.get<Array<MembreEquipe>>(this.url + 'equipe/code/' + id);
+    public findByEquipeId(id: number): Observable<Array<MembreEquipe>> {
+        return this.http.get<Array<MembreEquipe>>(this.url + 'equipe/id/' + id);
     }
 
     public deleteByCode(): Observable<number> {
-        return this.http.delete<number>(this.url + 'equipeCode/' + this.selected.equipe.code + '/collaborateurCode/' + this.selected.collaborateur.code);
+        return this.http.delete<number>(this.url + 'equipeCode/' + this.selected.equipe.code +
+            '/collaborateurCode/' + this.selected.collaborateur.code);
     }
 
     public deleteMultipleByCode(): Observable<number> {
