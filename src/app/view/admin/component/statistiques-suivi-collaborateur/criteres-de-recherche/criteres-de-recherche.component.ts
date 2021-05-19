@@ -28,8 +28,8 @@ export class CriteresDeRechercheComponent implements OnInit {
         this.service.items = value;
     }
 
-    calcStatistiqueSuiviCollaborateur() {
-        this.service.calcStatistiqueSuiviCollaborateur().subscribe(data => this.items = data);
+    suivreCollaborateurs() {
+        this.service.suivreCollaborateurs().subscribe(data => this.items = data);
     }
 
 }

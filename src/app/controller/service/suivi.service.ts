@@ -40,12 +40,9 @@ export class SuiviService {
         this._items = value;
     }
 
-    public calcStatistiqueSuiviCollaborateur(): Observable<Array<CollaborateurVo>> {
-        console.log(this.url + 'dateMin/' + this.selected.dateDemarrageEffectiveMin
-            + '/dateMax/' + this.selected.dateDemarrageEffectiveMax);
-        return this.http.get<Array<CollaborateurVo>>(this.url + 'dateMin/'
-            + this.selected.dateDemarrageEffectiveMin
-            + '/dateMax/' + this.selected.dateDemarrageEffectiveMax);
+    public suivreCollaborateurs(): Observable<Array<CollaborateurVo>> {
+        console.log(this.url + 'suivreCollaborateurs');
+        return this.http.post<Array<CollaborateurVo>>(this.url + 'suivreCollaborateurs', this.selected);
     }
 
 }

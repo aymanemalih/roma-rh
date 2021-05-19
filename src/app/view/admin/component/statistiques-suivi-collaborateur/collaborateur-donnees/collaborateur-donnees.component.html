@@ -34,9 +34,6 @@
                 </ng-template>
                 <ng-template pTemplate="body" let-selected>
                     <tr>
-                        <td>
-                            <p-tableCheckbox [value]="selected"></p-tableCheckbox>
-                        </td>
                         <td>{{selected.collaborateur.nom}} {{selected.collaborateur.prenom}}</td>
                         <td>{{selected.sommeJourNonWeekEnd}}</td>
                         <td>{{selected.sommeJourTravail}}</td>
