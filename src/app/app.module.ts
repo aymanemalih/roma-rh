@@ -407,6 +407,18 @@ import {DemandeCongeViewComponent} from './view/admin/component/demande-conge/de
         DemandeCongeCreateComponent,
         DemandeCongeListComponent,
         DemandeCongeViewComponent,
+        ProjetGlobalComponent,
+        ProjetComponent,
+        ProjetCreateComponent,
+        ProjetEditComponent,
+        ProjetViewComponent,
+        ProjetListComponent,
+        LotComponent,
+        LotCreateComponent,
+        LotEditComponent,
+        LotViewComponent,
+        LotListComponent,
+
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

@@ -3,6 +3,7 @@ import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Entreprise} from "../model/entreprise.model";
+import {EntrepriseVo} from '../model/entreprise-vo.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,18 @@ export class EntrepriseService {
   private _items: Array<Entreprise>;
   private _selected: Entreprise;
   private _selectes: Array<Entreprise>;
+  private _entrepriseVo: EntrepriseVo;
+
+  get entrepriseVo(): EntrepriseVo {
+    if(this._entrepriseVo == null){
+      this._entrepriseVo = new EntrepriseVo();
+    }
+    return this._entrepriseVo;
+  }
+
+  set entrepriseVo(value: EntrepriseVo) {
+    this._entrepriseVo = value;
+  }
 
   private _createDialog: boolean;
   private _editDialog: boolean;
@@ -32,7 +45,9 @@ export class EntrepriseService {
   public edit(): Observable<Entreprise> {
     return this.http.put<Entreprise>(this.url, this.selected);
   }
-
+  public findByCriteria(): Observable<Array<Entreprise>>{
+    return this.http.post<Array<Entreprise>>(this.url + 'findByCriteria', this.entrepriseVo )
+  }
   public deleteByCode(): Observable<number> {
     return this.http.delete<number>(this.url + 'code/' + this.selected.code);
   }
