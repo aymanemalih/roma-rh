@@ -3,6 +3,7 @@ import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Tache} from '../model/tache.model';
+import {TacheVo} from '../model/tache-vo.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class TacheService {
   private _items: Array<Tache>;
   private _selected: Tache;
   private _selectes: Array<Tache>;
+  private _tacheVo: TacheVo;
 
   private _createDialog: boolean;
   private _editDialog: boolean;
@@ -19,6 +21,18 @@ export class TacheService {
   private _submitted: boolean;
 
   constructor(private http: HttpClient) {
+  }
+
+
+  get tacheVo(): TacheVo {
+    if (this._tacheVo == null){
+      this._tacheVo = new TacheVo();
+    }
+    return this._tacheVo;
+  }
+
+  set tacheVo(value: TacheVo) {
+    this._tacheVo = value;
   }
 
   public findAll(): Observable<Array<Tache>> {
