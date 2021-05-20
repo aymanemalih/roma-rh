@@ -1,43 +1,55 @@
-<div class="card" style="height: 110px; background-color: #e5e8e8">
+
+<p-panel header="Recherche" [toggleable]="true">
+
     <div class="p-fluid p-formgrid p-grid">
         <div class="p-field p-col">
-            <label for="client">Client</label><br>
-            <p-dropdown id="client" [options]="itemsClients" [(ngModel)]="tacheVo.clientId"
-                        optionLabel="libelle" optionValue="id"
-                        (onChange)="findProjectsByClientId(tacheVo.clientId)"></p-dropdown>
+            <label>Client</label>
+            <p-dropdown [options]="itemsClients" [showClear]="true" optionLabel="client.libelle" optionValue="id" [(ngModel)]="tacheVo.clientId" (onChange)="findProject()"></p-dropdown>
         </div>
         <div class="p-field p-col">
-            <label for="nro">Nro</label>
-            <p-dropdown id="nro" [options]="itemsProjets" [(ngModel)]="tacheVo.nroId" optionLabel="code" optionValue="id"></p-dropdown>
+            <label>Nro</label>
+            <p-dropdown [options]="itemsProjets" [showClear]="true" optionLabel="nro.code" optionValue="id" [(ngModel)]="tacheVo.projetId" (onChange)="findLots()"></p-dropdown>
         </div>
-
         <div class="p-field p-col">
-            <label for="sro">Sro</label>
-            <p-dropdown id="sro" [options]="itemslots" [(ngModel)]="tacheVo.sroId" optionLabel="code" optionValue="id"></p-dropdown>
+            <label>Sro</label>
+            <p-dropdown [options]="itemslots" [showClear]="true" optionLabel="sro.code"></p-dropdown>
+        </div>
+        <div class="p-field p-col">
+            <label>Equipe</label>
+            <p-dropdown [options]="itemsEquipes" [showClear]="true" optionLabel="equipe.libelle"
+                        optionValue="id" [(ngModel)]="tacheVo.equipeId"  (onChange)="findMembers()"></p-dropdown>
+        </div>
+        <div class="p-field p-col">
+            <label>Collaborateur</label>
+            <p-dropdown [options]="itemsmembresEquipe" [showClear]="true"
+                        optionValue="id" [(ngModel)]="tacheVo.membreEquipeId">
+                <ng-template let-membreEquipe pTemplate="item">
+                    <div>{{membreEquipe.collaborateur.nom}} {{membreEquipe.collaborateur.prenom}}</div>
+                </ng-template>
+                <ng-template pTemplate="selectedItem">
+                    <div *ngIf="tacheVo.membreEquipeId == null">select member</div>
+                    <div *ngIf="tacheVo.membreEquipeId">
+                        {{itemsmembresEquipe[findSelectedMember(tacheVo.membreEquipeId)].collaborateur.nom}}
+                        {{itemsmembresEquipe[findSelectedMember(tacheVo.membreEquipeId)].collaborateur.prenom}}
+                    </div>
+                </ng-template>
+            </p-dropdown>
+        </div>
+        <div class="p-field p-col">
+            <label>DateMin</label>
+            <p-calendar [showIcon]="true" inputId="icon" [(ngModel)]="tacheVo.dateDemarrageEffectiveMin"></p-calendar>
+        </div>
+        <div class="p-field p-col">
+            <label>DateMax</label>
+            <p-calendar [showIcon]="true" inputId="icon" [(ngModel)]="tacheVo.dateDemarrageEffectiveMax"></p-calendar>
         </div>
     </div>
-    <div class="p-fluid p-formgrid p-grid">
-        <div class="p-field p-col">
-            <label for="equipe">Equipe</label>
-            <p-dropdown id="equipe" [options]="itemsEquipes" [(ngModel)]="tacheVo.equipeId" optionLabel="libelle" optionValue="id" ></p-dropdown>
-        </div>
-        <div class="p-field p-col">
-            <label for="collaborateur">Collaborateur</label>
-            <p-dropdown id="collaborateur" [options]="itemsCollaborateurs" [(ngModel)]="tacheVo.membreEquipeId" optionLabel="nom" optionValue="id" ></p-dropdown>
-        </div>
-        <div class="p-field p-col">
-            <label>DateDemarrageMin</label>
-            <p-calendar  [(ngModel)]="tacheVo.dateDemarrageEffectiveMin" [inline]="true"></p-calendar>
-
-        </div>
-        <div class="p-field p-col">
-            <label>DateDemarrageMax</label>
-            <p-calendar [(ngModel)]="tacheVo.dateDemarrageEffectiveMax" [inline]="true"></p-calendar>
-        </div>
+    <div class="p-card-footer">
+        <button pButton pRipple type="button" label="Rechercher" icon="pi pi-search" class="p-mr-2 p-mb-2"
+                (click)="search()"></button>
+        <button pButton pRipple type="button" label="Exporter" icon="pi pi-upload" class="p-mr-2 p-mb-2"></button>
     </div>
-    <button pButton pRipple type="button" label="Success" class="p-button-rounded p-button-success"></button>
+</p-panel>
 
-
-</div>
 
 

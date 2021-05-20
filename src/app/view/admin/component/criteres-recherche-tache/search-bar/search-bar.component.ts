@@ -36,12 +36,70 @@ export class SearchBarComponent implements OnInit {
               private projetService: ProjetService) { }
 
   ngOnInit(): void {
+    this.clientService.findAll().subscribe(
+        data => {
+          this.clientService.items = data;
+        }
+    );
+    this.equipeService.findAll().subscribe(
+        data => {
+          this.equipeService.items = data;
+        }
+    );
+    this.projetService.findAll().subscribe(
+        data => {
+          this.projetService.items = data;
+        }
+    );
+    this.lotService.findAll().subscribe(
+            data => {
+              this.lotService.items = data;
+            }
+        );
+    this.collaborateurService.findAll().subscribe(
+        data => {
+          this.collaborateurService.items = data;
+        }
+    );
   }
   reset(){
     this.service.tacheVo = null;
   }
-  findProjectsByClientId(clientId: number) {
-    this.projetService.findByClientId(clientId).subscribe(data => this.itemsProjets = data);
+  findMembers(){
+    this.tacheVo.membreEquipeId = null;
+    this.membreEquipeService.findByEquipeId(this.tacheVo.equipeId).subscribe(
+        data => {
+          console.log(data);
+          this.membreEquipeService.items = data;
+          console.log(this.membreEquipeService.items);
+        }
+    );
+  }
+  public findSelectedMember(id: number): number {
+    return this.membreEquipeService.findIndexById(id);
+  }
+
+  public findLots() {
+    this.lotService.findByProjetId(this.tacheVo.projetId).subscribe(
+        data => {
+          this.lotService.items = data;
+        }
+    );
+  }
+  public findProject() {
+    console.log(this.tacheVo.clientId);
+    this.projetService.findByClientId(this.tacheVo.clientId).subscribe(
+        data => {
+          this.projetService.items = data;
+        }
+    );
+  }
+  search(){
+    this.service.search().subscribe(
+        data => {
+          this.service.items = data;
+        }
+    );
   }
   get tacheVo(): TacheVo{
     return this.service.tacheVo;

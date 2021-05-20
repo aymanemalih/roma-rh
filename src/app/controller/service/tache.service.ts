@@ -42,6 +42,9 @@ export class TacheService {
   public save(): Observable<Tache> {
     return this.http.post<Tache>(this.url, this.selected);
   }
+  public search(): Observable<Array<Tache>>{
+    return this.http.post<Array<Tache>>(this.url , this.tacheVo);
+  }
 
   public edit(): Observable<Tache> {
     return this.http.put<Tache>(this.url, this.selected);

@@ -383,6 +383,7 @@ import {CollaborateurDonneesComponent} from "./view/admin/component/statistiques
         StatistiquesSuiviCollaborateurComponent,
         CriteresDeRechercheComponent,
         CollaborateurDonneesComponent,
+        SearchBarComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
