@@ -61,6 +61,11 @@ export class SearchBarComponent implements OnInit {
           this.collaborateurService.items = data;
         }
     );
+    this.sroService.findAll().subscribe(
+        data => {
+          this.sroService.items = data;
+        }
+    );
   }
   reset(){
     this.service.tacheVo = null;
