@@ -150,6 +150,17 @@ export class AppMenuComponent implements OnInit {
                         label: 'Documentation', icon: 'pi pi-fw pi-info-circle', routerLink: ['/documentation']
                     }
                 ]
+            },
+            {
+                label: 'Statistiques', icon: 'pi pi-fw pi-chart-bar',
+                items: [
+                    {
+                        label: 'Client', icon: 'pi pi-fw pi-user', routerLink: ['view/admin/statistiques-client']
+                    },
+                    {
+                        label: 'Projet', icon: 'pi pi-fw pi-folder', routerLink: ['/view/admin/statistiques-projet']
+                    }
+                ]
             }
         ];
     }

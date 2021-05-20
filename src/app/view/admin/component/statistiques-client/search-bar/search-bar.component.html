@@ -1,0 +1,52 @@
+
+<p-panel header="Recherche" [toggleable]="true">
+
+    <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col">
+            <label>Client</label>
+            <p-dropdown [options]="clients" [showClear]="true" optionLabel="libelle" optionValue="id" [(ngModel)]="selected.clientId" (onChange)="loadProject()"></p-dropdown>
+        </div>
+        <div class="p-field p-col">
+            <label>Nro</label>
+            <p-dropdown [options]="projects" [showClear]="true" optionLabel="nro.libelle" optionValue="id" [(ngModel)]="selected.projetId" (onChange)="loadLots()"></p-dropdown>
+        </div>
+        <div class="p-field p-col">
+            <label>Sro</label>
+            <p-dropdown [options]="lots" [showClear]="true" optionLabel="sro.libelle"></p-dropdown>
+        </div>
+        <div class="p-field p-col">
+            <label>Equipe</label>
+            <p-dropdown [options]="equipes" [showClear]="true" optionLabel="libelle"
+                        optionValue="id" [(ngModel)]="selected.equipeId" (onChange)="loadMembreEquipe()"></p-dropdown>
+        </div>
+        <div class="p-field p-col">
+            <label>Collaborateur</label>
+            <p-dropdown [options]="membreEquipes" [showClear]="true"
+            optionValue="id" [(ngModel)]="selected.membreEquipeId">
+                <ng-template let-membreEquipe pTemplate="item">
+                        <div>{{membreEquipe.collaborateur.nom}} {{membreEquipe.collaborateur.prenom}}</div>
+                </ng-template>
+                <ng-template pTemplate="selectedItem">
+                    <div *ngIf="selected.membreEquipeId == null">select member</div>
+                    <div *ngIf="selected.membreEquipeId">
+                        {{membreEquipes[findSelectedMember(selected.membreEquipeId)].collaborateur.nom}}
+                        {{membreEquipes[findSelectedMember(selected.membreEquipeId)].collaborateur.prenom}}
+                    </div>
+                </ng-template>
+            </p-dropdown>
+        </div>
+        <div class="p-field p-col">
+            <label>DateMin</label>
+            <p-calendar [showIcon]="true" inputId="icon" [(ngModel)]="selected.dateDemarrageEffectiveMin"></p-calendar>
+        </div>
+        <div class="p-field p-col">
+            <label>DateMax</label>
+            <p-calendar [showIcon]="true" inputId="icon" [(ngModel)]="selected.dateDemarrageEffectiveMax"></p-calendar>
+        </div>
+    </div>
+    <div class="p-card-footer">
+        <button pButton pRipple type="button" label="Rechercher" icon="pi pi-search" class="p-mr-2 p-mb-2"
+        (click)="calcStatistique()"></button>
+        <button pButton pRipple type="button" label="Exporter" icon="pi pi-upload" class="p-mr-2 p-mb-2"></button>
+    </div>
+</p-panel>

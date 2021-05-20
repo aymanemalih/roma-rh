@@ -150,6 +150,7 @@ export class EntrepriseListComponent implements OnInit {
     }
 
     findItems(selected: Entreprise) {
+        this.selected = {...selected};
         this.serviceItems.findByEntrepriseCode(selected.code).subscribe(
             data => {
                 this.serviceItems.items = data;
