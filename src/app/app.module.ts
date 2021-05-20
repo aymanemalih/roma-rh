@@ -172,10 +172,6 @@ import { EquipeMembreEquipeComponent } from './view/admin/component/equipe-membr
 import { EquipeComponent } from './view/admin/component/equipe-membre-equipe/equipe/equipe.component';
 import { EquipeCreateComponent } from './view/admin/component/equipe-membre-equipe/equipe/equipe-create/equipe-create.component';
 import { EquipeListComponent } from './view/admin/component/equipe-membre-equipe/equipe/equipe-list/equipe-list.component';
-import { EquipeEditComponent } from './view/admin/component/equipe-membre-equipe/equipe/equipe-edit/equipe-edit.component';
-import { EquipeViewComponent } from './view/admin/component/equipe-membre-equipe/equipe/equipe-view/equipe-view.component';
-import { MembreEquipeComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe.component';
-import { MembreEquipeCreateComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-create/membre-equipe-create.component';
 import { MembreEquipeListComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-list/membre-equipe-list.component';
 import { MembreEquipeEditComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-edit/membre-equipe-edit.component';
 import { MembreEquipeViewComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-view/membre-equipe-view.component';
@@ -188,6 +184,15 @@ import {StatistiquesClientComponent} from './view/admin/component/statistiques-c
 import {StatistiquesProjetComponent} from './view/admin/component/statistiques-projet/statistiques-projet.component';
 import {SearchBarComponent} from './view/admin/component/statistiques-client/search-bar/search-bar.component';
 import { StatistiquesClientTableComponent } from './view/admin/component/statistiques-client/statistiques-client-table/statistiques-client-table.component';
+import {EquipeEditComponent} from "./view/admin/component/equipe-membre-equipe/equipe/equipe-edit/equipe-edit.component";
+import {EquipeViewComponent} from "./view/admin/component/equipe-membre-equipe/equipe/equipe-view/equipe-view.component";
+import {MembreEquipeComponent} from "./view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe.component";
+import {MembreEquipeCreateComponent} from "./view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-create/membre-equipe-create.component";
+import {CriteresRechercheTacheComponent} from "./view/admin/component/criteres-recherche-tache/criteres-recherche-tache.component";
+import {StatistiquesSuiviCollaborateurComponent} from "./view/admin/component/statistiques-suivi-collaborateur/statistiques-suivi-collaborateur.component";
+import {CriteresDeRechercheComponent} from "./view/admin/component/statistiques-suivi-collaborateur/criteres-de-recherche/criteres-de-recherche.component";
+import {ListeTachesComponent} from "./view/admin/component/criteres-recherche-tache/liste-taches/liste-taches.component";
+import {CollaborateurDonneesComponent} from "./view/admin/component/statistiques-suivi-collaborateur/collaborateur-donnees/collaborateur-donnees.component";
 
 
 @NgModule({
@@ -371,7 +376,7 @@ import { StatistiquesClientTableComponent } from './view/admin/component/statist
         StatistiquesProjetComponent,
         StatistiquesClientComponent,
         SearchBarComponent,
-        StatistiquesClientTableComponent
+        StatistiquesClientTableComponent,
         CriteresRechercheTacheComponent,
         SearchBarComponent,
         ListeTachesComponent,

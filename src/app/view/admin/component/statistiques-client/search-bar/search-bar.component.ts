@@ -10,9 +10,8 @@ import {MembreEquipeService} from '../../../../../controller/service/membre-equi
 import {MembreEquipe} from '../../../../../controller/model/membre-equipe';
 import {EquipeService} from '../../../../../controller/service/equipe.service';
 import {Equipe} from '../../../../../controller/model/equipe.model';
-import {StatistiquesServiceService} from "../../../../../controller/service/statistiques-service.service";
-import {Observable} from "rxjs";
-import {A} from "@angular/cdk/keycodes";
+import {StatistiquesServiceService} from '../../../../../controller/service/statistiques-service.service';
+import {Observable} from 'rxjs';
 
 @Component({
     selector: 'app-search-bar',
@@ -21,6 +20,14 @@ import {A} from "@angular/cdk/keycodes";
 })
 export class SearchBarComponent implements OnInit {
 
+    get clientStatistiques(): Array<ClientSatistique> {
+        return this.statistiquesService.clientStatistiques;
+    }
+
+    set clientStatistiques(value: Array<ClientSatistique>) {
+        this.statistiquesService.clientStatistiques = value;
+    }
+
     constructor(private clientService: ClientService,
                 private projectService: ProjetService,
                 private lotService: LotService,
@@ -28,6 +35,7 @@ export class SearchBarComponent implements OnInit {
                 private equipeService: EquipeService,
                 private statistiquesService: StatistiquesServiceService) {
     }
+
 
     ngOnInit(): void {
         this.clientService.findAll().subscribe(
@@ -102,14 +110,62 @@ export class SearchBarComponent implements OnInit {
         return this.membreEquipeService.findIndexById(id);
     }
 
-    calcStatistique(){
+    calcStatistique() {
+        this.clientStatistiques = new Array<ClientSatistique>();
         this.statistiquesService.calcStatistique().subscribe(
             data => {
-                this.statistiquesService.items = data;
+                this.statistiquesService.items = this.group(data);
                 console.log(this.statistiquesService.items);
                 console.log('ha ana');
                 console.log(this.statistiquesService.items.keys());
             }
         );
+    }
+
+
+    public group(list: Array<TacheVo>) {
+        const map = new Map<number, Array<TacheVo>>();
+        list.forEach((item) => {
+            const key = item.lot.projet.client.id;
+            const collection = map.get(key);
+            if (!collection) {
+                const clientStati = new ClientSatistique();
+                clientStati.id = key;
+                clientStati.client = item.lot.projet.client;
+                clientStati.totalHeure += item.totalHeure;
+                clientStati.totalPeriode += item.totalPeriode;
+                this.clientStatistiques.push(clientStati);
+                map.set(key, [item]);
+            } else {
+                this.clientStatistiques[this.findIndexById(key)].totalHeure += item.totalHeure;
+                this.clientStatistiques[this.findIndexById(key)].totalPeriode += item.totalPeriode;
+                collection.push(item);
+            }
+        });
+        return map;
+    }
+
+    public findIndexById(id: number): number {
+        let index = -1;
+        for (let i = 0; i < this.clientStatistiques.length; i++) {
+            if (this.clientStatistiques[i].id === id) {
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
+
+}
+
+export class ClientSatistique {
+    id: number;
+    client: Client;
+    totalHeure: number;
+    totalPeriode: number;
+
+    constructor() {
+        this.totalPeriode = 0;
+        this.totalHeure = 0;
     }
 }

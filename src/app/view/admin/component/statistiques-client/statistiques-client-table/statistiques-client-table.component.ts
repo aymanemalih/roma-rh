@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {StatistiquesServiceService} from '../../../../../controller/service/statistiques-service.service';
 import {TacheVo} from '../../../../../controller/model/tache-vo.model';
+import {Client} from '../../../../../controller/model/client.model';
+import {ClientSatistique} from "../search-bar/search-bar.component";
 
 @Component({
   selector: 'app-statistiques-client-table',
@@ -14,21 +16,11 @@ export class StatistiquesClientTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  get items(): Array<TacheVo> {
+  get items(): Map<number, Array<TacheVo>> {
     return this.statistiqueClientService.items;
   }
 
-  public groupBy(list:  Array<TacheVo>, keyGetter) {
-    const map = new Map();
-    list.forEach((item) => {
-      const key = keyGetter(item);
-      const collection = map.get(key);
-      if (!collection) {
-        map.set(key, [item]);
-      } else {
-        collection.push(item);
-      }
-    });
-    return map;
+  get clientStatistiques(): Array<ClientSatistique> {
+    return this.statistiqueClientService.clientStatistiques;
   }
 }
