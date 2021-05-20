@@ -1,24 +1,27 @@
 <div class="card"  style="height: 110px; background-color: #e5e8e8">
-    <div class="p-grid">
+    <div class="p-fluid p-formgrid p-grid">
         <div class="p-grid p-field p-sm-1"></div>
         <div class="p-grid p-field p-sm-9">
-            <div class="p-field p-sm-4">
+            <div class="p-field p-sm-3">
                 <label for="client">Client:</label><br>
                 <p-dropdown id="client" [options]="itemsClients" [(ngModel)]="groupeTacheVO.clientId"
                             optionLabel="libelle" optionValue="id"
                             (onChange)="findProjectsByClientId(groupeTacheVO.clientId)"></p-dropdown>
             </div>
-            <div *ngIf="groupeTacheVO.clientId != null" class="p-field p-sm-4">
+            <div class="p-field p-sm-1"></div>
+            <div *ngIf="groupeTacheVO.clientId != null" class="p-field p-sm-3">
                 <label for="projet">Projet:</label><br>
                 <p-dropdown id="projet" [options]="itemsProjets" [(ngModel)]="groupeTacheVO.projetId"
                             optionLabel="libelle" optionValue="id"
                             (onChange)="findLotsByProjetId(groupeTacheVO.projetId)"></p-dropdown>
             </div>
-            <div *ngIf="groupeTacheVO.projetId != null" class="p-field p-sm-4">
+            <div class="p-field p-sm-1"></div>
+            <div *ngIf="groupeTacheVO.projetId != null" class="p-field p-sm-3">
                 <label for="lot">Lot:</label><br>
                 <p-dropdown id="lot" [options]="itemsLots" [(ngModel)]="groupeTacheVO.lotId"
                             optionLabel="libelle" optionValue="id"></p-dropdown>
             </div>
+            <div class="p-field p-sm-1"></div>
         </div>
         <div class="p-field p-sm-2">
             <br><br>
