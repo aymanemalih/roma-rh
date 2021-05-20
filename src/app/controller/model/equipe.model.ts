@@ -16,3 +16,7 @@ export class Equipe {
     this.responsable = new Collaborateur();
   }
 }
+
+
+
+
