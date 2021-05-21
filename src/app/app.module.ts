@@ -212,6 +212,9 @@ import {ListeTachesComponent} from './view/admin/component/criteres-recherche-ta
 import {StatistiquesSuiviCollaborateurComponent} from './view/admin/component/statistiques-suivi-collaborateur/statistiques-suivi-collaborateur.component';
 import { CriteresDeRechercheComponent } from './view/admin/component/statistiques-suivi-collaborateur/criteres-de-recherche/criteres-de-recherche.component';
 import { CollaborateurDonneesComponent } from './view/admin/component/statistiques-suivi-collaborateur/collaborateur-donnees/collaborateur-donnees.component';
+import { ProjetEquipeComponent } from './view/admin/component/projet-global/projet-equipe/projet-equipe.component';
+import { ProjetEquipeCreateListComponent } from './view/admin/component/projet-global/projet-equipe/projet-equipe-create-list/projet-equipe-create-list.component';
+import { ProjetEquipeEditListComponent } from './view/admin/component/projet-global/projet-equipe/projet-equipe-edit-list/projet-equipe-edit-list.component';
 
 
 @NgModule({
@@ -419,6 +422,9 @@ import { CollaborateurDonneesComponent } from './view/admin/component/statistiqu
         StatistiquesSuiviCollaborateurComponent,
         CriteresDeRechercheComponent,
         CollaborateurDonneesComponent,
+        ProjetEquipeComponent,
+        ProjetEquipeCreateListComponent,
+        ProjetEquipeEditListComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

@@ -48,7 +48,7 @@ export class ProjetCreateComponent implements OnInit {
                 this.messageService.add({
                     severity: 'success',
                     summary: 'Successful',
-                    detail: 'GroupeTache Created',
+                    detail: 'Projet Created',
                     life: 3000
                 });
             });
