@@ -44,6 +44,7 @@ import {ProjetGlobalComponent} from './view/admin/component/projet-global/projet
 import {EquipeMembreEquipeComponent} from './view/admin/component/equipe-membre-equipe/equipe-membre-equipe.component';
 import {DemandeCongeComponent} from './view/admin/component/demande-conge/demande-conge.component';
 import {StatistiquesSuiviCollaborateurComponent} from './view/admin/component/statistiques-suivi-collaborateur/statistiques-suivi-collaborateur.component';
+import {CriteresRechercheTacheComponent} from './view/admin/component/criteres-recherche-tache/criteres-recherche-tache.component';
 
 @NgModule({
     imports: [
@@ -58,6 +59,7 @@ import {StatistiquesSuiviCollaborateurComponent} from './view/admin/component/st
                     {path: 'view/admin/suivi-collaborateur', component: StatistiquesSuiviCollaborateurComponent},
                     {path: 'view/admin/groupetache-tache', component: GroupetacheTacheComponent},
                     {path: 'view/admin/equipe-membre-equipe', component: EquipeMembreEquipeComponent},
+                    {path: 'view/admin/criteres-recherche-tache', component: CriteresRechercheTacheComponent},
                     {path: 'view/admin/entreprise-client', component: EntrepriseClientComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},

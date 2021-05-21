@@ -1,4 +1,4 @@
-<div class="p-grid" *ngIf="items.length>0 || selectedGroupeTache.code">
+<div class="p-grid">
     <div class="p-col-12">
 
         <p-toast></p-toast>
@@ -47,7 +47,7 @@
                             <p-tableCheckbox [value]="tache"></p-tableCheckbox>
                         </td>
                         <td>{{tache.libelle}}</td>
-                        <td>{{tache.dateDemarrageEffective}}</td>
+                        <td>{{tache.dateDemarrageEffective.substr(0, 10)}} <br>{{tache.dateDemarrageEffective.substr(11, 8)}}</td>
                         <td>{{tache.membreEquipe.collaborateur.nom}} {{tache.membreEquipe.collaborateur.prenom}}</td>
                         <td>{{tache.categorieTache.libelle}}</td>
                         <td>

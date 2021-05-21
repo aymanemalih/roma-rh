@@ -1,0 +1,52 @@
+<div class="card">
+    <h5 class="card-header">Result</h5>
+    <p-table [value]="clientStatistiques" dataKey="name">
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 3rem"></th>
+                <th pSortableColumn="name">Client <p-sortIcon field="name"></p-sortIcon></th>
+                <th pSortableColumn="category">TotalPeriode <p-sortIcon field="category"></p-sortIcon></th>
+                <th pSortableColumn="rating">TotalHeures <p-sortIcon field="rating"></p-sortIcon></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-client let-expanded="expanded">
+            <tr>
+                <td>
+                    <button type="button" pButton pRipple [pRowToggler]="client" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+                </td>
+                <td>{{client.client.libelle}}</td>
+                <td>{{client.totalPeriode}}</td>
+                <td>{{client.totalHeure}}</td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="rowexpansion" let-client>
+            <tr>
+                <td colspan="7">
+                    <div class="p-p-3">
+                        <p-table [value]="items.get(client.id)" dataKey="id">
+                            <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="id">Lot <p-sortIcon field="price"></p-sortIcon></th>
+                <th pSortableColumn="customer">TotalPeriode<p-sortIcon field="customer"></p-sortIcon></th>
+                <th pSortableColumn="date">TotalHeures <p-sortIcon field="date"></p-sortIcon></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-detail>
+            <tr>
+                <td>{{detail.lot.libelle}}</td>
+                <td>{{detail.totalPeriode}}</td>
+                <td>{{detail.totalHeure}}</td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="6">There are no order for this product yet.</td>
+            </tr>
+        </ng-template>
+    </p-table>
+    </div>
+    </td>
+    </tr>
+    </ng-template>
+    </p-table>
+</div>

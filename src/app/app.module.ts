@@ -139,73 +139,60 @@ import {CustomerService} from './demo/service/customerservice';
 import {PhotoService} from './demo/service/photoservice';
 import {ProductService} from './demo/service/productservice';
 import {IconService} from './demo/service/iconservice';
-import {CommandeCreateComponent} from './view/admin/commandes/commande-create/commande-create.component';
-import {CommandesComponent} from './view/admin/commandes/commandes.component';
-import {CommandeListComponent} from './view/admin/commandes/commande-list/commande-list.component';
-import {CommandeEditComponent} from './view/admin/commandes/commande-edit/commande-edit.component';
-import {CommandeViewComponent} from './view/admin/commandes/commande-view/commande-view.component';
-import {EntrepriseClientComponent} from './view/admin/component/entreprise-client/entreprise-client.component';
-import {EntrepriseComponent} from './view/admin/component/entreprise-client/entreprise/entreprise.component';
-import {ClientComponent} from './view/admin/component/entreprise-client/client/client.component';
-import {EntrepriseCreateComponent} from './view/admin/component/entreprise-client/entreprise/entreprise-create/entreprise-create.component';
-import {EntrepriseEditComponent} from './view/admin/component/entreprise-client/entreprise/entreprise-edit/entreprise-edit.component';
-import {EntrepriseListComponent} from './view/admin/component/entreprise-client/entreprise/entreprise-list/entreprise-list.component';
-import {EntrepriseViewComponent} from './view/admin/component/entreprise-client/entreprise/entreprise-view/entreprise-view.component';
+import { CommandeCreateComponent } from './view/admin/commandes/commande-create/commande-create.component';
+import { CommandesComponent } from './view/admin/commandes/commandes.component';
+import { CommandeListComponent } from './view/admin/commandes/commande-list/commande-list.component';
+import { CommandeEditComponent } from './view/admin/commandes/commande-edit/commande-edit.component';
+import { CommandeViewComponent } from './view/admin/commandes/commande-view/commande-view.component';
+import { EntrepriseClientComponent } from './view/admin/component/entreprise-client/entreprise-client.component';
+import { EntrepriseComponent } from './view/admin/component/entreprise-client/entreprise/entreprise.component';
+import { ClientComponent } from './view/admin/component/entreprise-client/client/client.component';
+import { EntrepriseCreateComponent } from './view/admin/component/entreprise-client/entreprise/entreprise-create/entreprise-create.component';
+import { EntrepriseEditComponent } from './view/admin/component/entreprise-client/entreprise/entreprise-edit/entreprise-edit.component';
+import { EntrepriseListComponent } from './view/admin/component/entreprise-client/entreprise/entreprise-list/entreprise-list.component';
+import { EntrepriseViewComponent } from './view/admin/component/entreprise-client/entreprise/entreprise-view/entreprise-view.component';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {ClientCreateComponent} from './view/admin/component/entreprise-client/client/client-create/client-create.component';
-import {ClientListComponent} from './view/admin/component/entreprise-client/client/client-list/client-list.component';
-import {ClientEditComponent} from './view/admin/component/entreprise-client/client/client-edit/client-edit.component';
-import {ClientViewComponent} from './view/admin/component/entreprise-client/client/client-view/client-view.component';
-import {GroupetacheTacheComponent} from './view/admin/component/groupetache-tache/groupetache-tache.component';
-import {GroupeTacheComponent} from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache.component';
-import {TacheComponent} from './view/admin/component/groupetache-tache/tache/tache.component';
-import {GroupeTacheCreateComponent} from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-create/groupe-tache-create.component';
-import {GroupeTacheEditComponent} from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-edit/groupe-tache-edit.component';
-import {GroupeTacheListComponent} from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-list/groupe-tache-list.component';
-import {GroupeTacheViewComponent} from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-view/groupe-tache-view.component';
-import {TacheCreateComponent} from './view/admin/component/groupetache-tache/tache/tache-create/tache-create.component';
-import {TacheEditComponent} from './view/admin/component/groupetache-tache/tache/tache-edit/tache-edit.component';
-import {TacheListComponent} from './view/admin/component/groupetache-tache/tache/tache-list/tache-list.component';
-import {TacheViewComponent} from './view/admin/component/groupetache-tache/tache/tache-view/tache-view.component';
-import {SearchBarGroupetacheComponent} from './view/admin/component/groupetache-tache/groupe-tache/search-bar-groupetache/search-bar-groupetache.component';
-import {EquipeMembreEquipeComponent} from './view/admin/component/equipe-membre-equipe/equipe-membre-equipe.component';
-import {EquipeComponent} from './view/admin/component/equipe-membre-equipe/equipe/equipe.component';
-import {EquipeCreateComponent} from './view/admin/component/equipe-membre-equipe/equipe/equipe-create/equipe-create.component';
-import {EquipeListComponent} from './view/admin/component/equipe-membre-equipe/equipe/equipe-list/equipe-list.component';
-import {EquipeEditComponent} from './view/admin/component/equipe-membre-equipe/equipe/equipe-edit/equipe-edit.component';
-import {EquipeViewComponent} from './view/admin/component/equipe-membre-equipe/equipe/equipe-view/equipe-view.component';
-import {MembreEquipeComponent} from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe.component';
-import {MembreEquipeCreateComponent} from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-create/membre-equipe-create.component';
-import {MembreEquipeListComponent} from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-list/membre-equipe-list.component';
-import {MembreEquipeEditComponent} from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-edit/membre-equipe-edit.component';
-import {MembreEquipeViewComponent} from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-view/membre-equipe-view.component';
-import {ProjetGlobalComponent} from './view/admin/component/projet-global/projet-global.component';
-import {ProjetComponent} from './view/admin/component/projet-global/projet/projet.component';
-
-import {LotComponent} from './view/admin/component/projet-global/lot/lot.component';
-import {LotListComponent} from './view/admin/component/projet-global/lot/lot-list/lot-list.component';
-import {LotEditComponent} from './view/admin/component/projet-global/lot/lot-edit/lot-edit.component';
-import {LotViewComponent} from './view/admin/component/projet-global/lot/lot-view/lot-view.component';
-import {ProjetListComponent} from './view/admin/component/projet-global/projet/projet-list/projet-list.component';
-import {ProjetViewComponent} from './view/admin/component/projet-global/projet/projet-view/projet-view.component';
-import {ProjetEditComponent} from './view/admin/component/projet-global/projet/projet-edit/projet-edit.component';
-import {ProjetCreateComponent} from './view/admin/component/projet-global/projet/projet-create/projet-create.component';
-import {LotCreateComponent} from './view/admin/component/projet-global/lot/lot-create/lot-create.component';
-import {GroupeTacheListeComponent} from './view/admin/component/projet-global/groupe-tache/groupe-tache-list/groupe-tache-list.component';
-import {GroupeTacheComponente} from './view/admin/component/projet-global/groupe-tache/groupe-tache.component';
-import {GroupesTacheCreateComponent} from './view/admin/component/projet-global/groupe-tache/groupe-tache-create/groupe-tache-create.component';
-import {GroupesTacheViewComponent} from './view/admin/component/projet-global/groupe-tache/groupe-tache-view/groupe-tache-view.component';
-import {GroupesTacheEditComponent} from './view/admin/component/projet-global/groupe-tache/groupe-tache-edit/groupe-tache-edit.component';
-import {TachesComponent} from './view/admin/component/projet-global/taches/taches.component';
-import {TachesCreateComponent} from './view/admin/component/projet-global/taches/taches-create/taches-create.component';
-import {TachesEditComponent} from './view/admin/component/projet-global/taches/taches-edit/taches-edit.component';
-import {TachesListComponent} from './view/admin/component/projet-global/taches/taches-list/taches-list.component';
-import {TachesViewComponent} from './view/admin/component/projet-global/taches/taches-view/taches-view.component';
+import { ClientListComponent } from './view/admin/component/entreprise-client/client/client-list/client-list.component';
+import { ClientEditComponent } from './view/admin/component/entreprise-client/client/client-edit/client-edit.component';
+import { ClientViewComponent } from './view/admin/component/entreprise-client/client/client-view/client-view.component';
+import { GroupetacheTacheComponent } from './view/admin/component/groupetache-tache/groupetache-tache.component';
+import { GroupeTacheComponent } from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache.component';
+import { TacheComponent } from './view/admin/component/groupetache-tache/tache/tache.component';
+import { GroupeTacheCreateComponent } from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-create/groupe-tache-create.component';
+import { GroupeTacheEditComponent } from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-edit/groupe-tache-edit.component';
+import { GroupeTacheListComponent } from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-list/groupe-tache-list.component';
+import { GroupeTacheViewComponent } from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-view/groupe-tache-view.component';
+import { TacheCreateComponent } from './view/admin/component/groupetache-tache/tache/tache-create/tache-create.component';
+import { TacheEditComponent } from './view/admin/component/groupetache-tache/tache/tache-edit/tache-edit.component';
+import { TacheListComponent } from './view/admin/component/groupetache-tache/tache/tache-list/tache-list.component';
+import { TacheViewComponent } from './view/admin/component/groupetache-tache/tache/tache-view/tache-view.component';
+import { SearchBarGroupetacheComponent } from './view/admin/component/groupetache-tache/groupe-tache/search-bar-groupetache/search-bar-groupetache.component';
+import { EquipeMembreEquipeComponent } from './view/admin/component/equipe-membre-equipe/equipe-membre-equipe.component';
+import { EquipeComponent } from './view/admin/component/equipe-membre-equipe/equipe/equipe.component';
+import { EquipeCreateComponent } from './view/admin/component/equipe-membre-equipe/equipe/equipe-create/equipe-create.component';
+import { EquipeListComponent } from './view/admin/component/equipe-membre-equipe/equipe/equipe-list/equipe-list.component';
+import { MembreEquipeListComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-list/membre-equipe-list.component';
+import { MembreEquipeEditComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-edit/membre-equipe-edit.component';
+import { MembreEquipeViewComponent } from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-view/membre-equipe-view.component';
 import {DemandeCongeComponent} from './view/admin/component/demande-conge/demande-conge.component';
 import {DemandeCongeEditComponent} from './view/admin/component/demande-conge/demande-conge-edit/demande-conge-edit.component';
 import {DemandeCongeCreateComponent} from './view/admin/component/demande-conge/demande-conge-create/demande-conge-create.component';
 import {DemandeCongeListComponent} from './view/admin/component/demande-conge/demande-conge-list/demande-conge-list.component';
 import {DemandeCongeViewComponent} from './view/admin/component/demande-conge/demande-conge-view/demande-conge-view.component';
+import {StatistiquesClientComponent} from './view/admin/component/statistiques-client/statistiques-client.component';
+import {StatistiquesProjetComponent} from './view/admin/component/statistiques-projet/statistiques-projet.component';
+import {SearchBarComponent} from './view/admin/component/statistiques-client/search-bar/search-bar.component';
+import { StatistiquesClientTableComponent } from './view/admin/component/statistiques-client/statistiques-client-table/statistiques-client-table.component';
+import {EquipeEditComponent} from "./view/admin/component/equipe-membre-equipe/equipe/equipe-edit/equipe-edit.component";
+import {EquipeViewComponent} from "./view/admin/component/equipe-membre-equipe/equipe/equipe-view/equipe-view.component";
+import {MembreEquipeComponent} from "./view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe.component";
+import {MembreEquipeCreateComponent} from "./view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-create/membre-equipe-create.component";
+import {CriteresRechercheTacheComponent} from "./view/admin/component/criteres-recherche-tache/criteres-recherche-tache.component";
+import {StatistiquesSuiviCollaborateurComponent} from "./view/admin/component/statistiques-suivi-collaborateur/statistiques-suivi-collaborateur.component";
+import {CriteresDeRechercheComponent} from "./view/admin/component/statistiques-suivi-collaborateur/criteres-de-recherche/criteres-de-recherche.component";
+import {ListeTachesComponent} from "./view/admin/component/criteres-recherche-tache/liste-taches/liste-taches.component";
+import {CollaborateurDonneesComponent} from "./view/admin/component/statistiques-suivi-collaborateur/collaborateur-donnees/collaborateur-donnees.component";
 import {CriteresRechercheTacheComponent} from './view/admin/component/criteres-recherche-tache/criteres-recherche-tache.component';
 import {SearchBarComponent} from './view/admin/component/criteres-recherche-tache/search-bar/search-bar.component';
 import {ListeTachesComponent} from './view/admin/component/criteres-recherche-tache/liste-taches/liste-taches.component';
@@ -370,9 +357,6 @@ import { ProjetEquipeEditListComponent } from './view/admin/component/projet-glo
         GroupeTacheComponent,
         TacheComponent,
         GroupeTacheCreateComponent,
-        GroupeTacheEditComponent,
-        GroupeTacheListComponent,
-        GroupeTacheViewComponent,
         GroupesTacheCreateComponent,
         GroupesTacheEditComponent,
         GroupesTacheViewComponent,
@@ -416,12 +400,18 @@ import { ProjetEquipeEditListComponent } from './view/admin/component/projet-glo
         DemandeCongeCreateComponent,
         DemandeCongeListComponent,
         DemandeCongeViewComponent,
+        MembreEquipeViewComponent,
+        StatistiquesProjetComponent,
+        StatistiquesClientComponent,
+        SearchBarComponent,
+        StatistiquesClientTableComponent,
         CriteresRechercheTacheComponent,
         SearchBarComponent,
         ListeTachesComponent,
         StatistiquesSuiviCollaborateurComponent,
         CriteresDeRechercheComponent,
         CollaborateurDonneesComponent,
+        SearchBarComponent,
         ProjetEquipeComponent,
         ProjetEquipeCreateListComponent,
         ProjetEquipeEditListComponent,

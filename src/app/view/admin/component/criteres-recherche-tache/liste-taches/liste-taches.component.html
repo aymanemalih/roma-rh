@@ -1,1 +1,56 @@
-<p>liste-taches works!</p>
+
+<div class="p-grid">
+    <div class="p-col-12">
+
+        <p-toast></p-toast>
+
+        <div class="card">
+            <p-toolbar styleClass="p-mb-4">
+                <ng-template pTemplate="right">
+                    <button pButton pRipple label="Exporter" icon="pi pi-upload" class="p-button-help p-mb-2" (click)="dt.exportCSV()"></button>
+                </ng-template>
+            </p-toolbar>
+
+            <p-table #dt [value]="items" [columns]="cols" [rows]="4" [paginator]="true" [globalFilterFields]="['nom']"
+                     [rowHover]="true" dataKey="id"
+                     styleClass="p-datatable-customers"
+                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                        <h5 class="p-m-0">Liste</h5>
+                        <span class="p-input-icon-left">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text"  placeholder="Search..." />
+                    </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="membreEquipe">MembreEquipe <p-sortIcon field="membreEquipe"></p-sortIcon></th>
+                        <th pSortableColumn="dateDemarrageEffective">DateDemarrageEffective <p-sortIcon field="dateDemarrageEffective"></p-sortIcon></th>
+                        <th pSortableColumn="periode">Periode <p-sortIcon field="periode"></p-sortIcon></th>
+                        <th pSortableColumn="libelle">Libelle <p-sortIcon field="libelle"></p-sortIcon></th>
+                        <th pSortableColumn="groupeTache">GroupeTache <p-sortIcon field="groupeTache"></p-sortIcon></th>
+                        <th pSortableColumn="categorieTache">CategorieTache <p-sortIcon field="categorieTache"></p-sortIcon></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-selected>
+                    <tr>
+                        <td>{{selected.membreEquipe.collaborateur.nom}} {{selected.membreEquipe.collaborateur.prenom}}</td>
+                        <td>{{selected.dateDemarrageEffective}}</td>
+                        <td>{{selected.periode.libelle}}</td>
+                        <td>{{selected.libelle}}</td>
+                        <td>{{selected.groupeTache.libelle}} {{selected.groupeTache.dateDemarragePrevu}}</td>
+                        <td>{{selected.categorieTache.libelle}}</td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+                    <div class="p-d-flex p-ai-center p-jc-between">
+                        In total there are {{items ? items.length : 0 }} items.
+                    </div>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>
+
