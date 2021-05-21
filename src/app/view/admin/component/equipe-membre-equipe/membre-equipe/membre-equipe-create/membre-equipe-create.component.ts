@@ -20,6 +20,16 @@ export class MembreEquipeCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.collaborateurService.findAll().subscribe(
+        data=>{
+          this.collaborateurService.items = data;
+        }
+    );
+    this.equipeService.findAll().subscribe(
+        data=>{
+          this.equipeService.items = data;
+        }
+    );
   }
 
   public hideCreateDialog() {

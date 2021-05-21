@@ -1,18 +1,15 @@
 <p-dialog [(visible)]="createDialog" [style]="{width: '450px'}" header="Ajouter un MembreEquipe" [modal]="true" styleClass="p-fluid">
     <ng-template pTemplate="content">
         <div class="p-field">
-            <label for="equipe">Equipe</label>
-            <select id="equipe" [(ngModel)]="selected.equipe" required autofocus >
-                <option *ngFor="let e of equipes" [ngValue]="e">{{e.libelle}}</option>
-            </select>
-            <small class="p-invalid" *ngIf="submitted && !selected.collaborateur"></small>
+            <label>Equipe</label>
+            <p-dropdown [options]="equipes"  [showClear]="true"
+                        optionValue="id" [(ngModel)]="selected.equipe.libelle" ></p-dropdown>
+
         </div>
         <div class="p-field">
-            <label for="responsable">Collaborateur</label>
-            <select id="responsable" [(ngModel)]="selected.collaborateur" required autofocus >
-                <option *ngFor="let c of collaborateurs" [ngValue]="c">{{c.nom}} {{c.prenom}}</option>
-            </select>
-            <small class="p-invalid" *ngIf="submitted && !selected.collaborateur"></small>
+            <label>Collaborateur</label>
+            <p-dropdown [options]="collaborateurs"  [showClear]="true"
+                        optionValue="id" [(ngModel)]="selected.collaborateur.nom" ></p-dropdown>
         </div>
 
     </ng-template>

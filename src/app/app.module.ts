@@ -193,6 +193,7 @@ import {StatistiquesSuiviCollaborateurComponent} from "./view/admin/component/st
 import {CriteresDeRechercheComponent} from "./view/admin/component/statistiques-suivi-collaborateur/criteres-de-recherche/criteres-de-recherche.component";
 import {ListeTachesComponent} from "./view/admin/component/criteres-recherche-tache/liste-taches/liste-taches.component";
 import {CollaborateurDonneesComponent} from "./view/admin/component/statistiques-suivi-collaborateur/collaborateur-donnees/collaborateur-donnees.component";
+import { RechercheTachesComponent } from './view/admin/component/criteres-recherche-tache/recherche-taches/recherche-taches.component';
 
 
 @NgModule({
@@ -384,6 +385,7 @@ import {CollaborateurDonneesComponent} from "./view/admin/component/statistiques
         CriteresDeRechercheComponent,
         CollaborateurDonneesComponent,
         SearchBarComponent,
+        RechercheTachesComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
