@@ -1,5 +1,4 @@
 import {Client} from './client.model';
-import {Tache} from './tache.model';
 import {EtatFacture} from './etat-facture.model';
 
 export class Facture {
@@ -11,7 +10,7 @@ export class Facture {
     public TotalHeursFactures: number;
     public montantCalcule: number;
     public montantFacture: number;
+    public dateFacture: Date;
     public client: Client;
-    public tache: Tache;
     public etatFacture: EtatFacture;
 }

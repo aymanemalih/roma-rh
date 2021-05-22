@@ -3,6 +3,7 @@ import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Facture} from '../model/facture.model';
 import {Observable} from 'rxjs';
+import {FactureVO} from '../model/facture-vo.model';
 
 @Injectable({
     providedIn: 'root'
@@ -12,6 +13,7 @@ export class FactureService {
     private _items: Array<Facture>;
     private _selected: Facture;
     private _selectes: Array<Facture>;
+    private _factureVO: FactureVO;
 
     private _createDialog: boolean;
     private _editDialog: boolean;
@@ -60,6 +62,21 @@ export class FactureService {
         for (const item of this.selectes) {
             this.deleteIndexById(item.id);
         }
+    }
+
+    public search(): Observable<Array<Facture>> {
+        return this.http.post<Array<Facture>>(this.url + 'search', this.factureVO);
+    }
+
+    get factureVO(): FactureVO {
+        if (this._factureVO == null) {
+            this._factureVO = new FactureVO();
+        }
+        return this._factureVO;
+    }
+
+    set factureVO(value: FactureVO) {
+        this._factureVO = value;
     }
 
     get items(): Array<Facture> {
