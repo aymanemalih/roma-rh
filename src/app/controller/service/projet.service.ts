@@ -103,7 +103,13 @@ export class ProjetService {
     }
 
     public deleteMultipleByCode(): Observable<number> {
-        return this.http.post<number>(this.url + 'multiples-codes', this.selectes);
+        return this.http.post<number>(this.url + 'delete-multiple-by-code' , this.selectes);
+    }
+
+    public deleteMultipleIndexById() {
+        for (const item of this.selectes){
+            this.deleteIndexById(item.id);
+        }
     }
 
     public findIndexById(id: number): number {
@@ -119,11 +125,5 @@ export class ProjetService {
 
     public deleteIndexById(id: number) {
         this.items.splice(this.findIndexById(id), 1);
-    }
-
-    public deleteMultipleIndexById() {
-        for (const item of this.selectes) {
-            this.deleteIndexById(item.id);
-        }
     }
 }
