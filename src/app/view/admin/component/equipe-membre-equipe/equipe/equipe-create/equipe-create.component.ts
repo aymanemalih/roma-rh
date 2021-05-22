@@ -20,6 +20,50 @@ export class EquipeCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.service.findAll().subscribe(
+        data => {
+          this.service.items = data;
+        }
+    );
+    this.collaborateurService.findAll().subscribe(
+        data => {
+          this.collaborateurService.items = data;
+        }
+    );
+    this.etatEquipeService.findAll().subscribe(
+        data => {
+          this.etatEquipeService.items = data;
+        });
+  }
+  public edit() {
+    this.submitted = true;
+    if (this.selected.libelle.trim()) {
+      if (this.selected.id) {
+        this.items[this.service.findIndexById(this.selected.id)] = this.selected;
+        this.service.edit().subscribe(data => {
+          this.selected = data;
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Successful',
+            detail: 'Equipe Updated',
+            life: 3000
+          });
+        });
+      }
+      this.editDialog = false;
+      this.selected = new Equipe();
+    }
+  }
+  get editDialog(): boolean {
+    return this.service.editDialog;
+  }
+
+  set editDialog(value: boolean) {
+    this.service.editDialog = value;
+  }
+
+  public hideEditDialog() {
+    this.editDialog = false;
   }
 
   public hideCreateDialog() {

@@ -1,29 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import {Client} from '../../../../../controller/model/client.model';
+import {TacheService} from '../../../../../controller/service/tache.service';
 import {ClientService} from '../../../../../controller/service/client.service';
 import {EquipeService} from '../../../../../controller/service/equipe.service';
-import {Equipe} from '../../../../../controller/model/equipe.model';
-import {Collaborateur} from '../../../../../controller/model/collaborateur.model';
 import {CollaborateurService} from '../../../../../controller/service/collaborateur.service';
 import {NroService} from '../../../../../controller/service/nro.service';
 import {SroService} from '../../../../../controller/service/sro.service';
-import {Nro} from '../../../../../controller/model/nro.model';
-import {Sro} from '../../../../../controller/model/sro.model';
-import {TacheService} from '../../../../../controller/service/tache.service';
-import {TacheVo} from '../../../../../controller/model/tache-vo.model';
-import {MembreEquipe} from '../../../../../controller/model/membre-equipe';
-import {Lot} from '../../../../../controller/model/lot.model';
 import {LotService} from '../../../../../controller/service/lot.service';
 import {MembreEquipeService} from '../../../../../controller/service/membre-equipe.service';
-import {Projet} from '../../../../../controller/model/projet.model';
 import {ProjetService} from '../../../../../controller/service/projet.service';
+import {TacheVo} from '../../../../../controller/model/tache-vo.model';
+import {Client} from '../../../../../controller/model/client.model';
+import {Equipe} from '../../../../../controller/model/equipe.model';
+import {Collaborateur} from '../../../../../controller/model/collaborateur.model';
+import {Nro} from '../../../../../controller/model/nro.model';
+import {Sro} from '../../../../../controller/model/sro.model';
+import {Projet} from '../../../../../controller/model/projet.model';
+import {MembreEquipe} from '../../../../../controller/model/membre-equipe';
+import {Lot} from '../../../../../controller/model/lot.model';
 
 @Component({
-  selector: 'app-search-bar',
-  templateUrl: './search-bar.component.html',
-  styleUrls: ['./search-bar.component.scss']
+  selector: 'app-recherche-taches',
+  templateUrl: './recherche-taches.component.html',
+  styleUrls: ['./recherche-taches.component.scss']
 })
-export class SearchBarComponent implements OnInit {
+export class RechercheTachesComponent implements OnInit {
+
 
   constructor(private service: TacheService,
               private clientService: ClientService,
@@ -52,13 +53,18 @@ export class SearchBarComponent implements OnInit {
         }
     );
     this.lotService.findAll().subscribe(
-            data => {
-              this.lotService.items = data;
-            }
-        );
+        data => {
+          this.lotService.items = data;
+        }
+    );
     this.collaborateurService.findAll().subscribe(
         data => {
           this.collaborateurService.items = data;
+        }
+    );
+    this.sroService.findAll().subscribe(
+        data => {
+          this.sroService.items = data;
         }
     );
   }
@@ -152,5 +158,4 @@ export class SearchBarComponent implements OnInit {
   set itemslots(value: Array<Lot>) {
     this.lotService.items = value;
   }
-
 }
