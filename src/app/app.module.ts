@@ -180,15 +180,6 @@ import {DemandeCongeViewComponent} from './view/admin/component/demande-conge/de
 import {StatistiquesClientComponent} from './view/admin/component/statistiques-client/statistiques-client.component';
 import {StatistiquesProjetComponent} from './view/admin/component/statistiques-projet/statistiques-projet.component';
 import { StatistiquesClientTableComponent } from './view/admin/component/statistiques-client/statistiques-client-table/statistiques-client-table.component';
-import {EquipeEditComponent} from "./view/admin/component/equipe-membre-equipe/equipe/equipe-edit/equipe-edit.component";
-import {EquipeViewComponent} from "./view/admin/component/equipe-membre-equipe/equipe/equipe-view/equipe-view.component";
-import {MembreEquipeComponent} from "./view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe.component";
-import {MembreEquipeCreateComponent} from "./view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-create/membre-equipe-create.component";
-import {CriteresRechercheTacheComponent} from "./view/admin/component/criteres-recherche-tache/criteres-recherche-tache.component";
-import {StatistiquesSuiviCollaborateurComponent} from "./view/admin/component/statistiques-suivi-collaborateur/statistiques-suivi-collaborateur.component";
-import {CriteresDeRechercheComponent} from "./view/admin/component/statistiques-suivi-collaborateur/criteres-de-recherche/criteres-de-recherche.component";
-import {ListeTachesComponent} from "./view/admin/component/criteres-recherche-tache/liste-taches/liste-taches.component";
-import {CollaborateurDonneesComponent} from "./view/admin/component/statistiques-suivi-collaborateur/collaborateur-donnees/collaborateur-donnees.component";
 import { RechercheTachesComponent } from './view/admin/component/criteres-recherche-tache/recherche-taches/recherche-taches.component';
 import {FacturesComponent} from './view/admin/component/factures/factures.component';
 import {FactureCreateComponent} from './view/admin/component/factures/facture-create/facture-create.component';
@@ -201,7 +192,6 @@ import {MembreEquipeComponent} from './view/admin/component/equipe-membre-equipe
 import {MembreEquipeCreateComponent} from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe-create/membre-equipe-create.component';
 import {CollaborateurDonneesComponent} from './view/admin/component/statistiques-suivi-collaborateur/collaborateur-donnees/collaborateur-donnees.component';
 import {CriteresRechercheTacheComponent} from './view/admin/component/criteres-recherche-tache/criteres-recherche-tache.component';
-import {SearchBarComponent} from './view/admin/component/criteres-recherche-tache/search-bar/search-bar.component';
 import {ListeTachesComponent} from './view/admin/component/criteres-recherche-tache/liste-taches/liste-taches.component';
 import {StatistiquesSuiviCollaborateurComponent} from './view/admin/component/statistiques-suivi-collaborateur/statistiques-suivi-collaborateur.component';
 import { CriteresDeRechercheComponent } from './view/admin/component/statistiques-suivi-collaborateur/criteres-de-recherche/criteres-de-recherche.component';
@@ -230,7 +220,7 @@ import {GroupesTacheViewComponent} from './view/admin/component/projet-global/gr
 import {GroupesTacheEditComponent} from './view/admin/component/projet-global/groupe-tache/groupe-tache-edit/groupe-tache-edit.component';
 import {GroupesTacheCreateComponent} from './view/admin/component/projet-global/groupe-tache/groupe-tache-create/groupe-tache-create.component';
 import { ProjetEquipeViewListComponent } from './view/admin/component/projet-global/projet-equipe/projet-equipe-view-list/projet-equipe-view-list.component';
-
+import {SearchBarComponent} from "./view/admin/component/statistiques-client/search-bar/search-bar.component";
 
 @NgModule({
     imports: [
@@ -431,10 +421,8 @@ import { ProjetEquipeViewListComponent } from './view/admin/component/projet-glo
         MembreEquipeViewComponent,
         StatistiquesProjetComponent,
         StatistiquesClientComponent,
-        SearchBarComponent,
         StatistiquesClientTableComponent,
         CriteresRechercheTacheComponent,
-        SearchBarComponent,
         ListeTachesComponent,
         StatistiquesSuiviCollaborateurComponent,
         CriteresDeRechercheComponent,
