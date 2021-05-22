@@ -194,6 +194,11 @@ import {CriteresDeRechercheComponent} from "./view/admin/component/statistiques-
 import {ListeTachesComponent} from "./view/admin/component/criteres-recherche-tache/liste-taches/liste-taches.component";
 import {CollaborateurDonneesComponent} from "./view/admin/component/statistiques-suivi-collaborateur/collaborateur-donnees/collaborateur-donnees.component";
 import { RechercheTachesComponent } from './view/admin/component/criteres-recherche-tache/recherche-taches/recherche-taches.component';
+import {FacturesComponent} from './view/admin/component/factures/factures.component';
+import {FactureCreateComponent} from './view/admin/component/factures/facture-create/facture-create.component';
+import {FactureListeComponent} from './view/admin/component/factures/facture-liste/facture-liste.component';
+import {FactureViewComponent} from './view/admin/component/factures/facture-view/facture-view.component';
+import {SearchBarFactureComponent} from './view/admin/component/factures/search-bar-facture/search-bar-facture.component';
 
 
 @NgModule({
@@ -386,6 +391,11 @@ import { RechercheTachesComponent } from './view/admin/component/criteres-recher
         CollaborateurDonneesComponent,
         SearchBarComponent,
         RechercheTachesComponent,
+        FacturesComponent,
+        FactureCreateComponent,
+        FactureListeComponent,
+        FactureViewComponent,
+        SearchBarFactureComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
