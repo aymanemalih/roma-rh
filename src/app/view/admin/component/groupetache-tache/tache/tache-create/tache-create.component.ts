@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MessageService} from 'primeng/api';
 import {GroupeTacheService} from '../../../../../../controller/service/groupe-tache.service';
-import {Lot} from '../../../../../../controller/model/lot.model';
 import {TacheService} from '../../../../../../controller/service/tache.service';
 import {PeriodeService} from '../../../../../../controller/service/periode.service';
 import {MembreEquipeService} from '../../../../../../controller/service/membre-equipe.service';
@@ -12,7 +11,6 @@ import {MembreEquipe} from '../../../../../../controller/model/membre-equipe';
 import {CategorieTache} from '../../../../../../controller/model/categorie-tache.model';
 import {Periode} from '../../../../../../controller/model/periode.model';
 import {EtatTache} from '../../../../../../controller/model/etat-tache.model';
-import {GroupeTache} from '../../../../../../controller/model/groupe-tache.model';
 
 @Component({
     selector: 'app-tache-create',
@@ -30,7 +28,7 @@ export class TacheCreateComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.selected.groupeTache = this.groupeTacheService.selected;
+        // this.selected.groupeTache = this.groupeTacheService.selected;
         this.etatTacheService.findAll().subscribe(data => this.itemsEtats = data);
         this.periodeService.findAll().subscribe(data => this.itemsPeriodes = data);
         this.membreEquipeService.findByEquipeCode(this.groupeTacheService.selected.equipe).subscribe(
