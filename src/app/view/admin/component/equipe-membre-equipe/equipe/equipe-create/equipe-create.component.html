@@ -1,25 +1,21 @@
 <p-dialog [(visible)]="createDialog" [style]="{width: '450px'}" header="Ajouter un equipe " [modal]="true" styleClass="p-fluid">
     <ng-template pTemplate="content">
         <div class="p-field">
-            <label for="libelle">Libelle</label>
-            <input type="text" pInputText id="libelle" [(ngModel)]="selected.libelle" required autofocus />
-            <small class="p-invalid" *ngIf="submitted && !selected.libelle">libelle is required.</small>
+            <label>Libelle</label>
+            <p-dropdown [options]="items"  [showClear]="true"
+                        optionValue="id" [(ngModel)]="selected.libelle" ></p-dropdown>
         </div>
         <div class="p-field">
-            <label for="responsable">Responsable</label>
-            <select id="responsable" [(ngModel)]="selected.responsable" required autofocus >
-                <option *ngFor="let c of collaborateurs" [ngValue]="c">{{c.nom}} {{c.prenom}}</option>
-            </select>
-            <small class="p-invalid" *ngIf="submitted && !selected.responsable">responsable is required.</small>
+            <label>Collaborateur</label>
+            <p-dropdown [options]="collaborateurs" [showClear]="true"
+                        optionValue="id" [(ngModel)]="selected.responsable.nom"></p-dropdown>
         </div>
 
         <div class="p-formgrid p-grid">
             <div class="p-field p-col">
-                <label for="etatEquipe">Etat Equipe </label>
-                <select id="etatEquipe" [(ngModel)]="selected.etatEquipe" required autofocus >
-                    <option *ngFor="let e of etatEquipes" [ngValue]="e">{{e.libelle}}</option>
-                </select>
-                <small class="p-invalid" *ngIf="submitted && !selected.etatEquipe">EtatEquipe is required.</small>
+                <label>EtatEquipe</label>
+                <p-dropdown [options]="etatEquipes" [showClear]="true"
+                            optionValue="id" [(ngModel)]="selected.etatEquipe.libelle"></p-dropdown>
             </div>
         </div>
     </ng-template>

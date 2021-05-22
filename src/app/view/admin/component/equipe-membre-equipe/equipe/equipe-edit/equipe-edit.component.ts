@@ -20,6 +20,18 @@ export class EquipeEditComponent implements OnInit {
               private etatEquipeService: EtatEquipeService) { }
 
   ngOnInit(): void {
+    this.collaborateurService.findAll().subscribe(
+        data => {
+          this.collaborateurService.items = data;
+        }
+    );
+    this.etatEquipeService.findAll().subscribe(
+        data => {
+          this.etatEquipeService.items = data;
+        });
+  }
+  public collaborateur(): Collaborateur{
+    return this.collaborateurService.selected;
   }
   public edit() {
     this.submitted = true;
