@@ -221,6 +221,9 @@ import {GroupesTacheEditComponent} from './view/admin/component/projet-global/gr
 import {GroupesTacheCreateComponent} from './view/admin/component/projet-global/groupe-tache/groupe-tache-create/groupe-tache-create.component';
 import { ProjetEquipeViewListComponent } from './view/admin/component/projet-global/projet-equipe/projet-equipe-view-list/projet-equipe-view-list.component';
 import {SearchBarComponent} from "./view/admin/component/statistiques-client/search-bar/search-bar.component";
+import {GroupeTacheListComponent} from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-list/groupe-tache-list.component';
+import {GroupeTacheEditComponent} from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-edit/groupe-tache-edit.component';
+import {GroupeTacheViewComponent} from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-view/groupe-tache-view.component';
 
 @NgModule({
     imports: [
@@ -383,6 +386,9 @@ import {SearchBarComponent} from "./view/admin/component/statistiques-client/sea
         TacheListComponent,
         TacheViewComponent,
         GroupeTacheListeComponent,
+        GroupeTacheListComponent,
+        GroupeTacheEditComponent,
+        GroupeTacheViewComponent,
         SearchBarGroupetacheComponent,
         ProjetGlobalComponent,
         ProjetComponent,
