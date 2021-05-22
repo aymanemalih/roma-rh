@@ -51,8 +51,8 @@
             </div>
             <div class="p-field p-sm-3">
                 <label for="lot">Lot</label>
-                <input type="text" pInputText id="lot" disabled  [(ngModel)]="selected.lot" required autofocus />
-                <small class="p-invalid" *ngIf="submitted && !selected.lot">lot is required.</small>
+                <input type="text" pInputText id="lot"  value="{{lotService.selected.libelle}}"  disabled />
+
             </div>
             <div class="p-field p-sm-3">
                 <label for="etat">Etat</label>

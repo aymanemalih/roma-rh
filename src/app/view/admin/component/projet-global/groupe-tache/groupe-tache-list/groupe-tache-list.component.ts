@@ -1,151 +1,153 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {GroupeTacheService} from '../../../../../../controller/service/groupe-tache.service';
 import {TacheService} from '../../../../../../controller/service/tache.service';
 import {GroupeTache} from '../../../../../../controller/model/groupe-tache.model';
 
 @Component({
-  selector: 'app-groupe-tache-liste',
-  templateUrl: './groupe-tache-list.component.html',
-  styleUrls: ['./groupe-tache-list.component.scss']
+    selector: 'app-groupe-tache-liste',
+    templateUrl: './groupe-tache-list.component.html',
+    styleUrls: ['./groupe-tache-list.component.scss']
 })
 export class GroupeTacheListeComponent implements OnInit {
 
-  cols: any[];
+    cols: any[];
 
-  constructor(private messageService: MessageService, private confirmationService: ConfirmationService,
-              private service: GroupeTacheService, private serviceItems: TacheService) {
-  }
+    constructor(private messageService: MessageService, private confirmationService: ConfirmationService,
+                private service: GroupeTacheService, private serviceItems: TacheService) {
+    }
 
-  ngOnInit(): void {
-    this.initCol();
-  }
+    ngOnInit(): void {
+        this.initCol();
+    }
 
-  public delete(selected: GroupeTache) {
-    this.selected = selected;
-    this.confirmationService.confirm({
-      message: 'Are you sure you want to delete ' + selected.code + '?',
-      header: 'Confirm',
-      icon: 'pi pi-exclamation-triangle',
-      accept: () => {
-        this.service.deleteByCode().subscribe(data => {
-          this.items = this.items.filter(val => val.id !== this.selected.id);
-          this.selected = new GroupeTache();
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Successful',
-            detail: 'GroupeTache Deleted',
-            life: 3000
-          });
+    public delete(selected: GroupeTache) {
+        this.selected = selected;
+        this.confirmationService.confirm({
+            message: 'Are you sure you want to delete ' + selected.code + '?',
+            header: 'Confirm',
+            icon: 'pi pi-exclamation-triangle',
+            accept: () => {
+                this.service.deleteByCode().subscribe(data => {
+                    this.items = this.items.filter(val => val.id !== this.selected.id);
+                    this.selected = new GroupeTache();
+                    this.messageService.add({
+                        severity: 'success',
+                        summary: 'Successful',
+                        detail: 'GroupeTache Deleted',
+                        life: 3000
+                    });
+                });
+            }
         });
-      }
-    });
-  }
+    }
 
-  public deleteMultiple() {
-    this.confirmationService.confirm({
-      message: 'Are you sure you want to delete the selected GroupeTaches?',
-      header: 'Confirm',
-      icon: 'pi pi-exclamation-triangle',
-      accept: () => {
-        this.service.deleteMultipleByCode().subscribe(data => {
-          this.service.deleteMultipleIndexById();
-          this.selectes = null;
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Successful',
-            detail: 'GroupeTaches Deleted',
-            life: 3000
-          });
+    public deleteMultiple() {
+        this.confirmationService.confirm({
+            message: 'Are you sure you want to delete the selected GroupeTaches?',
+            header: 'Confirm',
+            icon: 'pi pi-exclamation-triangle',
+            accept: () => {
+                this.service.deleteMultipleByCode().subscribe(data => {
+                    this.service.deleteMultipleIndexById();
+                    this.selectes = null;
+                    this.messageService.add({
+                        severity: 'success',
+                        summary: 'Successful',
+                        detail: 'GroupeTaches Deleted',
+                        life: 3000
+                    });
+                });
+            }
         });
-      }
-    });
-  }
+    }
 
-  public openCreate() {
-    this.selected = new GroupeTache();
-    this.submitted = false;
-    this.createDialog = true;
-  }
+    public openCreate() {
+        this.selected = new GroupeTache();
+        this.submitted = false;
+        this.createDialog = true;
+    }
 
-  public edit(groupeTache: GroupeTache) {
-    this.selected = {...groupeTache};
-    this.editDialog = true;
-  }
+    public edit(groupeTache: GroupeTache) {
+        this.selected = {...groupeTache};
+        this.editDialog = true;
+    }
 
-  public view(groupeTache: GroupeTache) {
-    this.selected = {...groupeTache};
-    this.viewDialog = true;
-  }
+    public view(groupeTache: GroupeTache) {
+        this.selected = {...groupeTache};
+        this.viewDialog = true;
+    }
 
-  private initCol() {
-    this.cols = [
-      {field: 'libelle', header: 'Libelle'}
-    ];
-  }
+    private initCol() {
+        this.cols = [
+            {field: 'libelle', header: 'Libelle'}
+        ];
+    }
 
-  get selected(): GroupeTache {
-    return this.service.selected;
-  }
 
-  set selected(value: GroupeTache) {
-    this.service.selected = value;
-  }
+    get selected(): GroupeTache {
+        return this.service.selected;
+    }
 
-  get items(): Array<GroupeTache> {
-    return this.service.items;
-  }
+    set selected(value: GroupeTache) {
+        this.service.selected = value;
+    }
 
-  set items(value: Array<GroupeTache>) {
-    this.service.items = value;
-  }
+    get items(): Array<GroupeTache> {
+        return this.service.items;
+    }
 
-  get submitted(): boolean {
-    return this.service.submitted;
-  }
+    set items(value: Array<GroupeTache>) {
+        this.service.items = value;
+    }
 
-  set submitted(value: boolean) {
-    this.service.submitted = value;
-  }
+    get submitted(): boolean {
+        return this.service.submitted;
+    }
 
-  get createDialog(): boolean {
-    return this.service.createDialog;
-  }
+    set submitted(value: boolean) {
+        this.service.submitted = value;
+    }
 
-  set createDialog(value: boolean) {
-    this.service.createDialog = value;
-  }
+    get createDialog(): boolean {
+        return this.service.createDialog;
+    }
 
-  get editDialog(): boolean {
-    return this.service.editDialog;
-  }
+    set createDialog(value: boolean) {
+        this.service.createDialog = value;
+    }
 
-  set editDialog(value: boolean) {
-    this.service.editDialog = value;
-  }
+    get editDialog(): boolean {
+        return this.service.editDialog;
+    }
 
-  get viewDialog(): boolean {
-    return this.service.viewDialog;
-  }
+    set editDialog(value: boolean) {
+        this.service.editDialog = value;
+    }
 
-  set viewDialog(value: boolean) {
-    this.service.viewDialog = value;
-  }
+    get viewDialog(): boolean {
+        return this.service.viewDialog;
+    }
 
-  get selectes(): Array<GroupeTache> {
-    return this.service.selectes;
-  }
+    set viewDialog(value: boolean) {
+        this.service.viewDialog = value;
+    }
 
-  set selectes(value: Array<GroupeTache>) {
-    this.service.selectes = value;
-  }
+    get selectes(): Array<GroupeTache> {
+        return this.service.selectes;
+    }
 
-  findItems(selected: GroupeTache) {
-    this.serviceItems.findByGroupeTacheCode(selected.code).subscribe(
-        data => {
-          this.serviceItems.items = data;
-        }
-    );
-  }
+    set selectes(value: Array<GroupeTache>) {
+        this.service.selectes = value;
+    }
+
+    findItems(selected: GroupeTache) {
+        this.serviceItems.findByGroupeTacheCode(selected.code).subscribe(
+            data => {
+                this.serviceItems.items = data;
+            }
+        );
+        this.selected = selected;
+    }
 
 }

@@ -1,0 +1,77 @@
+<p-dialog [(visible)]="viewDialog" [style]="{width: '70%'}" header="Projet Details" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-grid">
+            <div class="p-field p-sm-3">
+                <label for="code">Code</label>
+                <input type="text" pInputText id="code" [(ngModel)]="selected.code" disabled />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="total">Libelle</label>
+                <input type="text" pInputText id="total" [(ngModel)]="selected.libelle" disabled />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="totale">Desctiption</label>
+                <input type="text" pInputText id="totale" [(ngModel)]="selected.description" disabled />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="avancement">Avancement</label>
+                <input type="number" pInputText id="avancement" [(ngModel)]="selected.avancement" disabled />
+
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-3">
+                <label for="datedemarre">Date Démarrage Effective</label>
+                <input type="date" pInputText id="datedemarre" [(ngModel)]="selected.dateDemarrageEffective" disabled />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="datedemarrep">Date Démarrage Prévu</label>
+                <input type="date" pInputText id="datedemarrep" [(ngModel)]="selected.dateDemarragePrevu" disabled />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="datefin">Date Fin Effective</label>
+                <input type="date" pInputText id="datefin" [(ngModel)]="selected.dateFinEffective" disabled />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="datefinp">Date Fin Prévu</label>
+                <input type="date" pInputText id="datefinp" [(ngModel)]="selected.dateFinPrevu" disabled />
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-3">
+                <label for="sro">Sro</label>
+                <input type="text" pInputText id="sro" value="{{selected.sro.libelle}}" disabled />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="projet">Projet</label>
+                <input type="text" pInputText id="projet" value="{{selected.projet.libelle}}" disabled />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="etat">Etat</label>
+                <input type="text" pInputText id="etat" value="{{selected.etatLot.libelle}}" disabled />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="resp">Responsable</label>
+                <input type="text" pInputText id="resp" value="{{selected.responsable.nom}} {{selected.responsable.prenom}}" disabled />
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-4">
+                <label for="nombreJoureHommeEffectif">NbrJrsEffectif</label>
+                <input type="number" pInputText id="nombreJoureHommeEffectif" [(ngModel)]="selected.nombreJoureHommeEffectif" disabled />
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="nombreJoureHommePrevu">NbrJrsPrevu</label>
+                <input type="number" pInputText id="nombreJoureHommePrevu" [(ngModel)]="selected.nombreJoureHommePrevu" disabled />
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="nombreJoureHommeRetard">NbrJrsRetard</label>
+                <input type="text" pInputText id="nombreJoureHommeRetard" [(ngModel)]="selected.nombreJoureHommeRetard" disabled />
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Fermer" icon="pi pi-times" class="p-button-text" (click)="hideViewDialog()"></button>
+    </ng-template>
+</p-dialog>

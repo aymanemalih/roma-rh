@@ -29,7 +29,6 @@ export class LotCreateComponent implements OnInit {
         this.sroService.findAll().subscribe(data => this.itemssros = data);
         this.collaborateurService.findAll().subscribe(data => this.itemsCollaborateurs = data);
         this.etatLotService.findAll().subscribe(data => this.itemsetatlots = data);
-        this.selected.projet = this.projetService.selected;
     }
 
     public hideCreateDialog() {
@@ -40,6 +39,7 @@ export class LotCreateComponent implements OnInit {
     public save() {
         this.submitted = true;
         if (this.selected.code.trim()) {
+            this.selected.projet = this.projetService.selected;
             this.service.save().subscribe(data => {
                 this.items.push({...data});
                 this.messageService.add({

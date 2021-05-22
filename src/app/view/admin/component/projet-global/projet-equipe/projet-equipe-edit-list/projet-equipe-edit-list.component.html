@@ -1,1 +1,78 @@
-<p>projet-equipe-edit-list works!</p>
+<div class="p-grid">
+    <div class="p-field p-sm-6">
+        <div class="p-formgroup-inline">
+            <div class="p-grid">
+                <div class="p-card-title">
+                    <h5>Ajouter des Equipes</h5></div>
+            </div>
+            <div class="p-grid">
+                <div class="p-card-body">
+                    <div class="p-field">
+                        <label for="equipe" class="p-sr-only">Equipe</label>
+                        <p-dropdown id="equipe" [options]="itemsEquipes" [(ngModel)]="selected.equipe"
+                                    optionLabel="libelle"></p-dropdown>
+                    </div>
+                </div>
+            </div>
+            <div class="p-grid">
+                <div class="p-card-footer">
+                    <button pButton type="button" label="Submit" (click)="save()"></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="p-field p-sm-6">
+        <div class="p-grid">
+            <div class="p-col-12">
+
+                <p-toast></p-toast>
+
+                <div class="card">
+                    <p-table #dt [value]="items" [columns]="cols" [rows]="8" [paginator]="true"
+                             [globalFilterFields]="['equipe']"
+                             [(selection)]="selectes" [rowHover]="true" dataKey="id"
+                             styleClass="p-datatable-customers"
+                             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                             [showCurrentPageReport]="true">
+                        <ng-template pTemplate="caption">
+                            <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                                <h5 class="p-m-0">Equipes</h5>
+                            </div>
+                        </ng-template>
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th style="width: 3rem">
+                                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                                </th>
+                                <th pSortableColumn="equipe">Equipe
+                                    <p-sortIcon field="equipe"></p-sortIcon>
+                                </th>
+                                <th></th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-selectedProjet>
+                            <tr>
+                                <td>
+                                    <p-tableCheckbox [value]="selectedProjet"></p-tableCheckbox>
+                                </td>
+                                <td>{{selectedProjet.equipe.libelle}}</td>
+                                <td>
+                                    <button pButton pRipple icon="pi pi-trash"
+                                            class="p-button-sm p-button-rounded p-button-danger p-mr-2"
+                                            (click)="delete(selectedProjet)"></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="summary">
+                            <div class="p-d-flex p-ai-center p-jc-between">
+                                In total there are {{items ? items.length : 0 }} items.
+                            </div>
+                        </ng-template>
+                    </p-table>
+                </div>
+                <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+            </div>
+        </div>
+    </div>
+</div>

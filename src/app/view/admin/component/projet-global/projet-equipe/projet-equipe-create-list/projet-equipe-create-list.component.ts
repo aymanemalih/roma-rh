@@ -57,11 +57,11 @@ export class ProjetEquipeCreateListComponent implements OnInit {
     }
 
     get items(): Array<ProjetEquipe> {
-        return this.service.items;
+        return this.projetService.selected.projetEquipes;
     }
 
     set items(value: Array<ProjetEquipe>) {
-        this.service.items = value;
+        this.projetService.selected.projetEquipes = value;
     }
 
     get selectes(): Array<ProjetEquipe> {

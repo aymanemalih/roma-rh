@@ -1,0 +1,68 @@
+<p-dialog [(visible)]="viewDialog" [style]="{width: '70%'}" header="Tache Details" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-grid">
+            <div class="p-field p-sm-4">
+                <label for="code">Code</label>
+                <input type="text" pInputText id="code" [(ngModel)]="selected.code" required autofocus disabled />
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="total">Libelle</label>
+                <input type="text" pInputText id="total" [(ngModel)]="selected.libelle" required autofocus disabled />
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="totale">Desctiption</label>
+                <input type="text" pInputText id="totale" [(ngModel)]="selected.description" required autofocus disabled />
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-4">
+                <label for="datedemarre">Date Démarrage Effective</label>
+                <input type="date" pInputText id="datedemarre" [(ngModel)]="selected.dateDemarrageEffective" required autofocus disabled />
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="datefin">Date Fin Effective</label>
+                <input type="date" pInputText id="datefin" [(ngModel)]="selected.dateFinEffective" required autofocus disabled />
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="groupeTache">GroupeTache</label>
+                <input type="text" pInputText id="groupeTache"  value="{{selected.groupeTache.libelle}}"  disabled />
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-3">
+                <label for="etates">Equipe</label>
+                <input type="text" pInputText id="etates"  value="{{selected.etatTache.libelle}}"  disabled />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="mem">Member</label>
+                <input type="text" pInputText id="mem"  value="{{selected.membreEquipe.id}}"  disabled />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="poid">Etat</label>
+                <input type="text" pInputText id="poid"  value="{{selected.periode.libelle}}"  disabled />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="categorie">Catégorie</label>
+                <input type="text" pInputText id="categorie"  value="{{selected.categorieTache.libelle}}"  disabled />
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-4">
+                <label for="annee">Annee</label>
+                <input type="number" pInputText id="annee" [(ngModel)]="selected.annee" required autofocus disabled />
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="mois">Mois</label>
+                <input type="number" pInputText id="mois" [(ngModel)]="selected.mois" required autofocus disabled />
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="semaine">Semaine</label>
+                <input type="text" pInputText id="semaine" [(ngModel)]="selected.semaine" required autofocus disabled />
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Fermer" icon="pi pi-times" class="p-button-text" (click)="hideViewDialog()"></button>
+    </ng-template>
+</p-dialog>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MessageService} from 'primeng/api';
 import {GroupeTacheService} from '../../../../../../controller/service/groupe-tache.service';
 import {TacheService} from '../../../../../../controller/service/tache.service';
@@ -13,115 +13,114 @@ import {CategorieTache} from '../../../../../../controller/model/categorie-tache
 import {EtatTache} from '../../../../../../controller/model/etat-tache.model';
 
 @Component({
-  selector: 'app-taches-create',
-  templateUrl: './taches-create.component.html',
-  styleUrls: ['./taches-create.component.scss']
+    selector: 'app-taches-create',
+    templateUrl: './taches-create.component.html',
+    styleUrls: ['./taches-create.component.scss']
 })
 export class TachesCreateComponent implements OnInit {
 
-  constructor(private messageService: MessageService,
-              private service: TacheService,
-              private periodeService: PeriodeService,
-              private membreEquipeService: MembreEquipeService,
-              private categorieTacheService: CategorieTacheService,
-              private etatTacheService: EtatTacheService,
-              private groupeTacheService: GroupeTacheService) {
-  }
-
-  ngOnInit(): void {
-    this.selected.groupeTache = this.groupeTacheService.selected;
-    this.etatTacheService.findAll().subscribe(data => this.itemsEtats = data);
-    this.periodeService.findAll().subscribe(data => this.itemsPeriodes = data);
-    this.membreEquipeService.findByEquipeCode(this.groupeTacheService.selected.equipe).subscribe(
-        data => this.itemsMembres = data);
-    this.categorieTacheService.findByCategorieGroupeTacheCode(this.groupeTacheService.selected.categorieGroupeTache).subscribe(
-        data => this.itemsCategories = data);
-  }
-
-  public hideCreateDialog() {
-    this.createDialog = false;
-    this.submitted = false;
-  }
-
-  public save() {
-    this.submitted = true;
-    if (this.selected.code.trim()) {
-      this.service.save().subscribe(data => {
-        this.items.push({...data});
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Successful',
-          detail: 'Tache Created',
-          life: 3000
-        });
-      });
-      this.createDialog = false;
-      this.selected = new Tache();
+    constructor(private messageService: MessageService,
+                private service: TacheService,
+                private periodeService: PeriodeService,
+                private membreEquipeService: MembreEquipeService,
+                private categorieTacheService: CategorieTacheService,
+                private etatTacheService: EtatTacheService,
+                private groupeTacheService: GroupeTacheService) {
     }
-  }
 
-  get selected(): Tache {
-    return this.service.selected;
-  }
+    ngOnInit(): void {
+        this.categorieTacheService.findAll().subscribe(data => this.itemsCategories = data);
+        this.etatTacheService.findAll().subscribe(data => this.itemsEtats = data);
+        this.periodeService.findAll().subscribe(data => this.itemsPeriodes = data);
+        this.membreEquipeService.findByEquipeCode(this.groupeTacheService.selected.equipe).subscribe(
+            data => this.itemsMembres = data);
+    }
 
-  set selected(value: Tache) {
-    this.service.selected = value;
-  }
+    public hideCreateDialog() {
+        this.createDialog = false;
+        this.submitted = false;
+    }
 
-  get createDialog(): boolean {
-    return this.service.createDialog;
-  }
+    public save() {
+        this.submitted = true;
+        if (this.selected.code.trim()) {
+            this.selected.groupeTache = this.groupeTacheService.selected;
+            this.service.save().subscribe(data => {
+                this.items.push({...data});
+                this.messageService.add({
+                    severity: 'success',
+                    summary: 'Successful',
+                    detail: 'Tache Created',
+                    life: 3000
+                });
+            });
+            this.createDialog = false;
+            this.selected = new Tache();
+        }
+    }
 
-  set createDialog(value: boolean) {
-    this.service.createDialog = value;
-  }
+    get selected(): Tache {
+        return this.service.selected;
+    }
 
-  get submitted(): boolean {
-    return this.service.submitted;
-  }
+    set selected(value: Tache) {
+        this.service.selected = value;
+    }
 
-  set submitted(value: boolean) {
-    this.service.submitted = value;
-  }
+    get createDialog(): boolean {
+        return this.service.createDialog;
+    }
 
-  get items(): Array<Tache> {
-    return this.service.items;
-  }
+    set createDialog(value: boolean) {
+        this.service.createDialog = value;
+    }
 
-  set items(value: Array<Tache>) {
-    this.service.items = value;
-  }
+    get submitted(): boolean {
+        return this.service.submitted;
+    }
 
-  get itemsMembres(): Array<MembreEquipe> {
-    return this.membreEquipeService.items;
-  }
+    set submitted(value: boolean) {
+        this.service.submitted = value;
+    }
 
-  set itemsMembres(value: Array<MembreEquipe>) {
-    this.membreEquipeService.items = value;
-  }
+    get items(): Array<Tache> {
+        return this.service.items;
+    }
 
-  get itemsPeriodes(): Array<Periode> {
-    return this.periodeService.items;
-  }
+    set items(value: Array<Tache>) {
+        this.service.items = value;
+    }
 
-  set itemsPeriodes(value: Array<Periode>) {
-    this.periodeService.items = value;
-  }
+    get itemsMembres(): Array<MembreEquipe> {
+        return this.membreEquipeService.items;
+    }
 
-  get itemsCategories(): Array<CategorieTache> {
-    return this.categorieTacheService.items;
-  }
+    set itemsMembres(value: Array<MembreEquipe>) {
+        this.membreEquipeService.items = value;
+    }
 
-  set itemsCategories(value: Array<CategorieTache>) {
-    this.categorieTacheService.items = value;
-  }
+    get itemsPeriodes(): Array<Periode> {
+        return this.periodeService.items;
+    }
 
-  get itemsEtats(): Array<EtatTache> {
-    return this.etatTacheService.items;
-  }
+    set itemsPeriodes(value: Array<Periode>) {
+        this.periodeService.items = value;
+    }
 
-  set itemsEtats(value: Array<EtatTache>) {
-    this.etatTacheService.items = value;
-  }
+    get itemsCategories(): Array<CategorieTache> {
+        return this.categorieTacheService.items;
+    }
+
+    set itemsCategories(value: Array<CategorieTache>) {
+        this.categorieTacheService.items = value;
+    }
+
+    get itemsEtats(): Array<EtatTache> {
+        return this.etatTacheService.items;
+    }
+
+    set itemsEtats(value: Array<EtatTache>) {
+        this.etatTacheService.items = value;
+    }
 
 }

@@ -9,13 +9,31 @@ import {CategorieGroupeTache} from '../model/categorie-groupe-tache.model';
   providedIn: 'root'
 })
 export class CategorieTacheService {
+  get selected(): CategorieTache {
+    return this._selected;
+  }
+
+  set selected(value: CategorieTache) {
+    this._selected = value;
+  }
+  get selectes(): Array<CategorieTache> {
+    return this._selectes;
+  }
+
+  set selectes(value: Array<CategorieTache>) {
+    this._selectes = value;
+  }
   private url = environment.baseUrl + 'categorieTache/';
+  // tslint:disable-next-line:variable-name
   private _items: Array<CategorieTache>;
+  private _selected: CategorieTache;
+  private _selectes: Array<CategorieTache>;
 
   constructor(private http: HttpClient) {
   }
 
   public findAll(): Observable<Array<CategorieTache>> {
+    console.log(this.url);
     return this.http.get<Array<CategorieTache>>(this.url);
   }
 

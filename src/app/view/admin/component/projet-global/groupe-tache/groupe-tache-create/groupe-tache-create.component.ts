@@ -28,7 +28,6 @@ export class GroupesTacheCreateComponent implements OnInit {
 
     ngOnInit(): void {
         this.equipeService.findAll().subscribe(data => this.itemsEquipes = data);
-        this.selected.lot = this.lotService.selected;
         this.categorieGroupeTacheService.findAll().subscribe(data => this.itemsCategories = data);
         this.etatGroupeTacheService.findAll().subscribe(data => this.itemsEtats = data);
     }
@@ -41,6 +40,7 @@ export class GroupesTacheCreateComponent implements OnInit {
     public save() {
         this.submitted = true;
         if (this.selected.code.trim()) {
+            this.selected.lot = this.lotService.selected;
             this.service.save().subscribe(data => {
                 this.items.push({...data});
                 this.messageService.add({

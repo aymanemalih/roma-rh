@@ -82,7 +82,7 @@ export class ProjetListComponent implements OnInit {
 
     private initCol() {
         this.cols = [
-            {field: 'libelle', header: 'Libelle'}
+            {field: 'equipe', header: 'equipe'}
         ];
     }
 
@@ -148,7 +148,7 @@ export class ProjetListComponent implements OnInit {
                 this.serviceItems.items = data;
             }
         );
+        this.selected = selected;
     }
-
 
 }

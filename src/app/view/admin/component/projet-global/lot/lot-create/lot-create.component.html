@@ -51,7 +51,7 @@
             </div>
             <div class="p-field p-sm-3">
                 <label for="projet">Projet</label>
-                <input type="text" pInputText id="projet" disabled [(ngModel)]="selected.projet"  required autofocus />
+                <input type="text" pInputText id="projet"  value="{{projetService.selected.libelle}}"  disabled />
             </div>
             <div class="p-field p-sm-3">
                 <label for="etat">Etat</label>

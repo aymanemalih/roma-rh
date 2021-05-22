@@ -30,7 +30,7 @@
             </div>
             <div class="p-field p-sm-4">
                 <label for="groupeTache">GroupeTache</label>
-                <input type="text" pInputText id="groupeTache" disabled  [(ngModel)]="selected.groupeTache" required autofocus />
+                <input type="text" pInputText id="groupeTache"  value="{{groupeTacheService.selected.libelle}}"  disabled />
             </div>
         </div>
         <div class="p-grid">
@@ -40,7 +40,7 @@
             </div>
             <div class="p-field p-sm-3">
                 <label for="mem">Member</label>
-                <p-dropdown id="mem" [options]="itemsMembres" [(ngModel)]="selected.membreEquipe" optionLabel="libelle"></p-dropdown>
+                <p-dropdown id="mem" [options]="itemsMembres" [(ngModel)]="selected.membreEquipe" optionLabel="id"></p-dropdown>
             </div>
             <div class="p-field p-sm-3">
                 <label for="poid">Etat</label>
@@ -48,7 +48,7 @@
             </div>
             <div class="p-field p-sm-3">
                 <label for="categorie">Catégorie</label>
-                <p-dropdown id="categorie" [options]="itemsCategories" [(ngModel)]="selected.categorieTache" optionLabel="libelle"></p-dropdown>
+                <p-dropdown id="categorie" [options]="itemsCategories" [(ngModel)]="selected.categorieTache" optionLabel="code"></p-dropdown>
             </div>
         </div>
         <div class="p-grid">
