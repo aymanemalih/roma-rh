@@ -219,6 +219,11 @@ import {SearchBarComponent} from './view/admin/component/statistiques-client/sea
 import {GroupeTacheListComponent} from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-list/groupe-tache-list.component';
 import {GroupeTacheEditComponent} from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-edit/groupe-tache-edit.component';
 import {GroupeTacheViewComponent} from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-view/groupe-tache-view.component';
+import { FacturesComponent } from './view/admin/component/factures/factures.component';
+import { FactureCreateComponent } from './view/admin/component/factures/facture-create/facture-create.component';
+import { FactureListeComponent } from './view/admin/component/factures/facture-liste/facture-liste.component';
+import { FactureViewComponent } from './view/admin/component/factures/facture-view/facture-view.component';
+import { SearchBarFactureComponent } from './view/admin/component/factures/search-bar-facture/search-bar-facture.component';
 
 @NgModule({
     imports: [
@@ -434,6 +439,11 @@ import {GroupeTacheViewComponent} from './view/admin/component/groupetache-tache
         ProjetEquipeCreateListComponent,
         ProjetEquipeEditListComponent,
         ProjetEquipeViewListComponent,
+        FacturesComponent,
+        FactureCreateComponent,
+        FactureListeComponent,
+        FactureViewComponent,
+        SearchBarFactureComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

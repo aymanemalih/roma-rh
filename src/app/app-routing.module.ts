@@ -45,6 +45,7 @@ import {EquipeMembreEquipeComponent} from './view/admin/component/equipe-membre-
 import {DemandeCongeComponent} from './view/admin/component/demande-conge/demande-conge.component';
 import {StatistiquesSuiviCollaborateurComponent} from './view/admin/component/statistiques-suivi-collaborateur/statistiques-suivi-collaborateur.component';
 import {CriteresRechercheTacheComponent} from './view/admin/component/criteres-recherche-tache/criteres-recherche-tache.component';
+import {FacturesComponent} from './view/admin/component/factures/factures.component';
 
 @NgModule({
     imports: [
@@ -54,7 +55,7 @@ import {CriteresRechercheTacheComponent} from './view/admin/component/criteres-r
                 children: [
                     {path: '', component: DashboardDemoComponent},
                     {path: 'view/commande', component: CommandesComponent},
-                    // {path: 'view/admin/factures', component: FacturesComponent},
+                    {path: 'view/admin/factures', component: FacturesComponent},
                     {path: 'view/admin/demande-conge', component: DemandeCongeComponent},
                     {path: 'view/admin/projet-global', component: ProjetGlobalComponent},
                     {path: 'view/admin/suivi-collaborateur', component: StatistiquesSuiviCollaborateurComponent},

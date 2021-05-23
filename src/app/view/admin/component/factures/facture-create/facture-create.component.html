@@ -1,0 +1,67 @@
+<p-dialog [(visible)]="createDialog" [style]="{width: '550px'}" header="Facture Details" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-grid">
+            <div class="p-field p-sm-5">
+                <div class="p-field">
+                    <label for="libelle">Libelle</label>
+                    <input type="text" pInputText id="libelle" [(ngModel)]="selected.libelle" required autofocus/>
+                    <small class="p-invalid" *ngIf="submitted && !selected.libelle">libelle is required.</small>
+                </div>
+                <div class="p-field">
+                    <label for="code">Code</label>
+                    <input type="text" pInputText id="code" [(ngModel)]="selected.code" required autofocus/>
+                    <small class="p-invalid" *ngIf="submitted && !selected.code">code is required.</small>
+                </div>
+            </div>
+            <div class="p-field p-col">
+                <label for="descrip">Description</label>
+                <textarea id="descrip" [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize"
+                          [(ngModel)]="selected.description">
+                </textarea>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-4">
+                <label for="dateFacture">Date Facture</label>
+                <input type="date" pInputText id="dateFacture" [(ngModel)]="selected.dateFacture" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.dateFacture">date is required.</small>
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="tat">Etat Facture</label>
+                <p-dropdown id="tat" [options]="itemsEtat" [(ngModel)]="selected.etatFacture" optionLabel="libelle"></p-dropdown>
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="client">Client</label>
+                <p-dropdown id="client" [options]="itemsClient" [(ngModel)]="selected.client" optionLabel="libelle"></p-dropdown>
+            </div>
+
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-3">
+                <label for="hrs">Total Heurs Calcules</label>
+                <input type="number" pInputText id="hrs" [(ngModel)]="selected.totalHeursCalcules" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.totalHeursCalcules">TotalHeursCalcules is required.</small>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="hrso">Total Heurs Factures</label>
+                <input type="number" pInputText id="hrso" [(ngModel)]="selected.totalHeursFactures" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.totalHeursFactures">TotalHeursFactures is required.</small>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="mtn">Montant Calcule</label>
+                <input type="number" pInputText id="mtn" [(ngModel)]="selected.montantCalcule" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.montantCalcule">montantCalcule is required.</small>
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="fct">Montant Facture</label>
+                <input type="number" pInputText id="fct" [(ngModel)]="selected.montantFacture" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.montantFacture">montantFacture is required.</small>
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideCreateDialog()"></button>
+        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="save()"></button>
+    </ng-template>
+</p-dialog>
