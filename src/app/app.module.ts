@@ -181,11 +181,6 @@ import {StatistiquesClientComponent} from './view/admin/component/statistiques-c
 import {StatistiquesProjetComponent} from './view/admin/component/statistiques-projet/statistiques-projet.component';
 import {StatistiquesClientTableComponent} from './view/admin/component/statistiques-client/statistiques-client-table/statistiques-client-table.component';
 import {RechercheTachesComponent} from './view/admin/component/criteres-recherche-tache/recherche-taches/recherche-taches.component';
-import {FacturesComponent} from './view/admin/component/factures/factures.component';
-import {FactureCreateComponent} from './view/admin/component/factures/facture-create/facture-create.component';
-import {FactureListeComponent} from './view/admin/component/factures/facture-liste/facture-liste.component';
-import {FactureViewComponent} from './view/admin/component/factures/facture-view/facture-view.component';
-import {SearchBarFactureComponent} from './view/admin/component/factures/search-bar-facture/search-bar-facture.component';
 import {EquipeEditComponent} from './view/admin/component/equipe-membre-equipe/equipe/equipe-edit/equipe-edit.component';
 import {EquipeViewComponent} from './view/admin/component/equipe-membre-equipe/equipe/equipe-view/equipe-view.component';
 import {MembreEquipeComponent} from './view/admin/component/equipe-membre-equipe/membre-equipe/membre-equipe.component';
@@ -435,11 +430,6 @@ import {GroupeTacheViewComponent} from './view/admin/component/groupetache-tache
         CollaborateurDonneesComponent,
         SearchBarComponent,
         RechercheTachesComponent,
-        FacturesComponent,
-        FactureCreateComponent,
-        FactureListeComponent,
-        FactureViewComponent,
-        SearchBarFactureComponent,
         ProjetEquipeComponent,
         ProjetEquipeCreateListComponent,
         ProjetEquipeEditListComponent,
