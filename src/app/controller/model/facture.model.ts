@@ -6,8 +6,8 @@ export class Facture {
     public libelle: string;
     public code: string;
     public description: string;
-    public TotalHeursCalcules: number;
-    public TotalHeursFactures: number;
+    public totalHeursCalcules: number;
+    public totalHeursFactures: number;
     public montantCalcule: number;
     public montantFacture: number;
     public dateFacture: Date;

@@ -19,65 +19,40 @@
         </div>
         <div class="p-grid">
             <div class="p-field p-sm-3">
-                <label for="datedemarre">Date Démarrage Effective</label>
-                <input type="date" pInputText id="datedemarre" [(ngModel)]="selected.dateDemarrageEffective" required autofocus />
-                <small class="p-invalid" *ngIf="submitted && !selected.dateDemarrageEffective">date is required.</small>
+                <label for="dateFacture">Date Facture</label>
+                <input type="date" pInputText id="dateFacture" [(ngModel)]="selected.dateFacture" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.dateFacture">date is required.</small>
             </div>
             <div class="p-field p-sm-3">
-                <label for="datedemarrep">Date Démarrage Prévu</label>
-                <input type="date" pInputText id="datedemarrep" [(ngModel)]="selected.dateDemarragePrevu" required autofocus />
-                <small class="p-invalid" *ngIf="submitted && !selected.dateDemarragePrevu">date is required.</small>
+                <label for="tat">Etat Facture</label>
+                <p-dropdown id="tat" [options]="itemsEtat" [(ngModel)]="selected.etatFacture" optionLabel="libelle"></p-dropdown>
             </div>
             <div class="p-field p-sm-3">
-                <label for="datefin">Date Fin Effective</label>
-                <input type="date" pInputText id="datefin" [(ngModel)]="selected.dateFinEffective" required autofocus />
-                <small class="p-invalid" *ngIf="submitted && !selected.dateFinEffective">date is required.</small>
+                <label for="client">Lot</label>
+                <input type="text" pInputText id="client"  value="{{clientService.selected.libelle}}"  disabled />
             </div>
-            <div class="p-field p-sm-3">
-                <label for="datefinp">Date Fin Prévu</label>
-                <input type="date" pInputText id="datefinp" [(ngModel)]="selected.dateFinPrevu" required autofocus />
-                <small class="p-invalid" *ngIf="submitted && !selected.dateFinPrevu">date is required.</small>
-            </div>
-        </div>
-        <div class="p-grid">
-            <div class="p-field p-sm-3">
-                <label for="equipe">Equipe</label>
-                <p-dropdown id="equipe" [options]="itemsEquipes" [(ngModel)]="selected.equipe" optionLabel="libelle"></p-dropdown>
-            </div>
-            <div class="p-field p-sm-3">
-                <label for="lot">Lot</label>
-                <input type="text" pInputText id="lot"  value="{{lotService.selected.libelle}}"  disabled />
 
-            </div>
-            <div class="p-field p-sm-3">
-                <label for="etat">Etat</label>
-                <p-dropdown id="etat" [options]="itemsEtats" [(ngModel)]="selected.etatGroupeTache" optionLabel="libelle"></p-dropdown>
-            </div>
-            <div class="p-field p-sm-3">
-                <label for="categorie">Catégorie</label>
-                <p-dropdown id="categorie" [options]="itemsCategories" [(ngModel)]="selected.categorieGroupeTache" optionLabel="libelle"></p-dropdown>
-            </div>
         </div>
         <div class="p-grid">
             <div class="p-field p-sm-3">
-                <label for="poids">Poids</label>
-                <input type="number" pInputText id="poids" [(ngModel)]="selected.poids" required autofocus />
-                <small class="p-invalid" *ngIf="submitted && !selected.poids">poids is required.</small>
+                <label for="hrs">Total Heurs Calcules</label>
+                <input type="number" pInputText id="hrs" [(ngModel)]="selected.TotalHeursCalcules" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.TotalHeursCalcules">TotalHeursCalcules is required.</small>
             </div>
             <div class="p-field p-sm-3">
-                <label for="nombreJoureHommeEffectif">NbrJrsEffectif</label>
-                <input type="number" pInputText id="nombreJoureHommeEffectif" [(ngModel)]="selected.nombreJoureHommeEffectif" required autofocus />
-                <small class="p-invalid" *ngIf="submitted && !selected.nombreJoureHommeEffectif">nombreJoureHommeEffectif is required.</small>
+                <label for="hrso">Total Heurs Factures</label>
+                <input type="number" pInputText id="hrso" [(ngModel)]="selected.totalHeursFactures" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.totalHeursFactures">TotalHeursFactures is required.</small>
             </div>
             <div class="p-field p-sm-3">
-                <label for="nombreJoureHommePrevu">NbrJrsPrevu</label>
-                <input type="number" pInputText id="nombreJoureHommePrevu" [(ngModel)]="selected.nombreJoureHommePrevu" required autofocus />
-                <small class="p-invalid" *ngIf="submitted && !selected.nombreJoureHommePrevu">nombreJoureHommePrevu is required.</small>
+                <label for="mtn">Montant Calcule</label>
+                <input type="number" pInputText id="mtn" [(ngModel)]="selected.montantCalcule" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.montantCalcule">montantCalcule is required.</small>
             </div>
             <div class="p-field p-sm-3">
-                <label for="nombreJoureHommeRetard">NbrJrsRetard</label>
-                <input type="text" pInputText id="nombreJoureHommeRetard" [(ngModel)]="selected.nombreJoureHommeRetard" required autofocus />
-                <small class="p-invalid" *ngIf="submitted && !selected.nombreJoureHommeRetard">nombreJoureHommeRetard is required.</small>
+                <label for="fct">Montant Facture</label>
+                <input type="number" pInputText id="fct" [(ngModel)]="selected.montantFacture" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.montantFacture">montantFacture is required.</small>
             </div>
         </div>
     </ng-template>

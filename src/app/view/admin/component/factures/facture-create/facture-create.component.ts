@@ -1,71 +1,89 @@
-import { Component, OnInit } from '@angular/core';
-import {MessageService} from 'primeng/api';
-import {Facture} from '../../../../../controller/model/Facture.model';
+import {Component, OnInit} from '@angular/core';
 import {FactureService} from '../../../../../controller/service/facture.service';
+import {ClientService} from '../../../../../controller/service/client.service';
+import {EtatFactureService} from '../../../../../controller/service/etat-facture.service';
+import {MessageService} from 'primeng/api';
+import {Facture} from '../../../../../controller/model/facture.model';
+import {EtatFacture} from '../../../../../controller/model/etat-facture.model';
+
 
 @Component({
-  selector: 'app-facture-create',
-  templateUrl: './facture-create.component.html',
-  styleUrls: ['./facture-create.component.scss']
+    selector: 'app-facture-create',
+    templateUrl: './facture-create.component.html',
+    styleUrls: ['./facture-create.component.scss']
 })
 export class FactureCreateComponent implements OnInit {
 
-  constructor(private messageService: MessageService, private service: FactureService) {
-  }
-
-  ngOnInit(): void {
-  }
-
-  public hideCreateDialog() {
-    this.createDialog = false;
-    this.submitted = false;
-  }
-
-  public save() {
-    this.submitted = true;
-    if (this.selected.code.trim()) {
-      this.service.save().subscribe(data => {
-        this.items.push({...data});
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Successful',
-          detail: 'Facture Created',
-          life: 3000
-        });
-      });
-      this.createDialog = false;
-      this.selected = new Facture();
+    constructor(private messageService: MessageService,
+                private etatFactureService: EtatFactureService,
+                private clientService: ClientService,
+                private service: FactureService) {
     }
-  }
-  get selected(): Facture {
-    return this.service.selected;
-  }
 
-  set selected(value: Facture) {
-    this.service.selected = value;
-  }
+    ngOnInit(): void {
+        this.etatFactureService.findAll().subscribe(data => this.itemsEtat = data);
+    }
 
-  get createDialog(): boolean {
-    return this.service.createDialog;
-  }
+    public hideCreateDialog() {
+        this.createDialog = false;
+        this.submitted = false;
+    }
 
-  set createDialog(value: boolean) {
-    this.service.createDialog = value;
-  }
+    public save() {
+        this.submitted = true;
+        if (this.selected.code.trim()) {
+            this.service.save().subscribe(data => {
+                this.selected.client = this.clientService.selected;
+                this.items.push({...data});
+                this.messageService.add({
+                    severity: 'success',
+                    summary: 'Successful',
+                    detail: 'Facture Created',
+                    life: 3000
+                });
+            });
+            this.createDialog = false;
+            this.selected = new Facture();
+        }
+    }
 
-  get submitted(): boolean {
-    return this.service.submitted;
-  }
+    get selected(): Facture {
+        return this.service.selected;
+    }
 
-  set submitted(value: boolean) {
-    this.service.submitted = value;
-  }
+    set selected(value: Facture) {
+        this.service.selected = value;
+    }
 
-  get items(): Array<Facture> {
-    return this.service.items;
-  }
+    get createDialog(): boolean {
+        return this.service.createDialog;
+    }
 
-  set items(value: Array<Facture>) {
-    this.service.items = value;
-  }
+    set createDialog(value: boolean) {
+        this.service.createDialog = value;
+    }
+
+    get submitted(): boolean {
+        return this.service.submitted;
+    }
+
+    set submitted(value: boolean) {
+        this.service.submitted = value;
+    }
+
+    get items(): Array<Facture> {
+        return this.service.items;
+    }
+
+    set items(value: Array<Facture>) {
+        this.service.items = value;
+    }
+
+    get itemsEtat(): Array<EtatFacture> {
+        return this.etatFactureService.items;
+    }
+
+    set itemsEtat(value: Array<EtatFacture>) {
+        this.etatFactureService.items = value;
+    }
 }

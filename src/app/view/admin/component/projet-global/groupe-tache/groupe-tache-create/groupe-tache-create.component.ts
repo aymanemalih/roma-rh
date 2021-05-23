@@ -95,14 +95,6 @@ export class GroupesTacheCreateComponent implements OnInit {
         this.equipeService.items = value;
     }
 
-    get itemsLots(): Array<Lot> {
-        return this.lotService.items;
-    }
-
-    set itemsLots(value: Array<Lot>) {
-        this.lotService.items = value;
-    }
-
     get itemsCategories(): Array<CategorieGroupeTache> {
         return this.categorieGroupeTacheService.items;
     }
