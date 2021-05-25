@@ -34,16 +34,13 @@
                         <th style="width: 3rem">
                             <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                         </th>
-                        <th pSortableColumn="libelle">Libelle <p-sortIcon field="libelle"></p-sortIcon></th>
-                        <th pSortableColumn="code">Code <p-sortIcon field="code"></p-sortIcon></th>
-                        <th pSortableColumn="totalHeursCalcules">Total Heurs Calcules <p-sortIcon field="totalHeursCalcules"></p-sortIcon></th>
-                        <th pSortableColumn="totalHeursFactures">Total Heurs Factures <p-sortIcon field="totalHeursFactures"></p-sortIcon></th>
-                        <th pSortableColumn="montantCalcule">Montant Calcule <p-sortIcon field="montantCalcule"></p-sortIcon></th>
-                        <th pSortableColumn="montantFacture">Montant Facture <p-sortIcon field="montantFacture"></p-sortIcon></th>
-                        <th pSortableColumn="dateFacture">Date Facture <p-sortIcon field="dateFacture"></p-sortIcon></th>
-                        <th pSortableColumn="client">Client <p-sortIcon field="client"></p-sortIcon></th>
-                        <th pSortableColumn="etatFacture">Etat Facture <p-sortIcon field="etatFacture"></p-sortIcon></th>
-                        <th></th>
+                        <th pSortableColumn="libelle">Libelle<p-sortIcon field="libelle"></p-sortIcon></th>
+                        <th pSortableColumn="totalHeurs">Total d’Heures<p-sortIcon field="totalHeurs"></p-sortIcon></th>
+                        <th pSortableColumn="montant">Montant<p-sortIcon field="montant"></p-sortIcon></th>
+                        <th pSortableColumn="dateFacture">Date Facture<p-sortIcon field="dateFacture"></p-sortIcon></th>
+                        <th pSortableColumn="client">Client<p-sortIcon field="client"></p-sortIcon></th>
+                        <th pSortableColumn="etatFacture">Etat Facture<p-sortIcon field="etatFacture"></p-sortIcon></th>
+                        <th>Action</th>
                     </tr>
                 </ng-template>
                 <ng-template pTemplate="body" let-facture>
@@ -52,18 +49,15 @@
                             <p-tableCheckbox [value]="facture"></p-tableCheckbox>
                         </td>
                         <td>{{facture.libelle}}</td>
-                        <td>{{facture.code}}</td>
-                        <td>{{facture.TotalHeursCalcules}}</td>
-                        <td>{{facture.TotalHeursFactures}}</td>
-                        <td>{{facture.montantCalcule}}</td>
-                        <td>{{facture.montantFacture}}</td>
+                        <td>{{facture.totalHeursCalcules}} (Calculées)<br>{{facture.totalHeursFactures}} (Facturées)</td>
+                        <td>{{facture.montantCalcule}} (Calculé)<br>{{facture.montantFacture}} (Facturé)</td>
                         <td>{{facture.dateFacture}}</td>
                         <td>{{facture.client.libelle}}</td>
                         <td>{{facture.etatFacture.libelle}}</td>
                         <td>
                             <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="edit(facture)"></button>
                             <button pButton pRipple icon="pi pi-list" class="p-button-rounded p-button-info p-mr-2" (click)="view(facture)"></button>
-                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="delete(facture)"></button>
+                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger" (click)="delete(facture)"></button>
                         </td>
                     </tr>
                 </ng-template>
