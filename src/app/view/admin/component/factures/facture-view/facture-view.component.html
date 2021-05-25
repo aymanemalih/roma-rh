@@ -1,1 +1,58 @@
-<p>facture-view works!</p>
+<p-dialog [(visible)]="viewDialog" [style]="{width: '50%'}" header="Commande Details" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-grid">
+            <div class="p-field p-sm-5">
+                <div class="p-field">
+                    <label for="libelle">Libelle</label>
+                    <input type="text" pInputText id="libelle" [(ngModel)]="selected.libelle" required autofocus/>
+                </div>
+                <div class="p-field">
+                    <label for="code">Code</label>
+                    <input type="text" pInputText id="code" [(ngModel)]="selected.code" required autofocus/>
+                </div>
+            </div>
+            <div class="p-field p-col">
+                <label for="descrip">Description</label>
+                <textarea id="descrip" [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" [(ngModel)]="selected.description">
+                </textarea>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-4">
+                <label for="dateFacture">Date Facture</label>
+                <input type="date" pInputText id="dateFacture" [(ngModel)]="selected.dateFacture" required autofocus />
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="tat">Etat Facture</label>
+                <input type="text" pInputText id="tat" value="{{selected.etatFacture.libelle}}" disabled />
+            </div>
+            <div class="p-field p-sm-4">
+                <label for="client">Client</label>
+                <input type="text" pInputText id="client" value="{{selected.client.libelle}}" disabled />
+            </div>
+
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-3">
+                <label for="hrs">Total Heurs Calcules</label>
+                <input type="number" pInputText id="hrs" [(ngModel)]="selected.totalHeursCalcules" required autofocus />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="hrso">Total Heurs Factures</label>
+                <input type="number" pInputText id="hrso" [(ngModel)]="selected.totalHeursFactures" required autofocus />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="mtn">Montant Calcule</label>
+                <input type="number" pInputText id="mtn" [(ngModel)]="selected.montantCalcule" required autofocus />
+            </div>
+            <div class="p-field p-sm-3">
+                <label for="fct">Montant Facture</label>
+                <input type="number" pInputText id="fct" [(ngModel)]="selected.montantFacture" required autofocus />
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Fermer" icon="pi pi-times" class="p-button-text" (click)="hideViewDialog()"></button>
+    </ng-template>
+</p-dialog>
