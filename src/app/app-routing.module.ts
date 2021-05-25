@@ -46,6 +46,8 @@ import {DemandeCongeComponent} from './view/admin/component/demande-conge/demand
 import {StatistiquesSuiviCollaborateurComponent} from './view/admin/component/statistiques-suivi-collaborateur/statistiques-suivi-collaborateur.component';
 import {CriteresRechercheTacheComponent} from './view/admin/component/criteres-recherche-tache/criteres-recherche-tache.component';
 import {FacturesComponent} from './view/admin/component/factures/factures.component';
+import {StatistiquesClientComponent} from './view/admin/component/statistiques-client/statistiques-client.component';
+import {StatistiquesProjetComponent} from './view/admin/component/statistiques-projet/statistiques-projet.component';
 
 @NgModule({
     imports: [
@@ -63,6 +65,8 @@ import {FacturesComponent} from './view/admin/component/factures/factures.compon
                     {path: 'view/admin/equipe-membre-equipe', component: EquipeMembreEquipeComponent},
                     {path: 'view/admin/criteres-recherche-tache', component: CriteresRechercheTacheComponent},
                     {path: 'view/admin/entreprise-client', component: EntrepriseClientComponent},
+                    {path: 'view/admin/statistiques-client', component: StatistiquesClientComponent},
+                    {path: 'view/admin/statistiques-projet', component: StatistiquesProjetComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},
                     {path: 'uikit/invalidstate', component: InvalidStateDemoComponent},

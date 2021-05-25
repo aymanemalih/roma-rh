@@ -20,7 +20,7 @@ export class TacheVo {
     responsableId: number;
     sroId: number;
 
-//le projet contient nro et client
+// le projet contient nro et client
 
     equipeId: number;
     clientId: number;

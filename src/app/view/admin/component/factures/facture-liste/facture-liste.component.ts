@@ -18,8 +18,8 @@ export class FactureListeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.initCol();
     this.service.findAll().subscribe(data => this.items = data);
+    this.initCol();
   }
 
   public delete(selected: Facture) {

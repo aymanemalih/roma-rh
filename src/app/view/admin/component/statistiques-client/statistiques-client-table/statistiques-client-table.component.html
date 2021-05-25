@@ -17,6 +17,7 @@
                 <td>{{client.client.libelle}}</td>
                 <td>{{client.totalPeriode}}</td>
                 <td>{{client.totalHeure}}</td>
+                <td><button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="openCreate()" ><app-facture-create></app-facture-create></button></td>
             </tr>
         </ng-template>
         <ng-template pTemplate="rowexpansion" let-client>
@@ -44,7 +45,8 @@
             </tr>
         </ng-template>
     </p-table>
-    </div>
+    <app-facture-create></app-facture-create>
+</div>
     </td>
     </tr>
     </ng-template>
