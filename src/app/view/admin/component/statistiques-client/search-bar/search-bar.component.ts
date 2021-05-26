@@ -11,7 +11,7 @@ import {MembreEquipe} from '../../../../../controller/model/membre-equipe';
 import {EquipeService} from '../../../../../controller/service/equipe.service';
 import {Equipe} from '../../../../../controller/model/equipe.model';
 import {StatistiquesServiceService} from '../../../../../controller/service/statistiques-service.service';
-import {Observable} from 'rxjs';
+import {FactureService} from "../../../../../controller/service/facture.service";
 
 @Component({
     selector: 'app-search-bar',
@@ -31,6 +31,7 @@ export class SearchBarComponent implements OnInit {
     constructor(private clientService: ClientService,
                 private projectService: ProjetService,
                 private lotService: LotService,
+                private factureService: FactureService,
                 private membreEquipeService: MembreEquipeService,
                 private equipeService: EquipeService,
                 private statistiquesService: StatistiquesServiceService) {
@@ -142,6 +143,7 @@ export class SearchBarComponent implements OnInit {
                 collection.push(item);
             }
         });
+
         return map;
     }
 

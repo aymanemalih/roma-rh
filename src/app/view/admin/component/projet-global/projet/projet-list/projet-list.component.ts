@@ -37,6 +37,7 @@ export class ProjetListComponent implements OnInit {
                         severity: 'success',
                         summary: 'Successful',
                         detail: 'Projet Deleted',
+                        key: 'projet',
                         life: 3000
                     });
                 });

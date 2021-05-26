@@ -39,7 +39,7 @@
         <div class="p-grid">
             <div class="p-field p-sm-3">
                 <label for="hrs">Total Heurs Calcules</label>
-                <input type="number" pInputText id="hrs" [(ngModel)]="selected.totalHeursCalcules" required autofocus />
+                <input type="number" pInputText id="hrs" [(ngModel)]="service.selected.totalHeursCalcules" required autofocus />
                 <small class="p-invalid" *ngIf="submitted && !selected.totalHeursCalcules">TotalHeursCalcules is required.</small>
             </div>
             <div class="p-field p-sm-3">

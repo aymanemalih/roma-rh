@@ -36,6 +36,7 @@ export class LotListComponent implements OnInit {
                         severity: 'success',
                         summary: 'Successful',
                         detail: 'Lot Deleted',
+                        key: 'lot',
                         life: 3000
                     });
                 });

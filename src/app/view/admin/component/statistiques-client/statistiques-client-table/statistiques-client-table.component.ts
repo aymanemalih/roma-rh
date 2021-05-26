@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {StatistiquesServiceService} from '../../../../../controller/service/statistiques-service.service';
 import {TacheVo} from '../../../../../controller/model/tache-vo.model';
-import {ClientSatistique} from "../search-bar/search-bar.component";
-import {FactureService} from "../../../../../controller/service/facture.service";
-import {Facture} from "../../../../../controller/model/facture.model";
+import {ClientSatistique} from '../search-bar/search-bar.component';
+import {FactureService} from '../../../../../controller/service/facture.service';
+import {Facture} from '../../../../../controller/model/facture.model';
 
 @Component({
     selector: 'app-statistiques-client-table',
@@ -27,8 +27,9 @@ export class StatistiquesClientTableComponent implements OnInit {
     }
 
 
-    public openCreate() {
+    public openCreate(client: ClientSatistique) {
         this.selected = new Facture();
+        this.selected.totalHeursCalcules = client.totalHeure;
         this.submitted = false;
         this.createDialog = true;
     }
