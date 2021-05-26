@@ -4,50 +4,51 @@
             <div class="p-field p-sm-5">
                 <div class="p-field">
                     <label for="libelle">Libelle</label>
-                    <input type="text" pInputText id="libelle" [(ngModel)]="selected.libelle" required autofocus/>
+                    <input type="text" pInputText id="libelle" [(ngModel)]="selected.libelle" required autofocus readonly="true"/>
                 </div>
                 <div class="p-field">
                     <label for="code">Code</label>
-                    <input type="text" pInputText id="code" [(ngModel)]="selected.code" required autofocus/>
+                    <input type="text" pInputText id="code" [(ngModel)]="selected.code" required autofocus readonly="true"/>
                 </div>
             </div>
             <div class="p-field p-col">
                 <label for="descrip">Description</label>
-                <textarea id="descrip" [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" [(ngModel)]="selected.description">
+                <textarea id="descrip" [rows]="5" [cols]="30" readonly="true" pInputTextarea autoResize="autoResize" [(ngModel)]="selected.description">
                 </textarea>
             </div>
         </div>
         <div class="p-grid">
             <div class="p-field p-sm-4">
                 <label for="dateFacture">Date Facture</label>
-                <input type="date" pInputText id="dateFacture" [(ngModel)]="selected.dateFacture" required autofocus />
+                <input type="date" pInputText readonly="true" id="dateFacture" [(ngModel)]="selected.dateFacture" required autofocus />
             </div>
             <div class="p-field p-sm-4">
                 <label for="tat">Etat Facture</label>
-                <input type="text" pInputText id="tat" value="{{selected.etatFacture.libelle}}" disabled />
+                <input type="text" readonly="true" pInputText id="tat" value="{{selected.etatFacture.libelle}}"  />
             </div>
             <div class="p-field p-sm-4">
                 <label for="client">Client</label>
-                <input type="text" pInputText id="client" value="{{selected.client.libelle}}" disabled />
+                <input type="text" readonly="true" pInputText id="client" value="{{selected.client.libelle}}" />
             </div>
-
         </div>
         <div class="p-grid">
-            <div class="p-field p-sm-3">
+            <div class="p-field p-sm-6">
                 <label for="hrs">Total Heurs Calcules</label>
-                <input type="number" pInputText id="hrs" [(ngModel)]="selected.totalHeursCalcules" required autofocus />
+                <input type="number" readonly="true" pInputText id="hrs" [(ngModel)]="selected.totalHeursCalcules" required autofocus />
             </div>
-            <div class="p-field p-sm-3">
-                <label for="hrso">Total Heurs Factures</label>
-                <input type="number" pInputText id="hrso" [(ngModel)]="selected.totalHeursFactures" required autofocus />
-            </div>
-            <div class="p-field p-sm-3">
+            <div class="p-field p-sm-6">
                 <label for="mtn">Montant Calcule</label>
-                <input type="number" pInputText id="mtn" [(ngModel)]="selected.montantCalcule" required autofocus />
+                <input type="number" readonly="true" pInputText id="mtn" [(ngModel)]="selected.montantCalcule" required autofocus />
             </div>
-            <div class="p-field p-sm-3">
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-6">
+                <label for="hrso">Total Heurs Factures</label>
+                <input type="number" readonly="true" pInputText id="hrso" [(ngModel)]="selected.totalHeursFactures" required autofocus />
+            </div>
+            <div class="p-field p-sm-6">
                 <label for="fct">Montant Facture</label>
-                <input type="number" pInputText id="fct" [(ngModel)]="selected.montantFacture" required autofocus />
+                <input type="number" pInputText id="fct" [(ngModel)]="selected.montantFacture" required autofocus readonly="true" />
             </div>
         </div>
     </ng-template>

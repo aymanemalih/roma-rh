@@ -30,6 +30,8 @@ export class StatistiquesClientTableComponent implements OnInit {
     public openCreate(client: ClientSatistique) {
         this.selected = new Facture();
         this.selected.totalHeursCalcules = client.totalHeure;
+        this.selected.montantCalcule = client.totalPeriode;
+        this.selected.client = client.client;
         this.submitted = false;
         this.createDialog = true;
     }

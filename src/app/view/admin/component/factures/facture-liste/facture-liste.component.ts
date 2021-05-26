@@ -61,11 +61,6 @@ export class FactureListeComponent implements OnInit {
       }
     });
   }
-  public openCreate() {
-    this.selected = new Facture();
-    this.submitted = false;
-    this.createDialog = true;
-  }
 
   public edit(facture: Facture) {
     this.selected = {...facture};
