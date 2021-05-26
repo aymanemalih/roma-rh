@@ -78,15 +78,13 @@ export class FactureListeComponent implements OnInit {
 
   private initCol() {
     this.cols = [
-      {field: 'libelle', header: 'libelle'},
-      {field: 'code', header: 'code'},
-      {field: 'totalHeursCalcules', header: 'totalHeursCalcules'},
-      {field: 'totalHeursFactures', header: 'totalHeursFactures'},
-      {field: 'montantCalcule', header: 'montantCalcule'},
-      {field: 'montantFacture', header: 'montantFacture'},
-      {field: 'dateFacture', header: 'dateFacture'},
-      {field: 'client', header: 'client'},
-      {field: 'etatFacture', header: 'etatFacture'}
+      {field: 'libelle', header: 'Libelle'},
+      {field: 'code', header: 'Code'},
+      {field: 'totalHeurs', header: 'Nombre Total d’Heures'},
+      {field: 'montant', header: 'Montant'},
+      {field: 'dateFacture', header: 'Date Facture'},
+      {field: 'client', header: 'Client'},
+      {field: 'etatFacture', header: 'Etat Facture'}
     ];
   }
 
