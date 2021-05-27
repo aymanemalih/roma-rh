@@ -1,1 +1,35 @@
-<p>paiement-view works!</p>
+<p-dialog [(visible)]="viewDialog" [style]="{width: '510px'}" header="Détails Du Paiement" [modal]="true"
+          styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-grid">
+            <div class="p-field p-sm-6">
+                <label for="libelle">Libelle</label>
+                <input type="text" pInputText id="libelle" [(ngModel)]="selected.libelle" disabled/>
+            </div>
+            <div class="p-field p-sm-6">
+                <label for="code">Code</label>
+                <input type="text" pInputText id="code" [(ngModel)]="selected.code" disabled/>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-6">
+                <label for="datedemarre">Date Démarrage Effective</label>
+                <input type="text" pInputText id="datedemarre" [(ngModel)]="selected.datePaiement" disabled/>
+            </div>
+            <div class="p-field p-sm-6">
+                <label for="montant">Montant</label>
+                <input type="number" pInputText id="montant" [(ngModel)]="selected.montant" disabled/>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-field p-sm-6">
+                <label for="etat">Etat</label>
+                <input id="etat" pInputText [(ngModel)]="selected.etatPaiement.libelle" disabled/>
+            </div>
+            <div class="p-field p-sm-6">
+                <label for="type">Type</label>
+                <input id="type" pInputText [(ngModel)]="selected.typePaiement.libelle" disabled/>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>

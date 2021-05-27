@@ -1,1 +1,40 @@
-<p>paiement-create works!</p>
+<p-dialog [(visible)]="createDialog" [style]="{width: '450px'}" header="Ajouter une paiement" [modal]="true"
+          styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-grid">
+            <div class="p-field p-sm-6">
+                <label for="libelle">Libelle</label>
+                <input type="text" pInputText id="libelle" [(ngModel)]="selected.libelle"/>
+            </div>
+            <div class="p-field p-sm-6">
+                <label for="code">Code</label>
+                <input type="text" pInputText id="code" [(ngModel)]="selected.code"/>
+            </div>
+        </div>
+        <div class="p-field">
+            <label for="type">Mode De Paiement</label>
+            <p-dropdown id="type" [options]="itemsTypes" [(ngModel)]="selected.typePaiement"
+                        optionLabel="libelle"></p-dropdown>
+        </div>
+        <div class="p-field">
+            <label for="montant">Montant</label>
+            <input type="number" pInputText id="montant" [(ngModel)]="selected.montant"/>
+        </div>
+        <div class="p-field">
+            <label for="date">Date De Paiement</label>
+            <input type="date" pInputText id="date" [(ngModel)]="selected.datePaiement"/>
+        </div>
+        <div class="p-field">
+            <label for="descrip">Commentaires</label>
+            <textarea id="descrip" [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize"
+                      [(ngModel)]="selected.description">
+                </textarea>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-text"
+                (click)="hideCreateDialog()"></button>
+        <button pButton pRipple label="Enregistrer" icon="pi pi-check" class="p-button-text" (click)="save()"></button>
+    </ng-template>
+</p-dialog>
