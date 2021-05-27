@@ -3,13 +3,14 @@
     <p-table [value]="clientStatistiques" dataKey="name">
         <ng-template pTemplate="header">
             <tr>
-                <th style="width: 3rem"></th>
+                <th style="width: 6rem"></th>
                 <th pSortableColumn="name">Client <p-sortIcon field="name"></p-sortIcon></th>
                 <th pSortableColumn="category">TotalPeriode <p-sortIcon field="category"></p-sortIcon></th>
                 <th pSortableColumn="rating">TotalHeures <p-sortIcon field="rating"></p-sortIcon></th>
+                <th pSortableColumn="nam">TotalFacture<p-sortIcon field="nam"></p-sortIcon></th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-client let-expanded="expanded">
+        <ng-template pTemplate="body" let-client   let-expanded="expanded" >
             <tr>
                 <td>
                     <button type="button" pButton pRipple [pRowToggler]="client" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
@@ -17,7 +18,7 @@
                 <td>{{client.client.libelle}}</td>
                 <td>{{client.totalPeriode}}</td>
                 <td>{{client.totalHeure}}</td>
-                <td><button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="openCreate()" ><app-facture-create></app-facture-create></button></td>
+               <td><button pButton pRipple label="New Facture" icon="pi pi-envelope" class="p-button-success p-mr-2 p-mb-2" (click)="openCreate(client)"></button></td>
             </tr>
         </ng-template>
         <ng-template pTemplate="rowexpansion" let-client>
@@ -45,10 +46,10 @@
             </tr>
         </ng-template>
     </p-table>
-    <app-facture-create></app-facture-create>
 </div>
     </td>
     </tr>
     </ng-template>
     </p-table>
+<app-facture-create></app-facture-create>
 </div>

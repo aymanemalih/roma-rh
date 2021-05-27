@@ -41,6 +41,7 @@ export class LotCreateComponent implements OnInit {
         if (this.selected.code.trim()) {
             this.selected.projet = this.projetService.selected;
             this.service.save().subscribe(data => {
+                console.log('ha data' + data);
                 this.items.push({...data});
                 this.messageService.add({
                     severity: 'success',

@@ -224,6 +224,7 @@ import { FactureCreateComponent } from './view/admin/component/factures/facture-
 import { FactureListeComponent } from './view/admin/component/factures/facture-liste/facture-liste.component';
 import { FactureViewComponent } from './view/admin/component/factures/facture-view/facture-view.component';
 import { SearchBarFactureComponent } from './view/admin/component/factures/search-bar-facture/search-bar-facture.component';
+import { FactureEditComponent } from './view/admin/component/factures/facture-edit/facture-edit.component';
 
 @NgModule({
     imports: [
@@ -444,6 +445,7 @@ import { SearchBarFactureComponent } from './view/admin/component/factures/searc
         FactureListeComponent,
         FactureViewComponent,
         SearchBarFactureComponent,
+        FactureEditComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
