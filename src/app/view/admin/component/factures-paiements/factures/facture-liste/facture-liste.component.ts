@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FactureService} from '../../../../../controller/service/facture.service';
+import {FactureService} from '../../../../../../controller/service/facture.service';
 import {ConfirmationService, MessageService} from 'primeng/api';
-import {Facture} from '../../../../../controller/model/facture.model';
+import {Facture} from '../../../../../../controller/model/facture.model';
 
 @Component({
   selector: 'app-facture-liste',

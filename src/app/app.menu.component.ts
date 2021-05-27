@@ -80,9 +80,9 @@ export class AppMenuComponent implements OnInit {
                 label: 'Pages', icon: 'pi pi-fw pi-copy', routerLink: ['/pages'],
                 items: [
                     {label: 'Projet', icon: 'pi pi-fw pi-wallet', routerLink: ['/view/admin/projet-global']},
-                    {label: 'Groupes/Taches', icon: 'pi pi-fw pi-th-large', routerLink: ['/view/admin/groupetache-tache']},
+                    {label: 'Groupes Des Taches', icon: 'pi pi-fw pi-th-large', routerLink: ['/view/admin/groupetache-tache']},
                     {label: 'Suivi Collaborateur', icon: 'pi pi-fw pi-id-card', routerLink: ['/view/admin/suivi-collaborateur']},
-                    {label: 'Factures', icon: 'pi pi-fw pi-envelope', routerLink: ['/view/admin/factures']},
+                    {label: 'Factures Et Paiements', icon: 'pi pi-fw pi-envelope', routerLink: ['/view/admin/factures-paiements']},
                     {label: 'Entreprise and Client', icon: 'pi pi-fw pi-pencil', routerLink: ['/view/admin/entreprise-client']},
                     {label: 'Equipe et Membres', icon: 'pi pi-fw pi-users', routerLink: ['/view/admin/equipe-membre-equipe']},
                     {label: 'Recherche Taches', icon: 'pi pi-fw pi-search-plus', routerLink: ['/view/admin/criteres-recherche-tache']},

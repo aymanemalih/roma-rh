@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {FactureService} from '../../../../../controller/service/facture.service';
-import {ClientService} from '../../../../../controller/service/client.service';
-import {EtatFactureService} from '../../../../../controller/service/etat-facture.service';
+import {FactureService} from '../../../../../../controller/service/facture.service';
+import {ClientService} from '../../../../../../controller/service/client.service';
+import {EtatFactureService} from '../../../../../../controller/service/etat-facture.service';
 import {MessageService} from 'primeng/api';
-import {Facture} from '../../../../../controller/model/facture.model';
-import {EtatFacture} from '../../../../../controller/model/etat-facture.model';
-import {Client} from '../../../../../controller/model/client.model';
+import {Facture} from '../../../../../../controller/model/facture.model';
+import {EtatFacture} from '../../../../../../controller/model/etat-facture.model';
+import {Client} from '../../../../../../controller/model/client.model';
 
 @Component({
     selector: 'app-facture-create',

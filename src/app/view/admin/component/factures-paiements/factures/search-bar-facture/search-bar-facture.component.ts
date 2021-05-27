@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {FactureService} from '../../../../../controller/service/facture.service';
-import {ClientService} from '../../../../../controller/service/client.service';
-import {EtatFactureService} from '../../../../../controller/service/etat-facture.service';
-import {FactureVO} from '../../../../../controller/model/facture-vo.model';
-import {Client} from '../../../../../controller/model/client.model';
-import {Facture} from '../../../../../controller/model/facture.model';
-import {EtatFacture} from '../../../../../controller/model/etat-facture.model';
+import {FactureService} from '../../../../../../controller/service/facture.service';
+import {ClientService} from '../../../../../../controller/service/client.service';
+import {EtatFactureService} from '../../../../../../controller/service/etat-facture.service';
+import {FactureVO} from '../../../../../../controller/model/facture-vo.model';
+import {Client} from '../../../../../../controller/model/client.model';
+import {Facture} from '../../../../../../controller/model/facture.model';
+import {EtatFacture} from '../../../../../../controller/model/etat-facture.model';
 
 @Component({
   selector: 'app-search-bar-facture',

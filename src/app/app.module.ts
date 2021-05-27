@@ -219,12 +219,18 @@ import {SearchBarComponent} from './view/admin/component/statistiques-client/sea
 import {GroupeTacheListComponent} from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-list/groupe-tache-list.component';
 import {GroupeTacheEditComponent} from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-edit/groupe-tache-edit.component';
 import {GroupeTacheViewComponent} from './view/admin/component/groupetache-tache/groupe-tache/groupe-tache-view/groupe-tache-view.component';
-import { FacturesComponent } from './view/admin/component/factures/factures.component';
-import { FactureCreateComponent } from './view/admin/component/factures/facture-create/facture-create.component';
-import { FactureListeComponent } from './view/admin/component/factures/facture-liste/facture-liste.component';
-import { FactureViewComponent } from './view/admin/component/factures/facture-view/facture-view.component';
-import { SearchBarFactureComponent } from './view/admin/component/factures/search-bar-facture/search-bar-facture.component';
-import { FactureEditComponent } from './view/admin/component/factures/facture-edit/facture-edit.component';
+import { FacturesComponent } from './view/admin/component/factures-paiements/factures/factures.component';
+import { FactureCreateComponent } from './view/admin/component/factures-paiements/factures/facture-create/facture-create.component';
+import { FactureListeComponent } from './view/admin/component/factures-paiements/factures/facture-liste/facture-liste.component';
+import { FactureViewComponent } from './view/admin/component/factures-paiements/factures/facture-view/facture-view.component';
+import { SearchBarFactureComponent } from './view/admin/component/factures-paiements/factures/search-bar-facture/search-bar-facture.component';
+import { FactureEditComponent } from './view/admin/component/factures-paiements/factures/facture-edit/facture-edit.component';
+import { FacturesPaiementsComponent } from './view/admin/component/factures-paiements/factures-paiements.component';
+import { PaiementsComponent } from './view/admin/component/factures-paiements/paiements/paiements.component';
+import { PaiementCreateComponent } from './view/admin/component/factures-paiements/paiements/paiement-create/paiement-create.component';
+import { PaiementEditComponent } from './view/admin/component/factures-paiements/paiements/paiement-edit/paiement-edit.component';
+import { PaiementListeComponent } from './view/admin/component/factures-paiements/paiements/paiement-liste/paiement-liste.component';
+import { PaiementViewComponent } from './view/admin/component/factures-paiements/paiements/paiement-view/paiement-view.component';
 
 @NgModule({
     imports: [
@@ -446,6 +452,12 @@ import { FactureEditComponent } from './view/admin/component/factures/facture-ed
         FactureViewComponent,
         SearchBarFactureComponent,
         FactureEditComponent,
+        FacturesPaiementsComponent,
+        PaiementsComponent,
+        PaiementCreateComponent,
+        PaiementEditComponent,
+        PaiementListeComponent,
+        PaiementViewComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
