@@ -20,6 +20,7 @@ export class StatistiquesClientTableComponent implements OnInit {
         return this.statistiqueClientService.items;
     }
 
+
     get clientStatistiques(): Array<ClientSatistique> {
         return this.statistiqueClientService.clientStatistiques;
     }
@@ -48,8 +49,6 @@ export class StatistiquesClientTableComponent implements OnInit {
         this.factureService.createDialog = value;
     }
 
-    index: Array<number>;
-
     ngOnInit(): void {
     }
 
@@ -62,14 +61,20 @@ export class StatistiquesClientTableComponent implements OnInit {
         this.createDialog = true;
     }
 
+    /*
+    get itemsFacture(): Array<Facture> {
+        return this.factureService.items;
+    }
+
+    set itemsFacture(value: Array<Facture>) {
+        this.factureService.items = value;
+    }
     findItems(selected: ClientSatistique) {
-        let i: number;
         this.factureService.findByClientCode(selected.client.code).subscribe(
             data => {
-                this.factureService.items = data;
-                this.index[i] = this.factureService.items.length;
-                return this.index[i];
+                this.itemsFacture = data;
             }
         );
     }
+     */
 }

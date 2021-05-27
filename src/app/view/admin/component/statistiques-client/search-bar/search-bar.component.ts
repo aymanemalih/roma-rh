@@ -11,7 +11,7 @@ import {MembreEquipe} from '../../../../../controller/model/membre-equipe';
 import {EquipeService} from '../../../../../controller/service/equipe.service';
 import {Equipe} from '../../../../../controller/model/equipe.model';
 import {StatistiquesServiceService} from '../../../../../controller/service/statistiques-service.service';
-import {FactureService} from "../../../../../controller/service/facture.service";
+import {FactureService} from '../../../../../controller/service/facture.service';
 
 @Component({
     selector: 'app-search-bar',
@@ -35,20 +35,6 @@ export class SearchBarComponent implements OnInit {
                 private membreEquipeService: MembreEquipeService,
                 private equipeService: EquipeService,
                 private statistiquesService: StatistiquesServiceService) {
-    }
-
-
-    ngOnInit(): void {
-        this.clientService.findAll().subscribe(
-            data => {
-                this.clientService.items = data;
-            }
-        );
-        this.equipeService.findAll().subscribe(
-            data => {
-                this.equipeService.items = data;
-            }
-        );
     }
 
     get clients(): Array<Client> {
@@ -77,6 +63,22 @@ export class SearchBarComponent implements OnInit {
 
     set selected(value: TacheVo) {
         this.statistiquesService.selected = value;
+    }
+
+    indice: number;
+
+
+    ngOnInit(): void {
+        this.clientService.findAll().subscribe(
+            data => {
+                this.clientService.items = data;
+            }
+        );
+        this.equipeService.findAll().subscribe(
+            data => {
+                this.equipeService.items = data;
+            }
+        );
     }
 
     public loadProject() {
@@ -129,8 +131,8 @@ export class SearchBarComponent implements OnInit {
         list.forEach((item) => {
             const key = item.lot.projet.client.id;
             const collection = map.get(key);
+            const clientStati = new ClientSatistique();
             if (!collection) {
-                const clientStati = new ClientSatistique();
                 clientStati.id = key;
                 clientStati.client = item.lot.projet.client;
                 clientStati.totalHeure += item.totalHeure;
@@ -142,6 +144,10 @@ export class SearchBarComponent implements OnInit {
                 this.clientStatistiques[this.findIndexById(key)].totalPeriode += item.totalPeriode;
                 collection.push(item);
             }
+            this.factureService.findByClientCode(item.lot.projet.client.code).subscribe(
+                data => {
+            clientStati.totalFacture = data.length;
+        });
         });
 
         return map;
@@ -165,9 +171,11 @@ export class ClientSatistique {
     client: Client;
     totalHeure: number;
     totalPeriode: number;
+    totalFacture: number;
 
     constructor() {
         this.totalPeriode = 0;
         this.totalHeure = 0;
+        this.totalFacture = 0;
     }
 }
