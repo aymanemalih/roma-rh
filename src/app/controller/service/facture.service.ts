@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {FactureVO} from '../model/facture-vo.model';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
+import {Lot} from "../model/lot.model";
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,10 @@ export class FactureService {
   private _submitted: boolean;
 
   constructor(private http: HttpClient) {
+  }
+
+  public findByClientCode(code: string): Observable<Array<Facture>> {
+    return this.http.get<Array<Facture>>(this.url + 'client/code/' + code);
   }
 
   public findAll(): Observable<Array<Facture>> {

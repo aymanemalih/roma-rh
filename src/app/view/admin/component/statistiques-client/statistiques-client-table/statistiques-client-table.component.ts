@@ -12,10 +12,8 @@ import {Facture} from '../../../../../controller/model/facture.model';
 })
 export class StatistiquesClientTableComponent implements OnInit {
 
-    constructor(private statistiqueClientService: StatistiquesServiceService, private factureService: FactureService) {
-    }
-
-    ngOnInit(): void {
+    constructor(private statistiqueClientService: StatistiquesServiceService,
+                private factureService: FactureService) {
     }
 
     get items(): Map<number, Array<TacheVo>> {
@@ -24,16 +22,6 @@ export class StatistiquesClientTableComponent implements OnInit {
 
     get clientStatistiques(): Array<ClientSatistique> {
         return this.statistiqueClientService.clientStatistiques;
-    }
-
-
-    public openCreate(client: ClientSatistique) {
-        this.selected = new Facture();
-        this.selected.totalHeursCalcules = client.totalHeure;
-        this.selected.montantCalcule = client.totalPeriode;
-        this.selected.client = client.client;
-        this.submitted = false;
-        this.createDialog = true;
     }
 
     get selected(): Facture {
@@ -58,5 +46,30 @@ export class StatistiquesClientTableComponent implements OnInit {
 
     set createDialog(value: boolean) {
         this.factureService.createDialog = value;
+    }
+
+    index: Array<number>;
+
+    ngOnInit(): void {
+    }
+
+    public openCreate(client: ClientSatistique) {
+        this.selected = new Facture();
+        this.selected.totalHeursCalcules = client.totalHeure;
+        this.selected.montantCalcule = client.totalPeriode;
+        this.selected.client = client.client;
+        this.submitted = false;
+        this.createDialog = true;
+    }
+
+    findItems(selected: ClientSatistique) {
+        let i: number;
+        this.factureService.findByClientCode(selected.client.code).subscribe(
+            data => {
+                this.factureService.items = data;
+                this.index[i] = this.factureService.items.length;
+                return this.index[i];
+            }
+        );
     }
 }
