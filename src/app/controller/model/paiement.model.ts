@@ -7,6 +7,7 @@ export class Paiement {
     public libelle: string;
     public code: string;
     public reference: string;
+    public description: string;
     public montant: number;
     public datePaiement: Date;
     public facture: Facture;

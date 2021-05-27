@@ -66,6 +66,7 @@ export class TacheListComponent implements OnInit {
     this.selected = new Tache();
     this.submitted = false;
     this.createDialog = true;
+    this.service.selected.groupeTache = this.serviceGrp.selected;
   }
 
   public edit(tache: Tache) {
