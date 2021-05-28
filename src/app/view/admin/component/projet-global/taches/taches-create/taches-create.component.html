@@ -36,19 +36,19 @@
         <div class="p-grid">
             <div class="p-field p-sm-3">
                 <label for="etates">Equipe</label>
-                <p-dropdown id="etates" [options]="itemsEtats" [(ngModel)]="selected.etatTache" optionLabel="libelle"></p-dropdown>
+                <p-dropdown id="etates" [options]="itemsEtats" placeholder="choisir Equipe" [(ngModel)]="selected.etatTache" optionLabel="libelle"></p-dropdown>
             </div>
             <div class="p-field p-sm-3">
                 <label for="mem">Member</label>
-                <p-dropdown id="mem" [options]="itemsMembres" [(ngModel)]="selected.membreEquipe" optionLabel="id"></p-dropdown>
+                <p-dropdown id="mem" [options]="itemsMembres" placeholder="choisir Membre" [(ngModel)]="selected.membreEquipe" optionLabel="id"></p-dropdown>
             </div>
             <div class="p-field p-sm-3">
                 <label for="poid">Etat</label>
-                <p-dropdown id="poid" [options]="itemsPeriodes" [(ngModel)]="selected.periode" optionLabel="libelle"></p-dropdown>
+                <p-dropdown id="poid" [options]="itemsPeriodes" placeholder="choisir Poids" [(ngModel)]="selected.periode" optionLabel="libelle"></p-dropdown>
             </div>
             <div class="p-field p-sm-3">
                 <label for="categorie">Catégorie</label>
-                <p-dropdown id="categorie" [options]="itemsCategories" [(ngModel)]="selected.categorieTache" optionLabel="code"></p-dropdown>
+                <p-dropdown id="categorie" [options]="itemsCategories" placeholder="choisir Categorie" [(ngModel)]="selected.categorieTache" optionLabel="code"></p-dropdown>
             </div>
         </div>
         <div class="p-grid">
@@ -64,7 +64,7 @@
             </div>
             <div class="p-field p-sm-4">
                 <label for="semaine">Semaine</label>
-                <input type="text" pInputText id="semaine" [(ngModel)]="selected.semaine" required autofocus />
+                <input type="number" pInputText id="semaine" [(ngModel)]="selected.semaine" required autofocus />
                 <small class="p-invalid" *ngIf="submitted && !selected.semaine">semaine is required.</small>
             </div>
         </div>

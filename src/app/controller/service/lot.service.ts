@@ -47,7 +47,7 @@ export class LotService {
     }
 
     public deleteMultipleByCode(): Observable<number> {
-        return this.http.post<number>(this.url + 'multiples-codes', this.selectes);
+        return this.http.post<number>(this.url + 'delete-multiple-by-code', this.selectes);
     }
 
     public findIndexById(id: number): number {

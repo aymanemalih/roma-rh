@@ -28,7 +28,7 @@
             </div>
             <div class="p-field p-sm-4">
                 <label for="tat">Etat Facture</label>
-                <p-dropdown id="tat" [options]="itemsEtat" [(ngModel)]="selected.etatFacture" optionLabel="libelle"></p-dropdown>
+                <p-dropdown id="tat" [options]="itemsEtat" placeholder="choisir Etat" [(ngModel)]="selected.etatFacture" optionLabel="libelle"></p-dropdown>
             </div>
             <div class="p-field p-sm-4">
                 <label for="client">Client</label>
@@ -50,12 +50,12 @@
         <div class="p-grid">
             <div class="p-field p-sm-6">
                 <label for="hrso">Total Heurs Factures</label>
-                <input type="number" pInputText id="hrso" [(ngModel)]="selected.totalHeursFactures" required autofocus />
+                <input type="number" pInputText id="hrso" [(ngModel)]="selected.totalHeursFactures" [placeholder]="selected.totalHeursCalcules" required autofocus />
                 <small class="p-invalid" *ngIf="submitted && !selected.totalHeursFactures">TotalHeursFactures is required.</small>
             </div>
             <div class="p-field p-sm-6">
                 <label for="fct">Montant Facture</label>
-                <input type="number" pInputText id="fct" [(ngModel)]="selected.montantFacture" required autofocus />
+                <input type="number" pInputText id="fct" [(ngModel)]="selected.montantFacture" [placeholder]="selected.montantCalcule" required autofocus />
                 <small class="p-invalid" *ngIf="submitted && !selected.montantFacture">montantFacture is required.</small>
             </div>
         </div>

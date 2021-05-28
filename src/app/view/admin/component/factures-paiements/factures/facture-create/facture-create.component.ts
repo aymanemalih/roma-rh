@@ -13,7 +13,7 @@ import {Client} from '../../../../../../controller/model/client.model';
     styleUrls: ['./facture-create.component.scss']
 })
 export class FactureCreateComponent implements OnInit {
-
+    selectedCity1: any;
     constructor(private messageService: MessageService,
                 private etatFactureService: EtatFactureService,
                 private clientService: ClientService,

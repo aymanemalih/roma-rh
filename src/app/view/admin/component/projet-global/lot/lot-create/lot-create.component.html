@@ -47,7 +47,7 @@
         <div class="p-grid">
             <div class="p-field p-sm-3">
                 <label for="sro">Sro</label>
-                <p-dropdown id="sro" [options]="itemssros" [(ngModel)]="selected.sro" optionLabel="libelle"></p-dropdown>
+                <p-dropdown id="sro" [options]="itemssros" placeholder="choisir sro" [(ngModel)]="selected.sro" optionLabel="libelle"></p-dropdown>
             </div>
             <div class="p-field p-sm-3">
                 <label for="projet">Projet</label>
@@ -55,11 +55,11 @@
             </div>
             <div class="p-field p-sm-3">
                 <label for="etat">Etat</label>
-                <p-dropdown id="etat" [options]="itemsetatlots" [(ngModel)]="selected.etatLot" optionLabel="libelle"></p-dropdown>
+                <p-dropdown id="etat" [options]="itemsetatlots" placeholder="choisir Etat" [(ngModel)]="selected.etatLot" optionLabel="libelle"></p-dropdown>
             </div>
             <div class="p-field p-sm-3">
                 <label for="resp">Responsable</label>
-                <p-dropdown id="resp" [options]="itemsCollaborateurs" [(ngModel)]="selected.responsable" optionLabel="code"></p-dropdown>
+                <p-dropdown id="resp" [options]="itemsCollaborateurs" placeholder="choisir Responsable" [(ngModel)]="selected.responsable" optionLabel="code"></p-dropdown>
             </div>
         </div>
         <div class="p-grid">
@@ -75,7 +75,7 @@
             </div>
             <div class="p-field p-sm-4">
                 <label for="nombreJoureHommeRetard">NbrJrsRetard</label>
-                <input type="text" pInputText id="nombreJoureHommeRetard" [(ngModel)]="selected.nombreJoureHommeRetard" required autofocus />
+                <input type="number" pInputText id="nombreJoureHommeRetard" [(ngModel)]="selected.nombreJoureHommeRetard" required autofocus />
                 <small class="p-invalid" *ngIf="submitted && !selected.nombreJoureHommeRetard">nombreJoureHommeRetard is required.</small>
             </div>
         </div>

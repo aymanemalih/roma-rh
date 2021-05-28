@@ -50,17 +50,17 @@
         <div class="p-grid">
             <div class="p-field p-sm-4">
                 <label for="client">Client </label>
-                <p-dropdown id="client" [options]="itemsClients" [(ngModel)]="selected.client"
+                <p-dropdown id="client" [options]="itemsClients" placeholder="choisir Client" [(ngModel)]="selected.client"
                             optionLabel="libelle"></p-dropdown>
             </div>
             <div class="p-field p-sm-4">
                 <label for="etat">Etat</label>
-                <p-dropdown id="etat" [options]="itemsEtatProjet" [(ngModel)]="selected.etatProjet"
+                <p-dropdown id="etat" [options]="itemsEtatProjet" placeholder="choisir Etat" [(ngModel)]="selected.etatProjet"
                             optionLabel="libelle"></p-dropdown>
             </div>
             <div class="p-field p-sm-4">
                 <label for="res">Responsable </label>
-                <p-dropdown id="res" [options]="itemsCollaborateurs" [(ngModel)]="selected.responsable"
+                <p-dropdown id="res" [options]="itemsCollaborateurs" placeholder="choisir Responsable" [(ngModel)]="selected.responsable"
                             optionLabel="nom"></p-dropdown>
             </div>
 
@@ -75,7 +75,7 @@
             </div>
             <div class="p-field p-sm-4">
                 <label for="nombreJoureHommeRetard">NbrJrsRetard</label>
-                <input type="text" pInputText id="nombreJoureHommeRetard" [(ngModel)]="selected.nombreJoureHommeRetard"
+                <input type="number" pInputText id="nombreJoureHommeRetard" [(ngModel)]="selected.nombreJoureHommeRetard"
                        required autofocus/>
                 <small class="p-invalid" *ngIf="submitted && !selected.nombreJoureHommeRetard">nombreJoureHommeRetard is
                     required.</small>

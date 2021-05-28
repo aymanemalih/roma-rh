@@ -59,6 +59,7 @@ export class FactureListeComponent implements OnInit {
                         severity: 'success',
                         summary: 'Successful',
                         detail: 'Factures Deleted',
+                        key: 'facture',
                         life: 3000
                     });
                 });

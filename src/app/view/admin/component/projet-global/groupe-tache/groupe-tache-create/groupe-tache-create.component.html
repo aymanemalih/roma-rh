@@ -47,7 +47,7 @@
         <div class="p-grid">
             <div class="p-field p-sm-3">
                 <label for="equipe">Equipe</label>
-                <p-dropdown id="equipe" [options]="itemsEquipes" [(ngModel)]="selected.equipe" optionLabel="libelle"></p-dropdown>
+                <p-dropdown id="equipe" [options]="itemsEquipes" placeholder="choisir Equipe" [(ngModel)]="selected.equipe" optionLabel="libelle"></p-dropdown>
             </div>
             <div class="p-field p-sm-3">
                 <label for="lot">Lot</label>
@@ -56,11 +56,11 @@
             </div>
             <div class="p-field p-sm-3">
                 <label for="etat">Etat</label>
-                <p-dropdown id="etat" [options]="itemsEtats" [(ngModel)]="selected.etatGroupeTache" optionLabel="libelle"></p-dropdown>
+                <p-dropdown id="etat" [options]="itemsEtats" placeholder="choisir Etat" [(ngModel)]="selected.etatGroupeTache" optionLabel="libelle"></p-dropdown>
             </div>
             <div class="p-field p-sm-3">
                 <label for="categorie">Catégorie</label>
-                <p-dropdown id="categorie" [options]="itemsCategories" [(ngModel)]="selected.categorieGroupeTache" optionLabel="libelle"></p-dropdown>
+                <p-dropdown id="categorie" [options]="itemsCategories" placeholder="choisir Categorie" [(ngModel)]="selected.categorieGroupeTache" optionLabel="libelle"></p-dropdown>
             </div>
         </div>
         <div class="p-grid">
@@ -81,7 +81,7 @@
             </div>
             <div class="p-field p-sm-3">
                 <label for="nombreJoureHommeRetard">NbrJrsRetard</label>
-                <input type="text" pInputText id="nombreJoureHommeRetard" [(ngModel)]="selected.nombreJoureHommeRetard" required autofocus />
+                <input type="number" pInputText id="nombreJoureHommeRetard" [(ngModel)]="selected.nombreJoureHommeRetard" required autofocus />
                 <small class="p-invalid" *ngIf="submitted && !selected.nombreJoureHommeRetard">nombreJoureHommeRetard is required.</small>
             </div>
         </div>
