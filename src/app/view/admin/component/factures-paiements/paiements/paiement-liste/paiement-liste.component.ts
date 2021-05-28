@@ -36,6 +36,7 @@ export class PaiementListeComponent implements OnInit {
             severity: 'success',
             summary: 'Successful',
             detail: 'Paiement Deleted',
+            key: 'paiement',
             life: 3000
           });
         });

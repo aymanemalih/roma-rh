@@ -15,11 +15,19 @@
                             optionLabel="libelle" optionValue="id"
                             (onChange)="findLotsByProjetId(groupeTacheVO.projetId)"></p-dropdown>
             </div>
+            <div *ngIf="groupeTacheVO.clientId == null" class="p-field p-sm-3">
+                <label for="projett">Projet:</label><br>
+                <input id="Projett" pInputText value="sélectionner d'abord un client" readonly="true"/>
+            </div>
             <div class="p-field p-sm-1"></div>
             <div *ngIf="groupeTacheVO.projetId != null" class="p-field p-sm-3">
                 <label for="lot">Lot:</label><br>
                 <p-dropdown id="lot" [options]="itemsLots" [(ngModel)]="groupeTacheVO.lotId"
                             optionLabel="libelle" optionValue="id"></p-dropdown>
+            </div>
+            <div *ngIf="groupeTacheVO.projetId == null" class="p-field p-sm-3">
+                <label for="lott">Lot:</label><br>
+                <input id="lott" pInputText value="sélectionner d'abord un projet" readonly="true"/>
             </div>
             <div class="p-field p-sm-1"></div>
         </div>

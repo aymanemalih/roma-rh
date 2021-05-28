@@ -4,7 +4,6 @@ import {HttpClient} from '@angular/common/http';
 import {FactureVO} from '../model/facture-vo.model';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
-import {Lot} from "../model/lot.model";
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +44,7 @@ export class FactureService {
   }
 
   public deleteMultipleByCode(): Observable<number> {
-    return this.http.post<number>(this.url + 'multiples-codes', this.selectes);
+    return this.http.post<number>(this.url + 'delete-multiple-by-code', this.selectes);
   }
 
   public findIndexById(id: number): number {

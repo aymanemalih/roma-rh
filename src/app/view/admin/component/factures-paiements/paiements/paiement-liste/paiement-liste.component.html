@@ -48,7 +48,7 @@
                         </td>
                         <td>{{paiement.libelle}}</td>
                         <td>{{paiement.datePaiement}}</td>
-                        <td>{{paiement.typePaiement}}</td>
+                        <td>{{paiement.typePaiement.libelle}}</td>
                         <td>{{paiement.montant}}</td>
                         <td>
                             <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-warning p-mr-2" (click)="edit(paiement)"></button>
@@ -68,6 +68,6 @@
         <app-paiement-create></app-paiement-create>
         <app-paiement-edit></app-paiement-edit>
         <app-paiement-view></app-paiement-view>
-        <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+        <p-confirmDialog [style]="{width: '450px'}" key="paiement"></p-confirmDialog>
     </div>
 </div>
