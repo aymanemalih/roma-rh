@@ -36,6 +36,7 @@ export class GroupeTacheListComponent implements OnInit {
             severity: 'success',
             summary: 'Successful',
             detail: 'GroupeTache Deleted',
+            key: 'groupeTache',
             life: 3000
           });
         });

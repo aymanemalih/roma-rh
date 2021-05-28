@@ -4,7 +4,6 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {GroupeTache} from '../model/groupe-tache.model';
 import {GroupeTacheVO} from '../model/groupe-tache-vo.model';
-import {Lot} from "../model/lot.model";
 
 @Injectable({
     providedIn: 'root'
@@ -55,7 +54,7 @@ export class GroupeTacheService {
     }
 
     public deleteMultipleByCode(): Observable<number> {
-        return this.http.post<number>(this.url + 'multiples-codes', this.selectes);
+        return this.http.post<number>(this.url + 'delete-multiple-by-code', this.selectes);
     }
 
     public findIndexById(id: number): number {

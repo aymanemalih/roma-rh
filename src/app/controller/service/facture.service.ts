@@ -4,7 +4,6 @@ import {HttpClient} from '@angular/common/http';
 import {FactureVO} from '../model/facture-vo.model';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
-import {Lot} from "../model/lot.model";
 
 @Injectable({
   providedIn: 'root'
