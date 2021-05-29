@@ -19,8 +19,8 @@
             </div>
             <div class="p-field p-sm-3">
                 <label for="nro">Nro</label>
-                <input type="text" pInputText id="nro" [(ngModel)]="selected.nro.code" required autofocus />
-                <small class="p-invalid" *ngIf="submitted && !selected.nro.code">Nro is required.</small>
+                <input type="text" pInputText id="nro" [(ngModel)]="selected.nro" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.nro">Nro is required.</small>
             </div>
         </div>
         <div class="p-grid">

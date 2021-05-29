@@ -1,5 +1,4 @@
 import {Collaborateur} from './collaborateur.model';
-import {Nro} from './nro.model';
 import {Etatprojet} from './etatprojet.model';
 import {Client} from './client.model';
 import {ProjetEquipe} from './projet-equipe.model';
@@ -9,7 +8,7 @@ export class Projet {
   public libelle: string;
   public code: string;
   public description: string;
-  public nro: Nro;
+  public nro: string;
   public avancement: number;
   public nombreJoureHommeRetard: number;
   public nombreJoureHommeEffectif: number;
@@ -28,7 +27,7 @@ export class Projet {
   constructor() {
     this.libelle = '';
     this.code = '';
-    this.nro = new Nro();
+    this.nro = '';
   }
 }
 
