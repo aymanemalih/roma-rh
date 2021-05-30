@@ -1,6 +1,5 @@
-<div class="card"  style="height: 110px; background-color: #e5e8e8">
+<div class="card" style="height: 110px; background-color: #e5e8e8">
     <div class="p-fluid p-formgrid p-grid">
-        <div class="p-grid p-field p-sm-1"></div>
         <div class="p-grid p-field p-sm-9">
             <div class="p-field p-sm-3">
                 <label for="client">Client:</label><br>
@@ -29,12 +28,18 @@
                 <label for="lott">Lot:</label><br>
                 <input id="lott" pInputText value="sélectionner d'abord un projet" readonly="true"/>
             </div>
-            <div class="p-field p-sm-1"></div>
         </div>
-        <div class="p-field p-sm-2">
-            <br><br>
+        <div class="p-sm-3 p-grid">
+            <div class="p-field p-sm-6">
+                <br><br>
                 <button pButton label="Rechercher" icon="pi pi-search" class="p-button-primary p-button-outlined"
                         (click)="findGroupeTacheByCreteria()"></button>
+            </div>
+            <div class="p-field p-sm-6">
+                <br><br>
+                <button pButton label="Réinitialiser" icon="pi pi-times" class="p-button-danger p-button-outlined"
+                        (click)="reset()"></button>
+            </div>
         </div>
     </div>
 </div>

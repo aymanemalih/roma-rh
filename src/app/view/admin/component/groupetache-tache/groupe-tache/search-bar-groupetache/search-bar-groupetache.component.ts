@@ -83,4 +83,9 @@ export class SearchBarGroupetacheComponent implements OnInit {
         this.lotService.findByProjetId(projetId).subscribe(data => this.itemsLots = data);
     }
 
+    reset(){
+        this.service.groupeTacheVO = null;
+        this.service.findAll().subscribe(data => this.items = data);
+    }
+
 }
