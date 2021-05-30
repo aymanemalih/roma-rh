@@ -1,27 +1,27 @@
 <div class="p-grid">
-    <div class="p-field p-sm-6">
-        <div class="p-formgroup-inline">
-            <div class="p-grid">
-                <div class="p-card-title">
-                    <h5>Ajouter des Equipes</h5></div>
+    <div class="p-field p-sm-5">
+        <div class="card">
+            <div class="card-header">
+                <h5>Ajouter des Equipes</h5>
             </div>
-            <div class="p-grid">
-                <div class="p-card-body">
-                    <div class="p-field">
+            <br><br>
+            <div class="card-body">
+                <div class="p-grid">
+                    <div class="p-field p-sm-6">
                         <label for="equipe" class="p-sr-only">Equipe</label>
-                        <p-dropdown id="equipe" [options]="itemsEquipes" placeholder="choisir Equipe" [(ngModel)]="selected.equipe"
+                        <p-dropdown id="equipe" [options]="itemsEquipes" placeholder="choisir Equipe"
+                                    [(ngModel)]="selected.equipe"
                                     optionLabel="libelle"></p-dropdown>
+                    </div>
+                    <div class="p-field p-sm-2"></div>
+                    <div class="p-field p-sm-4">
+                        <button pButton type="button" label="Submit" (click)="ajouerProjetEquipe()"></button>
                     </div>
                 </div>
             </div>
-            <div class="p-grid">
-                <div class="p-card-footer">
-                    <button pButton type="button" label="Submit" (click)="ajouerProjetEquipe()"></button>
-                </div>
-            </div>
         </div>
-
     </div>
+    <div class="p-field p-sm-1"></div>
     <div class="p-field p-sm-6">
         <div class="p-grid">
             <div class="p-col-12">
