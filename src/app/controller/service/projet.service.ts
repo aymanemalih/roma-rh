@@ -3,6 +3,8 @@ import {Projet} from '../model/projet.model';
 import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {ProjetVo} from "../model/projet-vo.model";
+import {Facture} from "../model/facture.model";
 
 
 @Injectable({
@@ -13,6 +15,7 @@ export class ProjetService {
     private _items: Array<Projet>;
     private _selected: Projet;
     private _selectes: Array<Projet>;
+    private _projetVo: ProjetVo;
 
     private _createDialog: boolean;
     private _editDialog: boolean;
@@ -70,7 +73,21 @@ export class ProjetService {
         this._submitted = value;
     }
 
+    get projetVo(): ProjetVo {
+        if (this._projetVo == null) {
+            this._projetVo = new ProjetVo();
+        }
+        return this._projetVo;
+    }
+
+    set projetVo(value: ProjetVo) {
+        this._projetVo = value;
+    }
+
     constructor(private http: HttpClient) {
+    }
+    public search(): Observable<Array<Projet>> {
+        return this.http.post<Array<Projet>>(this.url + 'search', this.projetVo);
     }
 
     public findAll(): Observable<Array<Projet>> {
@@ -103,11 +120,11 @@ export class ProjetService {
     }
 
     public deleteMultipleByCode(): Observable<number> {
-        return this.http.post<number>(this.url + 'delete-multiple-by-code' , this.selectes);
+        return this.http.post<number>(this.url + 'delete-multiple-by-code', this.selectes);
     }
 
     public deleteMultipleIndexById() {
-        for (const item of this.selectes){
+        for (const item of this.selectes) {
             this.deleteIndexById(item.id);
         }
     }

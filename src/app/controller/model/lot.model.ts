@@ -1,4 +1,3 @@
-import {Sro} from './sro.model';
 import {Projet} from './projet.model';
 import {Collaborateur} from './collaborateur.model';
 import {EtatLot} from './etat-lot.model';
@@ -7,7 +6,7 @@ export class Lot {
   public id: number;
   public libelle: string;
   public code: string;
-  public sro: Sro;
+  public sro: string;
   public description: string;
   public projet: Projet;
   public etatLot: EtatLot;

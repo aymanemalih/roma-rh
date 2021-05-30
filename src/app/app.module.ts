@@ -231,6 +231,7 @@ import { PaiementCreateComponent } from './view/admin/component/factures-paiemen
 import { PaiementEditComponent } from './view/admin/component/factures-paiements/paiements/paiement-edit/paiement-edit.component';
 import { PaiementListeComponent } from './view/admin/component/factures-paiements/paiements/paiement-liste/paiement-liste.component';
 import { PaiementViewComponent } from './view/admin/component/factures-paiements/paiements/paiement-view/paiement-view.component';
+import { SearchBarProjetComponent } from './view/admin/component/projet-global/projet/search-bar-projet/search-bar-projet.component';
 
 @NgModule({
     imports: [
@@ -458,6 +459,7 @@ import { PaiementViewComponent } from './view/admin/component/factures-paiements
         PaiementEditComponent,
         PaiementListeComponent,
         PaiementViewComponent,
+        SearchBarProjetComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

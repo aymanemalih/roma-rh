@@ -1,0 +1,30 @@
+<p-panel header="Recherche des Projets" [toggleable]="true">
+
+    <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col">
+            <label>Client</label>
+            <p-dropdown [options]="itemsClients" [showClear]="true" placeholder="choisir Client" optionLabel="libelle" optionValue="id"
+                        [(ngModel)]="projetVO.clientId"></p-dropdown>
+        </div>
+        <div class="p-field p-col">
+            <label>Etat</label>
+            <p-dropdown [options]="itemsEtats" [showClear]="true" placeholder="choisir Etat" optionLabel="libelle"
+                        optionValue="id" [(ngModel)]="projetVO.etatProjetId"></p-dropdown>
+        </div>
+        <div class="p-field p-col">
+            <label>Responsable</label>
+            <p-dropdown [options]="itemsCollab" [showClear]="true" placeholder="choisir Responsable" optionLabel="nom"
+                        optionValue="id" [(ngModel)]="projetVO.responsableProjetId"></p-dropdown>
+        </div>
+        <div class="p-field p-col">
+            <label for="total">Libelle</label>
+            <input type="text" pInputText id="total" [(ngModel)]="projetVO.libelleProjet" required autofocus/>
+        </div>
+    </div>
+    <div class="p-card-footer">
+        <button pButton pRipple type="button" label="Rechercher" icon="pi pi-search" class="p-mr-2 p-mb-2"
+                (click)="search()"></button>
+        <button pButton pRipple type="button" label="Exporter" icon="pi pi-upload" class="p-mr-2 p-mb-2"></button>
+    </div>
+
+</p-panel>

@@ -47,7 +47,8 @@
         <div class="p-grid">
             <div class="p-field p-sm-3">
                 <label for="sro">Sro</label>
-                <p-dropdown id="sro" [options]="itemssros" placeholder="choisir sro" [(ngModel)]="selected.sro" optionLabel="libelle"></p-dropdown>
+                <input type="sro" pInputText id="sro" [(ngModel)]="selected.sro" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !selected.sro">Sro is required.</small>
             </div>
             <div class="p-field p-sm-3">
                 <label for="projet">Projet</label>

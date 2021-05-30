@@ -5,10 +5,8 @@ import {Lot} from '../../../../../../controller/model/lot.model';
 import {ProjetService} from '../../../../../../controller/service/projet.service';
 import {CollaborateurService} from '../../../../../../controller/service/collaborateur.service';
 import {Collaborateur} from '../../../../../../controller/model/collaborateur.model';
-import {SroService} from '../../../../../../controller/service/sro.service';
 import {EtatLot} from '../../../../../../controller/model/etat-lot.model';
 import {EtatLotService} from '../../../../../../controller/service/etat-lot.service';
-import {Sro} from '../../../../../../controller/model/sro.model';
 
 @Component({
     selector: 'app-lot-create',
@@ -20,13 +18,11 @@ export class LotCreateComponent implements OnInit {
     constructor(private messageService: MessageService,
                 private service: LotService,
                 private collaborateurService: CollaborateurService,
-                private sroService: SroService,
                 private etatLotService: EtatLotService,
                 private projetService: ProjetService) {
     }
 
     ngOnInit(): void {
-        this.sroService.findAll().subscribe(data => this.itemssros = data);
         this.collaborateurService.findAll().subscribe(data => this.itemsCollaborateurs = data);
         this.etatLotService.findAll().subscribe(data => this.itemsetatlots = data);
     }
@@ -101,14 +97,6 @@ export class LotCreateComponent implements OnInit {
 
     set itemsetatlots(value: Array<EtatLot>) {
         this.etatLotService.items = value;
-    }
-
-    get itemssros(): Array<Sro> {
-        return this.sroService.items;
-    }
-
-    set itemssros(value: Array<Sro>) {
-        this.sroService.items = value;
     }
 
 }

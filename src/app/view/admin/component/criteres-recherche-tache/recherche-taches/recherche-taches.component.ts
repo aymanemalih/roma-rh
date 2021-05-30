@@ -3,7 +3,6 @@ import {TacheService} from '../../../../../controller/service/tache.service';
 import {ClientService} from '../../../../../controller/service/client.service';
 import {EquipeService} from '../../../../../controller/service/equipe.service';
 import {CollaborateurService} from '../../../../../controller/service/collaborateur.service';
-import {SroService} from '../../../../../controller/service/sro.service';
 import {LotService} from '../../../../../controller/service/lot.service';
 import {MembreEquipeService} from '../../../../../controller/service/membre-equipe.service';
 import {ProjetService} from '../../../../../controller/service/projet.service';
@@ -11,7 +10,6 @@ import {TacheVo} from '../../../../../controller/model/tache-vo.model';
 import {Client} from '../../../../../controller/model/client.model';
 import {Equipe} from '../../../../../controller/model/equipe.model';
 import {Collaborateur} from '../../../../../controller/model/collaborateur.model';
-import {Sro} from '../../../../../controller/model/sro.model';
 import {Projet} from '../../../../../controller/model/projet.model';
 import {MembreEquipe} from '../../../../../controller/model/membre-equipe';
 import {Lot} from '../../../../../controller/model/lot.model';
@@ -28,7 +26,6 @@ export class RechercheTachesComponent implements OnInit {
                 private clientService: ClientService,
                 private equipeService: EquipeService,
                 private collaborateurService: CollaborateurService,
-                private sroService: SroService,
                 private lotService: LotService,
                 private membreEquipeService: MembreEquipeService,
                 private projetService: ProjetService) {
@@ -58,11 +55,6 @@ export class RechercheTachesComponent implements OnInit {
         this.collaborateurService.findAll().subscribe(
             data => {
                 this.collaborateurService.items = data;
-            }
-        );
-        this.sroService.findAll().subscribe(
-            data => {
-                this.sroService.items = data;
             }
         );
     }
@@ -137,14 +129,6 @@ export class RechercheTachesComponent implements OnInit {
 
     set itemsCollaborateurs(value: Array<Collaborateur>) {
         this.collaborateurService.items = value;
-    }
-
-    get itemsSros(): Array<Sro> {
-        return this.sroService.items;
-    }
-
-    set itemsSros(value: Array<Sro>) {
-        this.sroService.items = value;
     }
 
     get itemsProjets(): Array<Projet> {
