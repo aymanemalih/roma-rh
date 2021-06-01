@@ -4,6 +4,8 @@ import {PaiementService} from '../../../../../../controller/service/paiement.ser
 import {FactureService} from '../../../../../../controller/service/facture.service';
 import {Paiement} from '../../../../../../controller/model/paiement.model';
 import {Facture} from '../../../../../../controller/model/facture.model';
+import {Report} from '../../../../../../controller/model/report.model';
+import {StringResult} from '../../../../../../controller/model/string-result.model';
 
 @Component({
   selector: 'app-paiement-liste',
@@ -12,6 +14,8 @@ import {Facture} from '../../../../../../controller/model/facture.model';
 })
 export class PaiementListeComponent implements OnInit {
   cols: any[];
+  report: Report = new Report();
+  reportName: StringResult = new StringResult();
 
   constructor(private messageService: MessageService, private confirmationService: ConfirmationService,
               private service: PaiementService,
@@ -77,6 +81,15 @@ export class PaiementListeComponent implements OnInit {
     this.selected = {...paiement};
     this.viewDialog = true;
   }
+
+  // public printPaiement(){
+  //   this.report.name = 'PaiementsList';
+  //   this.service.printPaiement(this.report).subscribe(
+  //       data => {
+  //         this.reportName = data;
+  //       }
+  //   );
+  // }
 
   private initCol() {
     this.cols = [
