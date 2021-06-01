@@ -54,8 +54,19 @@
             </div>
             <div class="p-field p-sm-6">
                 <label for="responsable">Responsable</label>
-                <p-dropdown id="responsable" [options]="itemsMembres" [(ngModel)]="selected.membreEquipe"
-                            optionLabel="id"></p-dropdown>
+                <p-dropdown id="responsable" [options]="itemsMembres" [showClear]="true"
+                            [(ngModel)]="selected.membreEquipe">
+                    <ng-template let-membreEquipe pTemplate="item">
+                        <div>{{membreEquipe.collaborateur.nom}} {{membreEquipe.collaborateur.prenom}}</div>
+                    </ng-template>
+                    <ng-template pTemplate="selectedItem">
+                        <div *ngIf="selected.membreEquipe == null">select member</div>
+                        <div *ngIf="selected.membreEquipe">
+                            {{itemsMembres[findSelectedMember(selected.membreEquipe.id)].collaborateur.nom}}
+                            {{itemsMembres[findSelectedMember(selected.membreEquipe.id)].collaborateur.prenom}}
+                        </div>
+                    </ng-template>
+                </p-dropdown>
             </div>
         </div>
 

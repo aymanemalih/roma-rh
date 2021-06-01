@@ -28,13 +28,14 @@ export class TacheCreateComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // this.selected.groupeTache = this.groupeTacheService.selected;
         this.etatTacheService.findAll().subscribe(data => this.itemsEtats = data);
         this.periodeService.findAll().subscribe(data => this.itemsPeriodes = data);
-        this.membreEquipeService.findByEquipeCode(this.groupeTacheService.selected.equipe).subscribe(
-            data => this.itemsMembres = data);
-        this.categorieTacheService.findByCategorieGroupeTacheCode(this.groupeTacheService.selected.categorieGroupeTache).subscribe(
-            data => this.itemsCategories = data);
+        this.membreEquipeService.findAll().subscribe(data => this.itemsMembres = data);
+        this.categorieTacheService.findAll().subscribe(data => this.itemsCategories = data);
+        // this.membreEquipeService.findByEquipeCode(this.groupeTacheService.selected.equipe).subscribe(
+        //     data => this.itemsMembres = data);
+        // this.categorieTacheService.findByCategorieGroupeTacheCode(this.groupeTacheService.selected.categorieGroupeTache).subscribe(
+        //     data => this.itemsCategories = data);
     }
 
     public hideCreateDialog() {
@@ -57,6 +58,10 @@ export class TacheCreateComponent implements OnInit {
             this.createDialog = false;
             this.selected = new Tache();
         }
+    }
+
+    public findSelectedMember(id: number): number {
+        return this.membreEquipeService.findIndexById(id);
     }
 
     get selected(): Tache {
